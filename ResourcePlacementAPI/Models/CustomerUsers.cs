@@ -11,7 +11,6 @@ namespace ResourcePlacementAPI.Models
     public class CustomerUsers
     {
         [Key]
-        public int CustomerUserId { get; set; }
         public string Email { get; set; }
         public string CompanyName { get; set; }
         public string PicName { get; set; }
