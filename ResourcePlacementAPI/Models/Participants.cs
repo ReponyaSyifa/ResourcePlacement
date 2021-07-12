@@ -21,7 +21,7 @@ namespace ResourcePlacementAPI.Models
         public string Grade { get; set; }
         public string Status { get; set; }
         public virtual Projects Projects { get; set; }
-        public int ProjectsId { get; set; }
+        public int ProjectId { get; set; }
         public virtual ICollection<ParticipantsSkills> ParticipantsSkills { get; set; }
 
     }

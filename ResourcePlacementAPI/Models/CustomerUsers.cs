@@ -16,5 +16,6 @@ namespace ResourcePlacementAPI.Models
         public string CompanyName { get; set; }
         public string PicName { get; set; }
         public virtual ICollection<Projects> Projects { get; set; }
+        public virtual Accounts Accounts { get; set; }
     }
 }
