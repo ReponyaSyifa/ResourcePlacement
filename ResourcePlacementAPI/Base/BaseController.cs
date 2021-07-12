@@ -56,7 +56,7 @@ namespace ResourcePlacementAPI.Base
             }
         }
 
-        [HttpDelete]
+        [HttpDelete("{key}")]
         public ActionResult Delete(Keys key)
         {
             var response = repository.Delete(key);
@@ -77,7 +77,7 @@ namespace ResourcePlacementAPI.Base
             }
         }
 
-        [HttpPut]
+        [HttpPut("{key}")]
         public ActionResult Update(Entity entity, Keys key)
         {
             var response = repository.Update(entity, key);
