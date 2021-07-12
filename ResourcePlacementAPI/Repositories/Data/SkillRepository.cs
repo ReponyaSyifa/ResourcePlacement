@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.Repositories.Data
 {
-    public class SkillsRepository : GeneralRepository<MyContext, Skills, int>
+    public class SkillRepository : GeneralRepository<MyContext, Skills, int>
     {
-        public SkillsRepository(MyContext myContext) : base(myContext)
+        public SkillRepository(MyContext myContext) : base(myContext)
         {
 
         }
