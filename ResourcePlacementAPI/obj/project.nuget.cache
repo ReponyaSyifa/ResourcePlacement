@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zDFz1mr/GJAwwA3tjlWeYPNhTKyr5tv509bi6Q/TAZKO3bbstWVtmEzHNoo0JBwfPsD8hFPyQyCuMG2B1tbDQA==",
+  "dgSpecHash": "pT4Y6Lfqx1NddTsc1aouG2C8Wp7C6IRCEEjl2EErE7iEFJrm8TLD47mopEJN0CiUi2AJEUDHBSm8Dz0GYaVnzg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacementAPI\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
+  "projectFilePath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\papahjahat\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\papahjahat\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
