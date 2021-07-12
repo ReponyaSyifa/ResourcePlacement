@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ResourcePlacementAPI.Context;
+using ResourcePlacementAPI.Repositories.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,17 @@ namespace ResourcePlacementAPI
             services.AddControllers();
             services.AddDbContext<MyContext>(options => options.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("APIContext")));
 
-            //services.AddScoped<>
+            services.AddScoped<AccountRepository>();
+            services.AddScoped<AccountRoleRepository>();
+            services.AddScoped<CustomerUserRepository>();
+            services.AddScoped<EmployeeRepository>();
+            services.AddScoped<ParticipantRepository>();
+            services.AddScoped<ParticipantSkillRepository>();
+            services.AddScoped<ProjectRepository>();
+            services.AddScoped<ProjectSkillRepository>();
+            services.AddScoped<RoleRepository>();
+            services.AddScoped<SkillRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
