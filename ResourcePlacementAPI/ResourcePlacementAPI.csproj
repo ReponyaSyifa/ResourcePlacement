@@ -25,9 +25,5 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="VieModels\" />
-  </ItemGroup>
-
 
 </Project>

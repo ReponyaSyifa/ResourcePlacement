@@ -20,6 +20,7 @@ namespace ResourcePlacementAPI.Repositories
             this.myContext = myContext;
             entities = myContext.Set<Entity>();
         }
+
         public int Delete(Key key)
         {
             var cari = entities.Find(key);
