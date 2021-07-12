@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacementAPI\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj": {}
+    "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacementAPI\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj": {
+    "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacementAPI\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
+        "projectUniqueName": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
         "projectName": "ResourcePlacementAPI",
-        "projectPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacementAPI\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
+        "projectPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
         "packagesPath": "C:\\Users\\papahjahat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacementAPI\\ResourcePlacementAPI\\obj\\",
+        "outputPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\papahjahat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -49,6 +49,12 @@
               "version": "[5.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.7, )"
             }
