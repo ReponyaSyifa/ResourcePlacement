@@ -12,9 +12,9 @@ namespace ResourcePlacementAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PraticipantSkillController : BaseController<ParticipantsSkills, ParticipantSkillRepository, int>
+    public class ParticipantSkillController : BaseController<ParticipantsSkills, ParticipantSkillRepository, int>
     {
-        public PraticipantSkillController(ParticipantSkillRepository repository) : base(repository)
+        public ParticipantSkillController(ParticipantSkillRepository repository) : base(repository)
         {
         }
     }
