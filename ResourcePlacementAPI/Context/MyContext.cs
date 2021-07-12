@@ -20,5 +20,6 @@ namespace ResourcePlacementAPI.Context
         public DbSet<Participants> Participants { get; set; }
         public DbSet<Projects> Projects { get; set; }
         public DbSet<Skills> Skills { get; set; }
+        public DbSet<Accounts> Accounts { get; set; }
     }
 }

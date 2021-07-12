@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.Models
 {
-    public class Accounts
+    public class Employees
     {
         [Key]
-        public int AccountId { get; set; }
-        public string Password { get; set; }
+        public int EmployeeId{ get; set; }
+        public string NIK { get; set; }
         public string Email { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }
