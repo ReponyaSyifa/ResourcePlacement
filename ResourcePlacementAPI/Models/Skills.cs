@@ -13,5 +13,7 @@ namespace ResourcePlacementAPI.Models
         [Key]
         public int SkillId { get; set; }
         public string SkillName { get; set; }
+        public virtual ICollection<ParticipantsSkills> ParticipantsSkills { get; set; }
+        public virtual ICollection<ProjectsSkills> ProjectsSkills { get; set; }
     }
 }

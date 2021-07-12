@@ -15,5 +15,6 @@ namespace ResourcePlacementAPI.Models
         public string Email { get; set; }
         public string CompanyName { get; set; }
         public string PicName { get; set; }
+        public virtual ICollection<Projects> Projects { get; set; }
     }
 }

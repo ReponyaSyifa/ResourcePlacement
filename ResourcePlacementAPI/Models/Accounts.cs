@@ -14,5 +14,6 @@ namespace ResourcePlacementAPI.Models
         public int AccountId { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
+        public virtual ICollection<AccountsRoles> AccountsRoles { get; set; }
     }
 }

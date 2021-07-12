@@ -20,6 +20,9 @@ namespace ResourcePlacementAPI.Models
         public DateTime BirthDate { get; set; }
         public string Grade { get; set; }
         public string Status { get; set; }
+        public virtual Projects Projects { get; set; }
+        public int ProjectsId { get; set; }
+        public virtual ICollection<ParticipantsSkills> ParticipantsSkills { get; set; }
 
     }
     public enum Gender
