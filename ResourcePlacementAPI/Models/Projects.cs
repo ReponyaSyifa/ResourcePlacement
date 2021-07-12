@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.Models
 {
-    public class Skills
+    public class Projects
     {
         [Key]
-        public int SkillId { get; set; }
-        public string SkillName { get; set; }
+        public int ProjectId { get; set; }
+        public string ProjectName { get; set; }
+        public string ProjectDesc { get; set; }
     }
 }
