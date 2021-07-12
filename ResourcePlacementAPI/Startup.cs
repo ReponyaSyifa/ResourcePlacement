@@ -29,6 +29,8 @@ namespace ResourcePlacementAPI
         {
             services.AddControllers();
             services.AddDbContext<MyContext>(options => options.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("APIContext")));
+
+            //services.AddScoped<>
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
