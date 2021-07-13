@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -9,8 +10,10 @@ namespace ResourcePlacementAPI.Models
     [Table("tb_T_AccountRoles")]
     public class AccountsRoles
     {
+        [JsonIgnore]
         public virtual Roles Roles { get; set; }
         public int RolesId { get; set; }
+        [JsonIgnore]
         public virtual Accounts Accounts { get; set; }
         public int AccountId { get; set; }
 
