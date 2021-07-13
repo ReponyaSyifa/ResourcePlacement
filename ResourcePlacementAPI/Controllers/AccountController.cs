@@ -8,6 +8,7 @@ using ResourcePlacementAPI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.Controllers
@@ -48,6 +49,31 @@ namespace ResourcePlacementAPI.Controllers
             }*/
         }
 
+        [HttpPut("ChangePassword")]
+        public ActionResult ChangePassword(ChangePasswordVM changePasswordVM)
+        {
+            var result = repository.ChangePassword(changePasswordVM);
+            if (result == 1)
+            {
+                return Ok(new { status = HttpStatusCode.OK, result = result, message = "Sukses" });
+            }
+            else if (result == 2)
+            {
+                return Ok(new { status = HttpStatusCode.BadRequest, result = result, message = "Old Password dan New Password tidak ada" });
+            }
+            else if (result == 3)
+            {
+                return Ok(new { status = HttpStatusCode.BadRequest, result = result, message = "Old Password tidak ada" });
+            }
+            else if (result == 4)
+            {
+                return Ok(new { status = HttpStatusCode.BadRequest, result = result, message = "New Password tidak ada" });
+            }
+            else
+            {
+                return Ok(new { status = HttpStatusCode.BadRequest, result = result, message = "Password yang lama tidak cocok" });
+            }
+        }
 
     }
 }

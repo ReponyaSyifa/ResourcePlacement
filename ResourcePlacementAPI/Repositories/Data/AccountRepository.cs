@@ -1,4 +1,5 @@
-﻿using ResourcePlacementAPI.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using ResourcePlacementAPI.Context;
 using ResourcePlacementAPI.Models;
 using ResourcePlacementAPI.ViewModel;
 using System;
@@ -76,6 +77,29 @@ namespace ResourcePlacementAPI.Repositories.Data
             }
         }
 
+        public int ChangePassword(ChangePasswordVM changePasswordVM)
+        {
+            var account = myContext.Accounts.FirstOrDefault(e => e.Email == changePasswordVM.Email);
 
+            if (changePasswordVM.NewPassword == null && changePasswordVM.OldPassword == null) return 2; //NewPassword & OldPassword gak ada
+            if (changePasswordVM.NewPassword != null && changePasswordVM.OldPassword == null) return 3; //OldPassword gak ada
+            if (changePasswordVM.NewPassword == null && changePasswordVM.OldPassword == null) return 4; //NewPassword gak ada
+
+            var checkPassword = HashingPassword.ValidatePassword(changePasswordVM.OldPassword, account.Password);
+
+            if (!checkPassword)
+            {
+                return 5;//OldPassword salah
+            }
+            else
+            {
+                var newPasswordHash = HashingPassword.HashPassword(changePasswordVM.NewPassword);
+                account.Password = newPasswordHash;
+
+                myContext.Entry(account).State = EntityState.Modified;
+                myContext.SaveChanges();
+                return 1;
+            }
+        }
     }
 }

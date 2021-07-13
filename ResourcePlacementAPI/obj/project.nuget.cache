@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FFOEIcr5llffkYYkHPF4W1Ew/4xFn347Vy58ZgPP864RiTxXVzq1JOpcn/6O0tUk/bn//bi+GfZmiBkVnDJIMA==",
+  "dgSpecHash": "/oVh8cCVhra+yrE/00hsRD8SaZKlQDGR78s/nl9sVO51tkB/Tx9CxDA5XfWmXk/t/OQH9KPNjESA6H5CyzwAIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\papahjahat\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\papahjahat\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\papahjahat\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\papahjahat\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.0\\microsoft.aspnetcore.jsonpatch.3.1.0.nupkg.sha512",
