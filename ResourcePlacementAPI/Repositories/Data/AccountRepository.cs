@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.Repositories.Data
 {
-    public class AccountRepository : GeneralRepository<MyContext, Accounts, int>
+    public class AccountRepository : GeneralRepository<MyContext, Accounts, string>
     {
         public AccountRepository(MyContext myContext) : base(myContext)
         {

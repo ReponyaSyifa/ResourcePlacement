@@ -63,3 +63,6 @@ C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\ResourcePlacementAPI\
 C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.dll
 C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.pdb
 C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.genruntimeconfig.cache
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\ResourcePlacementAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\ResourcePlacementAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\ResourcePlacementAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

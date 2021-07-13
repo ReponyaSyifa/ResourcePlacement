@@ -13,10 +13,6 @@ namespace ResourcePlacementAPI.Context
         {
 
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseLazyLoadingProxies();
-        }
         public DbSet<Participants> Participants { get; set; }
         public DbSet<Projects> Projects { get; set; }
         public DbSet<Skills> Skills { get; set; }
@@ -30,11 +26,17 @@ namespace ResourcePlacementAPI.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //relasi untuk project dan customer user
-            //             One to Many
-            modelBuilder.Entity<Projects>()
-               .HasOne(edc => edc.CustomerUsers)
-               .WithMany(u => u.Projects);
+            // relasi untuk Employee dan Account
+            //              One to One
+            modelBuilder.Entity<Employees>()
+                 .HasOne(e => e.Accounts)
+                 .WithOne(a => a.Employees)
+                 .HasForeignKey<Accounts>(a => a.EmployeeId);
+
+            modelBuilder.Entity<CustomerUsers>()
+               .HasOne(a => a.Accounts)
+               .WithOne(p => p.CustomerUsers)
+               .HasForeignKey<Accounts>(p => p.CustomerUserId);
 
             //relasi untuk project dan participant
             //             Many to One
@@ -42,28 +44,20 @@ namespace ResourcePlacementAPI.Context
                 .HasMany(p => p.Participants)
                 .WithOne(edc => edc.Projects);
 
-            // relasi untuk Customer User dan Account
-            //              One to One
-            modelBuilder.Entity<CustomerUsers>()
-                 .HasOne(e => e.Accounts)
-                 .WithOne(a => a.CustomerUsers)
-                 .HasForeignKey<Accounts>(a => a.Email);
-
-            // relasi untuk Employee dan Account
-            //              One to One
-            modelBuilder.Entity<Employees>()
-                 .HasOne(e => e.Accounts)
-                 .WithOne(a => a.Employees)
-                 .HasForeignKey<Accounts>(a => a.Email);
+            //relasi untuk project dan customer user
+            //             One to Many
+            modelBuilder.Entity<Projects>()
+               .HasOne(edc => edc.CustomerUsers)
+               .WithMany(u => u.Projects);
 
             // relasi untuk Account dan Role
             //              Many to Many
             modelBuilder.Entity<AccountsRoles>()
-                .HasKey(bc => new { bc.AccountsId, bc.RolesId });
+                .HasKey(bc => new { bc.AccountId, bc.RolesId });
             modelBuilder.Entity<AccountsRoles>()
                 .HasOne(bc => bc.Accounts)
                 .WithMany(b => b.AccountsRoles)
-                .HasForeignKey(bc => bc.AccountsId);
+                .HasForeignKey(bc => bc.AccountId);
             modelBuilder.Entity<AccountsRoles>()
                 .HasOne(bc => bc.Roles)
                 .WithMany(c => c.AccountsRoles)

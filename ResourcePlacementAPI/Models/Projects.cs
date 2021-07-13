@@ -7,18 +7,17 @@ using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.Models
 {
-    [Table("tb_M_Projects")]
+    [Table("tb_T_Projects")]
     public class Projects
     {
         [Key]
         public int ProjectId { get; set; }
         public string ProjectName { get; set; }
         public string ProjectDesc { get; set; }
+        public int CustomerUserId { get; set; }
 
         public virtual ICollection<Participants>Participants { get; set; }
         public virtual CustomerUsers CustomerUsers { get; set; }
-        public int CustomerUsersId { get; set; }
-
         public virtual ICollection<ProjectsSkills> ProjectsSkills { get; set; }
     }
 }

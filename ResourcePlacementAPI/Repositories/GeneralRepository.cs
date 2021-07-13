@@ -32,16 +32,11 @@ namespace ResourcePlacementAPI.Repositories
 
         public IEnumerable<Entity> Get()
         {
-            return entities.ToList();
+            var employee = entities.ToList();
+            return employee;
         }
 
         public Entity Get(Key key)
-        {
-            var findAll = entities.Find(key); //universitiesid tipenya int, sedangkan yg di general repo itu tipenya string
-            return findAll;
-        }
-
-        public Entity GetById(Key key)
         {
             var findId = entities.Find(key);
             return findId;

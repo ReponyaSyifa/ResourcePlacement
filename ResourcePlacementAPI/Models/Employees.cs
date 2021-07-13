@@ -11,6 +11,7 @@ namespace ResourcePlacementAPI.Models
     public class Employees
     {
         [Key]
+        public int EmployeeId { get; set; }
         public string Email { get; set; }
         public string NIK { get; set; }
         public string FirstName { get; set; }

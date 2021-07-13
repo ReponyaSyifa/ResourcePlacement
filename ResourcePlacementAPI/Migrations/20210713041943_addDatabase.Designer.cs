@@ -10,8 +10,8 @@ using ResourcePlacementAPI.Context;
 namespace ResourcePlacementAPI.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210712082153_AddDataBase")]
-    partial class AddDataBase
+    [Migration("20210713041943_addDatabase")]
+    partial class addDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,56 +28,74 @@ namespace ResourcePlacementAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CustomerUserId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("AccountId");
 
-                    b.HasIndex("Email")
-                        .IsUnique()
-                        .HasFilter("[Email] IS NOT NULL");
+                    b.HasIndex("CustomerUserId")
+                        .IsUnique();
 
-                    b.ToTable("tb_M_Accounts");
+                    b.HasIndex("EmployeeId")
+                        .IsUnique();
+
+                    b.ToTable("tb_T_Accounts");
                 });
 
             modelBuilder.Entity("ResourcePlacementAPI.Models.AccountsRoles", b =>
                 {
-                    b.Property<int>("AccountsId")
+                    b.Property<int>("AccountId")
                         .HasColumnType("int");
 
                     b.Property<int>("RolesId")
                         .HasColumnType("int");
 
-                    b.HasKey("AccountsId", "RolesId");
+                    b.HasKey("AccountId", "RolesId");
 
                     b.HasIndex("RolesId");
 
-                    b.ToTable("tb_M_AccountRoles");
+                    b.ToTable("tb_T_AccountRoles");
                 });
 
             modelBuilder.Entity("ResourcePlacementAPI.Models.CustomerUsers", b =>
                 {
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("CustomerUserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CompanyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PicName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Email");
+                    b.HasKey("CustomerUserId");
 
                     b.ToTable("tb_M_CustomerUsers");
                 });
 
             modelBuilder.Entity("ResourcePlacementAPI.Models.Employees", b =>
                 {
+                    b.Property<int>("EmployeeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
@@ -88,7 +106,7 @@ namespace ResourcePlacementAPI.Migrations
                     b.Property<string>("NIK")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Email");
+                    b.HasKey("EmployeeId");
 
                     b.ToTable("tb_M_Employees");
                 });
@@ -159,10 +177,10 @@ namespace ResourcePlacementAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CustomerUsersEmail")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("CustomerUserId")
+                        .HasColumnType("int");
 
-                    b.Property<int>("CustomerUsersId")
+                    b.Property<int?>("CustomerUsersCustomerUserId")
                         .HasColumnType("int");
 
                     b.Property<string>("ProjectDesc")
@@ -173,9 +191,9 @@ namespace ResourcePlacementAPI.Migrations
 
                     b.HasKey("ProjectId");
 
-                    b.HasIndex("CustomerUsersEmail");
+                    b.HasIndex("CustomerUsersCustomerUserId");
 
-                    b.ToTable("tb_M_Projects");
+                    b.ToTable("tb_T_Projects");
                 });
 
             modelBuilder.Entity("ResourcePlacementAPI.Models.ProjectsSkills", b =>
@@ -227,11 +245,15 @@ namespace ResourcePlacementAPI.Migrations
                 {
                     b.HasOne("ResourcePlacementAPI.Models.CustomerUsers", "CustomerUsers")
                         .WithOne("Accounts")
-                        .HasForeignKey("ResourcePlacementAPI.Models.Accounts", "Email");
+                        .HasForeignKey("ResourcePlacementAPI.Models.Accounts", "CustomerUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ResourcePlacementAPI.Models.Employees", "Employees")
                         .WithOne("Accounts")
-                        .HasForeignKey("ResourcePlacementAPI.Models.Accounts", "Email");
+                        .HasForeignKey("ResourcePlacementAPI.Models.Accounts", "EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("CustomerUsers");
 
@@ -242,7 +264,7 @@ namespace ResourcePlacementAPI.Migrations
                 {
                     b.HasOne("ResourcePlacementAPI.Models.Accounts", "Accounts")
                         .WithMany("AccountsRoles")
-                        .HasForeignKey("AccountsId")
+                        .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -289,7 +311,7 @@ namespace ResourcePlacementAPI.Migrations
                 {
                     b.HasOne("ResourcePlacementAPI.Models.CustomerUsers", "CustomerUsers")
                         .WithMany("Projects")
-                        .HasForeignKey("CustomerUsersEmail");
+                        .HasForeignKey("CustomerUsersCustomerUserId");
 
                     b.Navigation("CustomerUsers");
                 });
