@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.ViewModel
 {
-    public class ChangePassword
+    public class ChangePasswordVM
     {
     }
 }
