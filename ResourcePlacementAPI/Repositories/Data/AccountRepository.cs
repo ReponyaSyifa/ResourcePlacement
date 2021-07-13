@@ -1,12 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using ResourcePlacementAPI.Context;
 using ResourcePlacementAPI.Models;
 using ResourcePlacementAPI.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.Repositories.Data
@@ -19,15 +23,34 @@ namespace ResourcePlacementAPI.Repositories.Data
             this.myContext = myContext;
         }
 
-        public int Login(LoginVM loginVM)
+        public string Login(LoginVM loginVM)
         {
-            var findAkun = myContext.Accounts.FirstOrDefault(a => a.Email == loginVM.Email);
-            //if (findAkun != null && findAkun.Password == loginVM.Password)
-            if (findAkun != null && HashingPassword.ValidatePassword(loginVM.Password, findAkun.Password))
+            try
             {
-                return 1;
+                if (loginVM.Email != null && loginVM.Password != null)// pakai email
+                {
+                    var findAccount = myContext.Accounts.FirstOrDefault(e => e.Email == loginVM.Email);
+                    var checkPassword = HashingPassword.ValidatePassword(loginVM.Password, findAccount.Password);
+                    if (checkPassword == true)
+                    {
+                        var result = Authentication(loginVM.Email);
+                        return result;
+                    }
+                    else
+                    {
+                        return "0"; //password salah
+                    }
+                }
+                else// gak ada password atau gak ada semua
+                {
+                    return "2";
+                }
             }
-            return 0;
+            catch (Exception)
+            {
+
+                return "1";
+            }
         }
 
         public string Guid() //
@@ -100,6 +123,28 @@ namespace ResourcePlacementAPI.Repositories.Data
                 myContext.SaveChanges();
                 return 1;
             }
+        }
+
+        private string Authentication(string email)
+        {
+            //create claims details based on the user information
+            var account = myContext.Accounts.FirstOrDefault(e => e.Email == email);
+
+            var accountRole = myContext.AccountsRoles.Find(account.AccountId);
+            var role = myContext.Roles.Find(accountRole.RolesId);
+            var claims = new[] {
+                new Claim("email", account.Email),
+                new Claim("role", role.RoleName)
+                };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sdfsdfsjdbf78sdyfssdfsdfbuidfs98gdfsdbf"));
+
+            var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken("API", "Test", claims, expires: DateTime.UtcNow.AddDays(1), signingCredentials: signIn);
+
+            var result = new JwtSecurityTokenHandler().WriteToken(token);
+            return result;
         }
     }
 }

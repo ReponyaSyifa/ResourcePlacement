@@ -26,27 +26,26 @@ namespace ResourcePlacementAPI.Controllers
             this.repository = repository;
         }
 
-        [HttpPost("/API/Account/Login")]
+        [HttpPost("Login")]
         public ActionResult Login(LoginVM loginVM)
         {
-            int login = repository.Login(loginVM);
-            if (login == 1)
+            var login = repository.Login(loginVM);
+            if (login == "1")
             {
-                return Ok(login);
+                return Ok(new JWTokenVM { Status = HttpStatusCode.BadRequest, Token = login, Message = "email tidak sesuai dengan data didatabase" });
+            }
+            else if (login == "0")
+            {
+                return Ok(new JWTokenVM { Status = HttpStatusCode.BadRequest, Token = login, Message = "Password Salah" });
+            }
+            else if (login == "2")
+            {
+                return Ok(new JWTokenVM { Status = HttpStatusCode.BadRequest, Token = login, Message = "Masukan Password" });
             }
             else
             {
-                return BadRequest(login);
+                return Ok(new JWTokenVM { Status = HttpStatusCode.OK, Message = "Login Sukses", Token = login });
             }
-            /*switch (login)
-            {
-                case 1:
-                    return BadRequest();
-                case 2:
-                    return Ok();
-                default:
-                    return BadRequest();
-            }*/
         }
 
         [HttpPut("ChangePassword")]
