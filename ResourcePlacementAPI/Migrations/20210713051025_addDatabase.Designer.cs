@@ -10,7 +10,7 @@ using ResourcePlacementAPI.Context;
 namespace ResourcePlacementAPI.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210713041943_addDatabase")]
+    [Migration("20210713051025_addDatabase")]
     partial class addDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
