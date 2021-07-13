@@ -6,13 +6,9 @@
 
   <ItemGroup>
     <Compile Remove="Repository\**" />
-    <Compile Remove="ViewModel\**" />
     <Content Remove="Repository\**" />
-    <Content Remove="ViewModel\**" />
     <EmbeddedResource Remove="Repository\**" />
-    <EmbeddedResource Remove="ViewModel\**" />
     <None Remove="Repository\**" />
-    <None Remove="ViewModel\**" />
   </ItemGroup>
 
   <ItemGroup>
