@@ -25,8 +25,6 @@ namespace ResourcePlacementAPI.Repositories.Data
 
         public string Login(LoginVM loginVM)
         {
-            try
-            {
                 if (loginVM.Email != null && loginVM.Password != null)// pakai email
                 {
                     var findAccount = myContext.Accounts.FirstOrDefault(e => e.Email == loginVM.Email);
@@ -45,12 +43,6 @@ namespace ResourcePlacementAPI.Repositories.Data
                 {
                     return "2";
                 }
-            }
-            catch (Exception)
-            {
-
-                return "1";
-            }
         }
 
         public string Guid() //
@@ -130,7 +122,7 @@ namespace ResourcePlacementAPI.Repositories.Data
             //create claims details based on the user information
             var account = myContext.Accounts.FirstOrDefault(e => e.Email == email);
 
-            var accountRole = myContext.AccountsRoles.Find(account.AccountId);
+            var accountRole = myContext.AccountsRoles.FirstOrDefault(e => e.AccountId == account.AccountId);
             var role = myContext.Roles.Find(accountRole.RolesId);
             var claims = new[] {
                 new Claim("email", account.Email),

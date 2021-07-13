@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ResourcePlacementAPI.Base;
 using ResourcePlacementAPI.Models;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AccountRoleController : BaseController<AccountsRoles, AccountRoleRepository, int>
