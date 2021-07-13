@@ -12,7 +12,7 @@ namespace ResourcePlacementAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomerUserController : BaseController<CustomerUsers, CustomerUserRepository, int>
+    public class CustomerUserController : BaseController<CustomerUsers, CustomerUserRepository, string>
     {
         private CustomerUserRepository repository;
         public CustomerUserController(CustomerUserRepository repository) : base(repository)
