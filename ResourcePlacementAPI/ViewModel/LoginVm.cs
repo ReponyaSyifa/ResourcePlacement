@@ -7,5 +7,6 @@ namespace ResourcePlacementAPI.ViewModel
 {
     public class LoginVm
     {
+        public string Email { get; set; }
     }
 }
