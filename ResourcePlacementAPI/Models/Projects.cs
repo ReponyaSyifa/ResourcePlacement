@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,11 +16,8 @@ namespace ResourcePlacementAPI.Models
         public string ProjectDesc { get; set; }
         public int CustomerUserId { get; set; }
 
-        [JsonIgnore]
         public virtual ICollection<Participants>Participants { get; set; }
-        [JsonIgnore]
         public virtual CustomerUsers CustomerUsers { get; set; }
-        [JsonIgnore]
         public virtual ICollection<ProjectsSkills> ProjectsSkills { get; set; }
     }
 }

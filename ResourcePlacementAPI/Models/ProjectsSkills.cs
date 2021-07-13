@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -10,10 +9,8 @@ namespace ResourcePlacementAPI.Models
     [Table("tb_M_ProjectSkills")]
     public class ProjectsSkills
     {
-        [JsonIgnore]
         public virtual Skills Skills { get; set; }
         public int SkillsId { get; set; }
-        [JsonIgnore]
         public virtual Projects Projects { get; set; }
         public int ProjectsId { get; set; }
     }

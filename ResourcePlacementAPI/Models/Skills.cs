@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,10 +13,7 @@ namespace ResourcePlacementAPI.Models
         [Key]
         public int SkillId { get; set; }
         public string SkillName { get; set; }
-
-        [JsonIgnore]
         public virtual ICollection<ParticipantsSkills> ParticipantsSkills { get; set; }
-        [JsonIgnore]
         public virtual ICollection<ProjectsSkills> ProjectsSkills { get; set; }
     }
 }
