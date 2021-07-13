@@ -26,10 +26,18 @@ namespace ResourcePlacementAPI.Controllers
         }
 
         [HttpPost("/API/Account/Login")]
-        public  ActionResult Login(LoginVM loginVM)
+        public ActionResult Login(LoginVM loginVM)
         {
             int login = repository.Login(loginVM);
-            switch (login)
+            if (login == 1)
+            {
+                return Ok(login);
+            }
+            else
+            {
+                return BadRequest(login);
+            }
+            /*switch (login)
             {
                 case 1:
                     return BadRequest();
@@ -37,7 +45,7 @@ namespace ResourcePlacementAPI.Controllers
                     return Ok();
                 default:
                     return BadRequest();
-            }
+            }*/
         }
 
     }

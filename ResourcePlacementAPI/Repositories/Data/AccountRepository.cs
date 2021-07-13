@@ -4,6 +4,8 @@ using ResourcePlacementAPI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.Repositories.Data
@@ -18,46 +20,60 @@ namespace ResourcePlacementAPI.Repositories.Data
 
         public int Login(LoginVM loginVM)
         {
-            var findAkun = myContext.Accounts.Find(loginVM.Email);
-
-            var matchAcc = myContext.Accounts.FirstOrDefault(a => a.Email == loginVM.Email);
-            var matchPass = myContext.Accounts.FirstOrDefault(p => p.Password == loginVM.Password);
-            if (findAkun != null)
+            var findAkun = myContext.Accounts.FirstOrDefault(a => a.Email == loginVM.Email);
+            //if (findAkun != null && findAkun.Password == loginVM.Password)
+            if (findAkun != null && HashingPassword.ValidatePassword(loginVM.Password, findAkun.Password))
             {
-                if (matchAcc != null && matchPass != null)
-                {
-                    return 2;
-                }
                 return 1;
             }
             return 0;
         }
-        /*public string Guid() //
+
+        public string Guid() //
         {
             System.Guid guid = System.Guid.NewGuid();
             string newguid = guid.ToString();
             return newguid;
-        }*/
+        }
 
-        /*public int ResetPassword(ResetPasswordVM resetPwd)
+        public int ResetPassword(ResetPasswordVM resetPwd)
         {
-            System.Guid guid = System.Guid.NewGuid();
-            string newguid = guid.ToString();
+            string guid = Guid();
 
             var acc = new Accounts();
+            var accMatch = myContext.Accounts.FirstOrDefault(c => c.Email == resetPwd.Email);
 
-            var accMatchEmp = myContext.Employees.FirstOrDefault(e => e.Email == resetPwd.Email);
-            var accMatchCU = myContext.CustomerUsers.FirstOrDefault(c => c.Email == resetPwd.Email);
-
-            if (accMatchEmp  != null)
+            if (accMatch != null)
             {
-                acc.Email = accMatchEmp.Email;
-                acc.Password = HashingPassword.HashPassword(newguid);
-                myContext.Entry(accMatchEmp).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                acc.Password = HashingPassword.HashPassword(guid);
+                myContext.Entry(accMatch).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 var update = myContext.SaveChanges();
 
-                using (MailMessage)
+                using (MailMessage message = new MailMessage("hostmail.onlytest@gmail.com", resetPwd.Email))
+                {
+                    message.Subject = "[No Reply] Reset Password";
+                    string bodyMail = "Hi There!, ";
+                    bodyMail += "\n\nPlease copy these following GUID code and paste on to your login form:\n\n";
+                    bodyMail += guid;
+                    bodyMail += "\n\nThanks!\n\n";
+                    bodyMail += "\n\nRegards,\nReset Password Teams!\n";
+                    message.Body = bodyMail;
+
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.UseDefaultCredentials = false;
+                    NetworkCredential NetworkCred = new NetworkCredential("hostmail.onlytest@gmail.com", "raha,sia.");
+                    smtp.Credentials = NetworkCred;
+                    smtp.EnableSsl = true;
+                    smtp.Port = 587;
+                    smtp.Send(message);
+                }
+                return 2;
             }
-        }*/
+            else
+            {
+                return 1;
+            }
+        }
     }
 }
