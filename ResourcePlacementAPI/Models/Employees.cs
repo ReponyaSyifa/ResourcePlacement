@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -16,6 +17,7 @@ namespace ResourcePlacementAPI.Models
         public string NIK { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        [JsonIgnore]
         public virtual Accounts Accounts { get; set; }
     }
 }
