@@ -22,18 +22,5 @@ namespace ResourcePlacementAPI.Controllers
             this.repository = repository;
         }
 
-        [HttpPost("AddParticipantSkill")]
-        public ActionResult AddParticipantSkill(AddParticipantSkillVM addParSkill)
-        {
-            var addPsrtSkill = repository.AddParticipantSkill(addParSkill);
-            if (addPsrtSkill == 1)
-            {
-                return Ok(new { status = HttpStatusCode.OK, result = addPsrtSkill, message = "Add Participant Skill Succeed!" });
-            }
-            else
-            {
-                return BadRequest(new { status = HttpStatusCode.BadRequest, result = addPsrtSkill, message = "Add Participant Skill Failed!" });
-            }
-        }
     }
 }

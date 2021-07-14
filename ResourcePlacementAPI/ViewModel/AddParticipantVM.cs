@@ -22,10 +22,6 @@ namespace ResourcePlacementAPI.ViewModel
         public string Grade { get; set; }
         public string Status { get; set; }
         public int ProjectsId { get; set; }
-        public List<ListSkills> ListSkill { get; set; }
-    }
-    public class ListSkills
-    {
-        public int SkillsId { get; set; }
+        public int[] ListSkill { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace ResourcePlacementAPI.Repositories.Data
         public int AddParticipant(AddParticipantVM addParticipant)
         {
             var cekPartisipan = myContext.Participants.FirstOrDefault(p => p.Email == addParticipant.Email);
-            if (cekPartisipan.Status.Equals("Idle"))
+            if (cekPartisipan == null)
             {
                 Participants peserta = new Participants();
                 peserta.FirstName = addParticipant.FirstName;
@@ -35,17 +35,14 @@ namespace ResourcePlacementAPI.Repositories.Data
                 myContext.SaveChanges();
 
                 ParticipantsSkills parSkill = new ParticipantsSkills();
-                List<ListSkills> skills = new List<ListSkills>();
-                System.Collections.IList list = skills;
-                for (int i = 0; i < list.Count; i++)
+                for (int i = 0; i < addParticipant.ListSkill.Length; i++)
                 {
-                    int item = (int)list[i];
                     parSkill.ParticipantsId = peserta.ParticipantId;
-                    parSkill.SkillsId = item;
+                    parSkill.SkillsId = addParticipant.ListSkill[i];
                     myContext.ParticipantsSkills.Add(parSkill);
                     myContext.SaveChanges();
                 }
-                    
+
                 return 1;
             }
             else
