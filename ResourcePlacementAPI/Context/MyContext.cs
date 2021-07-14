@@ -42,13 +42,15 @@ namespace ResourcePlacementAPI.Context
             //             Many to One
             modelBuilder.Entity<Projects>()
                 .HasMany(p => p.Participants)
-                .WithOne(edc => edc.Projects);
+                .WithOne(edc => edc.Projects)
+                .HasForeignKey(c => c.ProjectId);
 
             //relasi untuk project dan customer user
             //             One to Many
             modelBuilder.Entity<Projects>()
                .HasOne(edc => edc.CustomerUsers)
-               .WithMany(u => u.Projects);
+               .WithMany(u => u.Projects)
+               .HasForeignKey(c => c.CustomerUserId);
 
             // relasi untuk Account dan Role
             //              Many to Many

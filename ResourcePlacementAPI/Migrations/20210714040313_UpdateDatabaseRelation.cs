@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ResourcePlacementAPI.Migrations
 {
-    public partial class addDatabase : Migration
+    public partial class UpdateDatabaseRelation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -72,18 +72,17 @@ namespace ResourcePlacementAPI.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProjectName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProjectDesc = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CustomerUserId = table.Column<int>(type: "int", nullable: false),
-                    CustomerUsersCustomerUserId = table.Column<int>(type: "int", nullable: true)
+                    CustomerUserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_tb_T_Projects", x => x.ProjectId);
                     table.ForeignKey(
-                        name: "FK_tb_T_Projects_tb_M_CustomerUsers_CustomerUsersCustomerUserId",
-                        column: x => x.CustomerUsersCustomerUserId,
+                        name: "FK_tb_T_Projects_tb_M_CustomerUsers_CustomerUserId",
+                        column: x => x.CustomerUserId,
                         principalTable: "tb_M_CustomerUsers",
                         principalColumn: "CustomerUserId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -128,18 +127,17 @@ namespace ResourcePlacementAPI.Migrations
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Grade = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProjectsProjectId = table.Column<int>(type: "int", nullable: true),
                     ProjectId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_tb_M_Participants", x => x.ParticipantId);
                     table.ForeignKey(
-                        name: "FK_tb_M_Participants_tb_T_Projects_ProjectsProjectId",
-                        column: x => x.ProjectsProjectId,
+                        name: "FK_tb_M_Participants_tb_T_Projects_ProjectId",
+                        column: x => x.ProjectId,
                         principalTable: "tb_T_Projects",
                         principalColumn: "ProjectId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -215,9 +213,9 @@ namespace ResourcePlacementAPI.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_tb_M_Participants_ProjectsProjectId",
+                name: "IX_tb_M_Participants_ProjectId",
                 table: "tb_M_Participants",
-                column: "ProjectsProjectId");
+                column: "ProjectId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_tb_M_ParticipantSkills_SkillsId",
@@ -247,9 +245,9 @@ namespace ResourcePlacementAPI.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_tb_T_Projects_CustomerUsersCustomerUserId",
+                name: "IX_tb_T_Projects_CustomerUserId",
                 table: "tb_T_Projects",
-                column: "CustomerUsersCustomerUserId");
+                column: "CustomerUserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -10,8 +10,8 @@ using ResourcePlacementAPI.Context;
 namespace ResourcePlacementAPI.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210713053049_addDatabase")]
-    partial class addDatabase
+    [Migration("20210714040313_UpdateDatabaseRelation")]
+    partial class UpdateDatabaseRelation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -142,15 +142,12 @@ namespace ResourcePlacementAPI.Migrations
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProjectsProjectId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ParticipantId");
 
-                    b.HasIndex("ProjectsProjectId");
+                    b.HasIndex("ProjectId");
 
                     b.ToTable("tb_M_Participants");
                 });
@@ -180,9 +177,6 @@ namespace ResourcePlacementAPI.Migrations
                     b.Property<int>("CustomerUserId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CustomerUsersCustomerUserId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ProjectDesc")
                         .HasColumnType("nvarchar(max)");
 
@@ -191,7 +185,7 @@ namespace ResourcePlacementAPI.Migrations
 
                     b.HasKey("ProjectId");
 
-                    b.HasIndex("CustomerUsersCustomerUserId");
+                    b.HasIndex("CustomerUserId");
 
                     b.ToTable("tb_T_Projects");
                 });
@@ -283,7 +277,9 @@ namespace ResourcePlacementAPI.Migrations
                 {
                     b.HasOne("ResourcePlacementAPI.Models.Projects", "Projects")
                         .WithMany("Participants")
-                        .HasForeignKey("ProjectsProjectId");
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Projects");
                 });
@@ -311,7 +307,9 @@ namespace ResourcePlacementAPI.Migrations
                 {
                     b.HasOne("ResourcePlacementAPI.Models.CustomerUsers", "CustomerUsers")
                         .WithMany("Projects")
-                        .HasForeignKey("CustomerUsersCustomerUserId");
+                        .HasForeignKey("CustomerUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("CustomerUsers");
                 });

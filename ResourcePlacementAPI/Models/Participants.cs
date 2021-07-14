@@ -21,9 +21,10 @@ namespace ResourcePlacementAPI.Models
         public DateTime BirthDate { get; set; }
         public string Grade { get; set; }
         public string Status { get; set; }
+        public int ProjectId { get; set; }
+
         [JsonIgnore]
         public virtual Projects Projects { get; set; }
-        public int ProjectId { get; set; }
         [JsonIgnore]
         public virtual ICollection<ParticipantsSkills> ParticipantsSkills { get; set; }
 
