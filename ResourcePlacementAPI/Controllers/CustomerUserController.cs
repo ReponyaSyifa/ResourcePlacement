@@ -39,5 +39,13 @@ namespace ResourcePlacementAPI.Controllers
                 return Ok(new { status = HttpStatusCode.OK, result = choose, message = "Status Idle" });
             }
         }
+
+
+        [HttpGet("AllChoosedParticipants")]
+        public ActionResult AllChoosedParticipants()
+        {
+            var get = repository.AllChoosedParticipants();
+            return Ok(get);
+        }
     }
 }

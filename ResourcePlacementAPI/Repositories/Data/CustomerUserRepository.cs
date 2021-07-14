@@ -64,5 +64,23 @@ namespace ResourcePlacementAPI.Repositories.Data
                 return 0;// salah input
             }
         }
+
+        // method ini digunakan untuk menampilkan Participant yang dapat dilihat oleh User
+        public IEnumerable<Participants> AllChoosedParticipants()
+        {
+            List<Participants> participants = new List<Participants>();
+
+            List<Participants> participantsInDatabase = myContext.Participants.ToList();
+
+            foreach (var item in participantsInDatabase)
+            {
+                if (item.ProjectId != null)
+                {
+                    participants.Add(item);
+                }                
+            }
+
+            return participants;
+        }
     }
 }
