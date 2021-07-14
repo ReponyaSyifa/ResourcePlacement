@@ -45,7 +45,7 @@ namespace ResourcePlacementAPI.Repositories.Data
                 }
         }
 
-        public string Guid() //
+        public string Guid()
         {
             System.Guid guid = System.Guid.NewGuid();
             string newguid = guid.ToString();
@@ -84,13 +84,13 @@ namespace ResourcePlacementAPI.Repositories.Data
                     smtp.Port = 587;
                     smtp.Send(message);
                 }
-                return 2;
+                return 1;
             }
             else
             {
-                return 1;
+                return 2;
             }
-        }
+        }        
 
         public int ChangePassword(ChangePasswordVM changePasswordVM)
         {

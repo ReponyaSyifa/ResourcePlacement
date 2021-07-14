@@ -48,6 +48,20 @@ namespace ResourcePlacementAPI.Controllers
             }
         }
 
+        [HttpPost("ResetPassword")]
+        public ActionResult ResetPassword(ResetPasswordVM resetPasswordVM)
+        {
+            var reset = repository.ResetPassword(resetPasswordVM);
+            if (reset == 1)
+            {
+                return Ok(new { status = HttpStatusCode.OK, result = reset, message = "Sukses" });
+            }
+            else
+            {
+                return Ok(new { status = HttpStatusCode.BadRequest, result = reset, message = "Gagal Reset Password" });
+            }
+        }
+
         [HttpPut("ChangePassword")]
         public ActionResult ChangePassword(ChangePasswordVM changePasswordVM)
         {
