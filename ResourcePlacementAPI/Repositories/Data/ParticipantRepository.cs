@@ -30,9 +30,22 @@ namespace ResourcePlacementAPI.Repositories.Data
                 peserta.BirthDate = addParticipant.BirthDate;
                 peserta.Grade = addParticipant.Grade;
                 peserta.Status = "Idle";
-                peserta.ProjectId = 2;
+                peserta.ProjectId = null;
                 myContext.Participants.Add(peserta);
                 myContext.SaveChanges();
+
+                ParticipantsSkills parSkill = new ParticipantsSkills();
+                List<ListSkills> skills = new List<ListSkills>();
+                System.Collections.IList list = skills;
+                for (int i = 0; i < list.Count; i++)
+                {
+                    int item = (int)list[i];
+                    parSkill.ParticipantsId = peserta.ParticipantId;
+                    parSkill.SkillsId = item;
+                    myContext.ParticipantsSkills.Add(parSkill);
+                    myContext.SaveChanges();
+                }
+                    
                 return 1;
             }
             else
