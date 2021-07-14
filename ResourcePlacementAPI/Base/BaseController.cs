@@ -78,7 +78,7 @@ namespace ResourcePlacementAPI.Base
         }
 
         [HttpPut]
-        public ActionResult Update(Entity entity, Keys key)
+        public ActionResult Put(Entity entity, Keys key)
         {
             var response = repository.Update(entity, key);
             if (key == null)

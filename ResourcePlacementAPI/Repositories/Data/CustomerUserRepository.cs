@@ -33,8 +33,8 @@ namespace ResourcePlacementAPI.Repositories.Data
 
                 var subject = $"HR Info : Employee Status Update";
                 var body = $"<h1>Hallo {name} </h1> <br>" +
-                            $"<p>Maaf anda proyek saat ini belum ada yang cocok dengan keahlian anda</p> <br>" +
-                            $"<p>          Nama Pegawai = {name}</p> <br>" +
+                            $"<p>Maaf, proyek saat ini belum ada yang cocok dengan keahlian anda</p>" +
+                            $"<p>          Nama Pegawai = {name}</p>" +
                             $"<p>          Status       = {participant.Status}</p> <br>";
                 var notification = $"sukses";
 

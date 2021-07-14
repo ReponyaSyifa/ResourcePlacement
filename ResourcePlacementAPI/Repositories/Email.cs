@@ -28,8 +28,8 @@ namespace ResourcePlacementAPI.Repositories
 
                 using (var message = new MailMessage(fromAddress, toAddress)
                 {
-                    Subject = body,
-                    Body = subject,
+                    Subject = subject,
+                    Body = body,
                     IsBodyHtml = true,
                 }) smtp.Send(message);
                 return notification;
