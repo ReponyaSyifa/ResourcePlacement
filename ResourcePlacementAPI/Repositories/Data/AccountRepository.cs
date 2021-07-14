@@ -31,7 +31,7 @@ namespace ResourcePlacementAPI.Repositories.Data
                     var checkPassword = HashingPassword.ValidatePassword(loginVM.Password, findAccount.Password);
                     if (checkPassword == true)
                     {
-                        var result = Authentication(loginVM.Email);
+                        var result = Token(loginVM.Email);
                         return result;
                     }
                     else
@@ -117,7 +117,7 @@ namespace ResourcePlacementAPI.Repositories.Data
             }
         }
 
-        private string Authentication(string email)
+        private string Token(string email)
         {
             //create claims details based on the user information
             var account = myContext.Accounts.FirstOrDefault(e => e.Email == email);
