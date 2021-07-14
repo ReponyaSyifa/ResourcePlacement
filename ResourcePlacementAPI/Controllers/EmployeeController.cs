@@ -43,5 +43,19 @@ namespace ResourcePlacementAPI.Controllers
                 return BadRequest(new { status = HttpStatusCode.BadRequest, result = register, message = "Gagal menyimpan, data harus diisi semua" });
             }
         }
+
+        [HttpPut("ProjectPlotting/{participantId}")]
+        public ActionResult ProjectPlotting(ProjectPlottingVM projectPlottingVM, int participantId)
+        {
+            var plotting = repository.ProjectPlotting(projectPlottingVM, participantId);
+            if (plotting == 0)
+            {
+                return Ok(new { status = HttpStatusCode.OK, result = plotting, message = "Dapat Job" });
+            }
+            else
+            {
+                return Ok(new { status = HttpStatusCode.OK, result = plotting, message = "Status Idle" });
+            }
+        }
     }
 }

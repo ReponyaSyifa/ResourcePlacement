@@ -117,5 +117,32 @@ namespace ResourcePlacementAPI.Repositories.Data
                 return 3;
             }
         }
+
+        public int ProjectPlotting(ProjectPlottingVM projectPlottingVM, int participantId)
+        {
+            if (projectPlottingVM.ProjectId != 0)
+            {
+                var participant = myContext.Participants.Find(participantId);
+                participant.ProjectId = projectPlottingVM.ProjectId;
+                myContext.SaveChanges();
+                return 0;
+            }
+            else
+            {
+                var participant = myContext.Participants.Find(participantId);
+                var name = $"{participant.FirstName} {participant.LastName}";
+
+                var subject = $"HR Info : Employee Status Update";
+                var body = $"<h1>Hallo {name} </h1> <br>" +
+                            $"<p>Maaf, proyek saat ini belum ada yang cocok dengan keahlian anda</p>" +
+                            $"<p>          Nama Pegawai = {name}</p>" +
+                            $"<p>          Status       = {participant.Status}</p> <br>";
+                var notification = $"sukses";
+
+                Email.SendEmail(participant.Email, body, subject, notification);
+                return 1;
+            }
+
+        }
     }
 }
