@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ResourcePlacementAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace ResourcePlacementAPI.ViewModel
     {
         Pria, Wanita
     }
+
     public class AddParticipantVM
     {
         public string FirstName { get; set; }
@@ -20,5 +22,10 @@ namespace ResourcePlacementAPI.ViewModel
         public string Grade { get; set; }
         public string Status { get; set; }
         public int ProjectsId { get; set; }
+        public List<ListSkills> ListSkill { get; set; }
+    }
+    public class ListSkills
+    {
+        public int SkillsId { get; set; }
     }
 }
