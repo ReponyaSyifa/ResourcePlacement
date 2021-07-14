@@ -22,17 +22,21 @@ namespace ResourcePlacementAPI.Controllers
             this.repository = repository;
         }
 
-        [HttpPut("ProjectPlotting/{participantId}")]
-        public ActionResult ProjectPlotting(ProjectPlottingVM projectPlottingVM, int participantId)
+        [HttpPut("ChooseParticipant/{participantId}")]
+        public ActionResult ChooseParticipant(ChooseParticipantVM chooseParticipantVM, int participantId)
         {
-            var plotting = repository.ProjectPlotting(projectPlottingVM, participantId);
-            if (plotting == 0)
+            var choose = repository.ChooseParticipant(chooseParticipantVM, participantId);
+            if (choose == 0)
             {
-                return Ok(new { status = HttpStatusCode.OK, result = plotting, message = "Dapat Job" });
+                return Ok(new { status = HttpStatusCode.BadRequest, result = choose, message = "Salah Input" });
+            }
+            else if(choose == 1)
+            {
+                return Ok(new { status = HttpStatusCode.OK, result = choose, message = "Status On Project" });
             }
             else
             {
-                return Ok(new { status = HttpStatusCode.OK, result = plotting, message = "Status Idle" });
+                return Ok(new { status = HttpStatusCode.OK, result = choose, message = "Status Idle" });
             }
         }
     }

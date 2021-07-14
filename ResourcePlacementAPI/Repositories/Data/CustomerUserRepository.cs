@@ -17,18 +17,36 @@ namespace ResourcePlacementAPI.Repositories.Data
             this.myContext = myContext;
         }
 
-        public int ProjectPlotting(ProjectPlottingVM projectPlottingVM, int participantId)
+        public int ChooseParticipant(ChooseParticipantVM chooseParticipant, int participantId)
         {
-            if (projectPlottingVM.ProjectId != 0)
+            if (chooseParticipant.Status == "Approved")
             {
                 var participant = myContext.Participants.Find(participantId);
-                participant.ProjectId = projectPlottingVM.ProjectId;
+                participant.Status = "On Project";
                 myContext.SaveChanges();
-                return 0;
+
+                var name = $"{participant.FirstName} {participant.LastName}";
+                var project = myContext.Projects.Find(participant.ProjectId);
+                var user = myContext.CustomerUsers.Find(project.CustomerUserId);
+
+                var subject = $"HR Info : Employee Status Update";
+                var body = $"<h1>Hallo {name} </h1> <br>" +
+                            $"<p>Selamat, anda diterima di proyek!!!</p>" +
+                            $"<p>          Nama Pegawai = {name}</p>" +
+                            $"<p>          Status       = {participant.Status}</p> <br>"+
+                            $"<p>          Penempatan   = {user.CompanyName}</p> <br>"+
+                            $"<p>          Nama User    = {user.PicName}</p> <br>";
+                var notification = $"sukses";
+
+                Email.SendEmail(participant.Email, body, subject, notification);
+                return 1; //dapat job
             }
-            else
+            else if (chooseParticipant.Status == "Rejected")
             {
                 var participant = myContext.Participants.Find(participantId);
+                participant.Status = "Idle";
+                myContext.SaveChanges();
+
                 var name = $"{participant.FirstName} {participant.LastName}";
 
                 var subject = $"HR Info : Employee Status Update";
@@ -38,10 +56,13 @@ namespace ResourcePlacementAPI.Repositories.Data
                             $"<p>          Status       = {participant.Status}</p> <br>";
                 var notification = $"sukses";
 
-                Email.SendEmail(participant.Email,body,subject,notification);
-                return 1;
+                Email.SendEmail(participant.Email, body, subject, notification);
+                return 2; // masih idle
             }
-            
+            else
+            {
+                return 0;// salah input
+            }
         }
     }
 }
