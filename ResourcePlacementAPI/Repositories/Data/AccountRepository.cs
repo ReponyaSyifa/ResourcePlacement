@@ -56,14 +56,14 @@ namespace ResourcePlacementAPI.Repositories.Data
         {
             string guid = Guid();
 
-            var acc = new Accounts();
+            //var acc = new Accounts();
             var accMatch = myContext.Accounts.FirstOrDefault(c => c.Email == resetPwd.Email);
 
             if (accMatch != null)
             {
-                acc.Password = HashingPassword.HashPassword(guid);
-                myContext.Entry(accMatch).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                var update = myContext.SaveChanges();
+                accMatch.Password = HashingPassword.HashPassword(guid);
+                //myContext.Entry(accMatch).State = EntityState.Modified;
+                myContext.SaveChanges();
 
                 using (MailMessage message = new MailMessage("hostmail.onlytest@gmail.com", resetPwd.Email))
                 {
