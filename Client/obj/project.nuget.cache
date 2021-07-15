@@ -1,10 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "OGqz1fMhpRUvTmoyG2j6BRSHXOQvSVkqMJClwSpP572YRs+k7YKjrUgX5quNzIX0NyfYcEm595U7+qQMfNDC5A==",
+  "dgSpecHash": "S0OYcUB8pu5K4lVg/gOpJiZN1Hesam9SxPkCrdUfWyo1deihBBauN/TFfDO7Ba0XZVdnWq1MvG6+OFIoCCnWuQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\Client\\Client.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\papahjahat\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\papahjahat\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.0\\microsoft.aspnetcore.authentication.jwtbearer.3.1.0.nupkg.sha512",
+    "C:\\Users\\papahjahat\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\5.5.0\\microsoft.identitymodel.jsonwebtokens.5.5.0.nupkg.sha512",
+    "C:\\Users\\papahjahat\\.nuget\\packages\\microsoft.identitymodel.logging\\5.5.0\\microsoft.identitymodel.logging.5.5.0.nupkg.sha512",
+    "C:\\Users\\papahjahat\\.nuget\\packages\\microsoft.identitymodel.protocols\\5.5.0\\microsoft.identitymodel.protocols.5.5.0.nupkg.sha512",
+    "C:\\Users\\papahjahat\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\5.5.0\\microsoft.identitymodel.protocols.openidconnect.5.5.0.nupkg.sha512",
+    "C:\\Users\\papahjahat\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.5.0\\microsoft.identitymodel.tokens.5.5.0.nupkg.sha512",
+    "C:\\Users\\papahjahat\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\papahjahat\\.nuget\\packages\\system.identitymodel.tokens.jwt\\5.5.0\\system.identitymodel.tokens.jwt.5.5.0.nupkg.sha512",
+    "C:\\Users\\papahjahat\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
