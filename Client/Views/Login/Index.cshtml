@@ -3,7 +3,7 @@
     Layout = "_LoginLayout";
 }
 
-@*INI INDEX PUNYA LOGIN*@
+@*INI INDEX PUNYA LOGIN PAGE*@
 
 <div id="auth">
 
@@ -11,7 +11,7 @@
         <div class="col-lg-5 col-12">
             <div id="auth-left">
                 <div class="auth-logo mb-6">
-                    <img src="~/rpms/images/logo/logo1.png" alt="Logo"></a>
+                    <a href="@Url.Content("~/Home/Index")"><img src="~/rpms/images/logo/logo1.png" alt="Logo"></a>
                 </div>
                 <h1 class="auth-title mb-0">Log in.</h1>
                 <p class="auth-subtitle mb-3">Insert Your Email and <br> Your Password.</p>
@@ -36,8 +36,10 @@
                 </form>
                 <div class="text-center mt-3 text-lg fs-4">
                     <p class="text-gray-600">
-                        Forgot Password? <a href="auth-register.html"
-                                            class="font-bold">Reset Here!</a>
+                        Forgot Password? <a href="auth-register.html" class="font-bold">Reset Here!</a>
+                    </p>
+                    <p class="text-gray-600">
+                        Don't have an account? <a href="@Url.Content("~/Register/Index")" class="font-bold">Register Here</a>
                     </p>
                 </div>
             </div>
