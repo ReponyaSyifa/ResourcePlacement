@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Placement Management System</title>
+
+    <meta name="description" content="Mazer is a free Admin Dashboard Template that can help you develop faster. Made with Bootstrap 5. No jQuery dependency.">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/rpms/css/app.css">
+    <link rel="stylesheet" href="~/rpms/css/bootstrap.css">
+    <link rel="stylesheet" href="~/rpms/css/style.css">
+</head>
+
+<body>
+
+    
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <script src="~/rpms/js/bootstrap.min.js"></script>
+    <script src="~/rpms/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+
+
