@@ -1,8 +1,94 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "RPMS - Landing Page";
+    Layout = "_LandingPageLayout";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@*INI INDEX PUNYA LANDING PAGE*@
+
+<div id="app">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <div class="container">
+                <a class="navbar-brand me-auto" href="index.html">
+                    <img src="~/rpms/images/logo/logo1.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" data-bs-toggle="modal" data-bs-target=".example2-modal-lg">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-outline-primary block font-extrabold"
+                                    data-bs-toggle="modal" data-bs-target=".example-modal-lg">
+                                Register
+                            </button>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="hero">
+            <div class="row">
+                <div class="">
+                    <h1 class='pt-5'>Resource Placement<br> Management System</h1>
+                    <p class='fs-5 mt-3'>Suit your resource, and Put them in the right Place</p>
+                    <a href="@Url.Content("~/Login/Index")" class="btn btn-primary">Log In</a>
+                </div>
+                <div class="col-lg-6 col-12 order-1 order-md-2">
+                    <img src="~/landingpage/images/hero1.png" alt="Demo  Image">
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+<div class="modal fade example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+         role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">
+                    Register Categories
+                </h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <a class="btn btn-primary font-extrabold mr-5" href="demo/index.html">Register as Internal</a>
+                <a class="btn btn-primary font-extrabold" href="demo/index.html">Register as External</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade example2-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+         role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">
+                    About Us
+                </h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Final Project MCC 52 .Net
+                    <br />From<br />Resource Placement Teams!
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
