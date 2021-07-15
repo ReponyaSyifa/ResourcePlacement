@@ -11,9 +11,9 @@ namespace Client.Controllers
 {
     public class ParticipantController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<ParticipantController> _logger;
 
-        public ParticipantController(ILogger<HomeController> logger)
+        public ParticipantController(ILogger<ParticipantController> logger)
         {
             _logger = logger;
         }

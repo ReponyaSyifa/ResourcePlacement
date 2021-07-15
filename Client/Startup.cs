@@ -48,6 +48,7 @@ namespace Client
             });
 
             services.AddScoped<Address>();
+            services.AddScoped<EmployeeRepository>();
             //services.AddScoped<ParticipantRepository>();
             services.AddControllersWithViews();
         }
