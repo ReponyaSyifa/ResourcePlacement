@@ -66,11 +66,19 @@ namespace ResourcePlacementAPI
             services.AddScoped<RoleRepository>();
             services.AddScoped<SkillRepository>();
 
+            //Ini syntax untuk menambahkan CORS WithOrigins dan harus paling bawah gini
+            services.AddCors(c =>
+            {
+                //wajib tuh ditambahin .AllowAnyHeader().AllowAnyMethod().AllowCredentials() biar bisa dipakai semua header, method, dan credentialsnya
+                c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:44320").AllowAnyHeader().AllowAnyMethod().AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //app.UseCors(options => options.AllowAnyOrigin());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -83,6 +91,8 @@ namespace ResourcePlacementAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("AllowOrigin"); // ini harus ditaruh sebelum end Point dan ini berfungsi untuk CORS withOrigins
 
             app.UseEndpoints(endpoints =>
             {

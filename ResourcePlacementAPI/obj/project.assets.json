@@ -7600,8 +7600,7 @@
       "Microsoft.EntityFrameworkCore >= 5.0.7",
       "Microsoft.EntityFrameworkCore.Proxies >= 5.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.7",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.7",
-      "Newtonsoft.Json >= 13.0.1"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.7"
     ]
   },
   "packageFolders": {
@@ -7676,10 +7675,6 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.7, )"
-          },
-          "Newtonsoft.Json": {
-            "target": "Package",
-            "version": "[13.0.1, )"
           }
         },
         "imports": [

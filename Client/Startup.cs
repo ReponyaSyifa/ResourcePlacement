@@ -1,4 +1,5 @@
 using Client.Base;
+using Client.Repository.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -47,6 +48,7 @@ namespace Client
             });
 
             services.AddScoped<Address>();
+            //services.AddScoped<ParticipantRepository>();
             services.AddControllersWithViews();
         }
 

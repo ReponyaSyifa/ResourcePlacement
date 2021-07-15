@@ -39,7 +39,6 @@
           "Microsoft.EntityFrameworkCore.Proxies": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.7",
-          "Newtonsoft.Json": "13.0.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -1811,6 +1810,10 @@
         }
       },
       "Client/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
         "runtime": {
           "Client.dll": {}
         },
