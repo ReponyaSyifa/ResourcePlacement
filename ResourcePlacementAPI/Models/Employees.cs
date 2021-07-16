@@ -17,6 +17,8 @@ namespace ResourcePlacementAPI.Models
         public string NIK { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public int AccountId { get; set; }
+
         [JsonIgnore]
         public virtual Accounts Accounts { get; set; }
     }

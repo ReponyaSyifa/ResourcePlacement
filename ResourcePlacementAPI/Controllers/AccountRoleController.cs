@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AccountRoleController : BaseController<AccountsRoles, AccountRoleRepository, int>

@@ -35,7 +35,7 @@ namespace ResourcePlacementAPI.Repositories.Data
                             $"<p>          Nama Pegawai = {name}</p>" +
                             $"<p>          Status       = {participant.Status}</p> <br>"+
                             $"<p>          Penempatan   = {user.CompanyName}</p> <br>"+
-                            $"<p>          Nama User    = {user.PicName}</p> <br>";
+                            $"<p>          Nama User    = {user.Name}</p> <br>";
                 var notification = $"sukses";
 
                 Email.SendEmail(participant.Email, body, subject, notification);

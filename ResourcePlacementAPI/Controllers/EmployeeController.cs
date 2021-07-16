@@ -57,5 +57,41 @@ namespace ResourcePlacementAPI.Controllers
                 return Ok(new { status = HttpStatusCode.OK, result = plotting, message = "Status Idle" });
             }
         }
+
+        [HttpPost("RegisterRepoWithAdmin")]
+        public ActionResult RegisterRepoWithAdmin(RegisterVM registerVM)
+        {
+            var register = repository.RegisterRepoWithAdmin(registerVM);
+            if (register == 1)
+            {
+                return Ok(new { status = HttpStatusCode.OK, result = register, message = "succes" });
+            }
+            else if (register == 2)
+            {
+                return BadRequest(new { status = HttpStatusCode.BadRequest, result = register, message = "nik sudah ada" });
+            }
+            else if (register == 3)
+            {
+                return BadRequest(new { status = HttpStatusCode.BadRequest, result = register, message = "data kurang" });
+            }
+            else
+            {
+                return BadRequest(new { status = HttpStatusCode.BadRequest, result = register, message = "Gagal menyimpan, data harus diisi semua" });
+            }
+        }
+
+        [HttpPut("AdminChooseRoleEmployee/{employeeId}")]
+        public ActionResult AdminChooseRoleEmployee(AdminChooseRoleEmployeeVM adminChooseRoleEmployeeVM, int employeeId)
+        {
+            var plotting = repository.AdminChooseRoleEmployee(adminChooseRoleEmployeeVM, employeeId);
+            if (plotting == 0)
+            {
+                return Ok(new { status = HttpStatusCode.OK, result = plotting, message = "Sukses" });
+            }
+            else
+            {
+                return Ok(new { status = HttpStatusCode.OK, result = plotting, message = "Gagal" });
+            }
+        }
     }
 }

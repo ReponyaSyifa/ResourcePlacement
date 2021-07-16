@@ -3,41 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ResourcePlacementAPI.Migrations
 {
-    public partial class UpdateDatabaseRelation : Migration
+    public partial class UpdateDatabaseinEmployeeCustomerUserandAccount : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "tb_M_CustomerUsers",
-                columns: table => new
-                {
-                    CustomerUserId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PicName = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_tb_M_CustomerUsers", x => x.CustomerUserId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "tb_M_Employees",
-                columns: table => new
-                {
-                    EmployeeId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NIK = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_tb_M_Employees", x => x.EmployeeId);
-                });
-
             migrationBuilder.CreateTable(
                 name: "tb_M_Roles",
                 columns: table => new
@@ -65,102 +34,61 @@ namespace ResourcePlacementAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "tb_T_Projects",
-                columns: table => new
-                {
-                    ProjectId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProjectName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProjectDesc = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CustomerUserId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_tb_T_Projects", x => x.ProjectId);
-                    table.ForeignKey(
-                        name: "FK_tb_T_Projects_tb_M_CustomerUsers_CustomerUserId",
-                        column: x => x.CustomerUserId,
-                        principalTable: "tb_M_CustomerUsers",
-                        principalColumn: "CustomerUserId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "tb_T_Accounts",
                 columns: table => new
                 {
                     AccountId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    EmployeeId = table.Column<int>(type: "int", nullable: false),
-                    CustomerUserId = table.Column<int>(type: "int", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_tb_T_Accounts", x => x.AccountId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "tb_M_CustomerUsers",
+                columns: table => new
+                {
+                    CustomerUserId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AccountId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tb_M_CustomerUsers", x => x.CustomerUserId);
                     table.ForeignKey(
-                        name: "FK_tb_T_Accounts_tb_M_CustomerUsers_CustomerUserId",
-                        column: x => x.CustomerUserId,
-                        principalTable: "tb_M_CustomerUsers",
-                        principalColumn: "CustomerUserId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_tb_T_Accounts_tb_M_Employees_EmployeeId",
-                        column: x => x.EmployeeId,
-                        principalTable: "tb_M_Employees",
-                        principalColumn: "EmployeeId",
+                        name: "FK_tb_M_CustomerUsers_tb_T_Accounts_AccountId",
+                        column: x => x.AccountId,
+                        principalTable: "tb_T_Accounts",
+                        principalColumn: "AccountId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "tb_M_Participants",
+                name: "tb_M_Employees",
                 columns: table => new
                 {
-                    ParticipantId = table.Column<int>(type: "int", nullable: false)
+                    EmployeeId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NIK = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Gender = table.Column<int>(type: "int", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Grade = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProjectId = table.Column<int>(type: "int", nullable: false)
+                    AccountId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tb_M_Participants", x => x.ParticipantId);
+                    table.PrimaryKey("PK_tb_M_Employees", x => x.EmployeeId);
                     table.ForeignKey(
-                        name: "FK_tb_M_Participants_tb_T_Projects_ProjectId",
-                        column: x => x.ProjectId,
-                        principalTable: "tb_T_Projects",
-                        principalColumn: "ProjectId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "tb_M_ProjectSkills",
-                columns: table => new
-                {
-                    SkillsId = table.Column<int>(type: "int", nullable: false),
-                    ProjectsId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_tb_M_ProjectSkills", x => new { x.ProjectsId, x.SkillsId });
-                    table.ForeignKey(
-                        name: "FK_tb_M_ProjectSkills_tb_M_Skills_SkillsId",
-                        column: x => x.SkillsId,
-                        principalTable: "tb_M_Skills",
-                        principalColumn: "SkillId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_tb_M_ProjectSkills_tb_T_Projects_ProjectsId",
-                        column: x => x.ProjectsId,
-                        principalTable: "tb_T_Projects",
-                        principalColumn: "ProjectId",
+                        name: "FK_tb_M_Employees_tb_T_Accounts_AccountId",
+                        column: x => x.AccountId,
+                        principalTable: "tb_T_Accounts",
+                        principalColumn: "AccountId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -189,6 +117,78 @@ namespace ResourcePlacementAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "tb_T_Projects",
+                columns: table => new
+                {
+                    ProjectId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProjectName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProjectDesc = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CustomerUserId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tb_T_Projects", x => x.ProjectId);
+                    table.ForeignKey(
+                        name: "FK_tb_T_Projects_tb_M_CustomerUsers_CustomerUserId",
+                        column: x => x.CustomerUserId,
+                        principalTable: "tb_M_CustomerUsers",
+                        principalColumn: "CustomerUserId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "tb_M_Participants",
+                columns: table => new
+                {
+                    ParticipantId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Gender = table.Column<int>(type: "int", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Grade = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProjectId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tb_M_Participants", x => x.ParticipantId);
+                    table.ForeignKey(
+                        name: "FK_tb_M_Participants_tb_T_Projects_ProjectId",
+                        column: x => x.ProjectId,
+                        principalTable: "tb_T_Projects",
+                        principalColumn: "ProjectId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "tb_M_ProjectSkills",
+                columns: table => new
+                {
+                    SkillsId = table.Column<int>(type: "int", nullable: false),
+                    ProjectsId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tb_M_ProjectSkills", x => new { x.ProjectsId, x.SkillsId });
+                    table.ForeignKey(
+                        name: "FK_tb_M_ProjectSkills_tb_M_Skills_SkillsId",
+                        column: x => x.SkillsId,
+                        principalTable: "tb_M_Skills",
+                        principalColumn: "SkillId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_tb_M_ProjectSkills_tb_T_Projects_ProjectsId",
+                        column: x => x.ProjectsId,
+                        principalTable: "tb_T_Projects",
+                        principalColumn: "ProjectId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "tb_M_ParticipantSkills",
                 columns: table => new
                 {
@@ -213,6 +213,18 @@ namespace ResourcePlacementAPI.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_tb_M_CustomerUsers_AccountId",
+                table: "tb_M_CustomerUsers",
+                column: "AccountId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tb_M_Employees_AccountId",
+                table: "tb_M_Employees",
+                column: "AccountId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_tb_M_Participants_ProjectId",
                 table: "tb_M_Participants",
                 column: "ProjectId");
@@ -233,18 +245,6 @@ namespace ResourcePlacementAPI.Migrations
                 column: "RolesId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tb_T_Accounts_CustomerUserId",
-                table: "tb_T_Accounts",
-                column: "CustomerUserId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_tb_T_Accounts_EmployeeId",
-                table: "tb_T_Accounts",
-                column: "EmployeeId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_tb_T_Projects_CustomerUserId",
                 table: "tb_T_Projects",
                 column: "CustomerUserId");
@@ -252,6 +252,9 @@ namespace ResourcePlacementAPI.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "tb_M_Employees");
+
             migrationBuilder.DropTable(
                 name: "tb_M_ParticipantSkills");
 
@@ -271,16 +274,13 @@ namespace ResourcePlacementAPI.Migrations
                 name: "tb_M_Roles");
 
             migrationBuilder.DropTable(
-                name: "tb_T_Accounts");
-
-            migrationBuilder.DropTable(
                 name: "tb_T_Projects");
 
             migrationBuilder.DropTable(
-                name: "tb_M_Employees");
+                name: "tb_M_CustomerUsers");
 
             migrationBuilder.DropTable(
-                name: "tb_M_CustomerUsers");
+                name: "tb_T_Accounts");
         }
     }
 }

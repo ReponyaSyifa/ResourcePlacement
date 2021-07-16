@@ -101,3 +101,8 @@ C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netc
 C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_InternalLayout.cshtml.g.cs
 C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LandingPageLayout.cshtml.g.cs
 C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginLayout.cshtml.g.cs
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Internal\ADD2.cshtml.g.cs
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Internal\Trainer.cshtml.g.cs
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ADD2Layout.cshtml.g.cs
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EksternalDashboardLayout.cshtml.g.cs
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_TrainerLayout.cshtml.g.cs

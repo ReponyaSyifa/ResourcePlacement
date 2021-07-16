@@ -13,8 +13,6 @@ namespace ResourcePlacementAPI.Models
     {
         [Key]
         public int AccountId { get; set; }
-        public int EmployeeId { get; set; }
-        public int CustomerUserId { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
 

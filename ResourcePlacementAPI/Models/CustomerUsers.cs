@@ -15,7 +15,9 @@ namespace ResourcePlacementAPI.Models
         public int CustomerUserId { get; set; }
         public string Email { get; set; }
         public string CompanyName { get; set; }
-        public string PicName { get; set; }
+        public string Name { get; set; }
+        public int AccountId { get; set; }
+
         [JsonIgnore]
         public virtual ICollection<Projects> Projects { get; set; }
         [JsonIgnore]

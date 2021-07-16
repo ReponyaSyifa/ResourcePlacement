@@ -7,13 +7,16 @@ namespace ResourcePlacementAPI.ViewModel
 {
     public class RegisterVM
     {
+        // inputan untuk ADD2 dan Trainer
         public string NIK { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
+        //inputan User
         public string CompanyName { get; set; }
         public string PicName { get; set; }
 
+        // tiga-tiganya wajib ada
         public string Email { get; set; }
         public string Password { get; set; }
         public int RoleId { get; set; } 

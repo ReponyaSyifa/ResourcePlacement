@@ -28,15 +28,15 @@ namespace ResourcePlacementAPI.Context
         {
             // relasi untuk Employee dan Account
             //              One to One
-            modelBuilder.Entity<Employees>()
-                 .HasOne(e => e.Accounts)
-                 .WithOne(a => a.Employees)
-                 .HasForeignKey<Accounts>(a => a.EmployeeId);
+            modelBuilder.Entity<Accounts>()
+                 .HasOne(e => e.Employees)
+                 .WithOne(a => a.Accounts)
+                 .HasForeignKey<Employees>(a => a.AccountId);
 
-            modelBuilder.Entity<CustomerUsers>()
-               .HasOne(a => a.Accounts)
-               .WithOne(p => p.CustomerUsers)
-               .HasForeignKey<Accounts>(p => p.CustomerUserId);
+            modelBuilder.Entity<Accounts>()
+               .HasOne(a => a.CustomerUsers)
+               .WithOne(p => p.Accounts)
+               .HasForeignKey<CustomerUsers>(p => p.AccountId);
 
             //relasi untuk project dan participant
             //             Many to One
