@@ -18,14 +18,10 @@
                 <div class="collapse navbar-collapse " id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" data-bs-toggle="modal" data-bs-target=".example2-modal-lg">About</a>
-                        </li>
-                        <li class="nav-item">
                             <button type="button" class="btn btn-outline-primary block font-extrabold"
                                     data-bs-toggle="modal" data-bs-target=".example-modal-lg">
-                                Register
-                            </button>
-                            
+                                Login
+                            </button>                            
                         </li>
                     </ul>
                 </div>
@@ -38,7 +34,10 @@
                 <div class="">
                     <h1 class='pt-5'>Resource Placement<br> Management System</h1>
                     <p class='fs-5 mt-3'>Suit your resource, and Put them in the right Place</p>
-                    <a href="@Url.Content("~/Login/Index")" class="btn btn-primary">Log In</a>
+                    <button type="button" class="btn btn-primary block font-extrabold mb-3"
+                            data-bs-toggle="modal" data-bs-target=".example4">
+                        Register
+                    </button>
                 </div>
                 <div class="col-lg-6 col-12 order-1 order-md-2">
                     <img src="~/landingpage/images/hero1.png" alt="Demo  Image">
@@ -48,7 +47,6 @@
     </div>
 </div>
 
-
 <div class="modal fade example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
@@ -56,39 +54,232 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalCenterTitle">
-                    Register Categories
+                    Login
                 </h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <form action="#">
+                <div class="modal-body">
+                    <label>Email: </label>
+                    <div class="form-group">
+                        <input type="text" placeholder="Email Address"
+                               class="form-control">
+                    </div>
+                    <label>Password: </label>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password"
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary"
+                            data-bs-dismiss="modal">
+                        <i class="bx bx-x d-block d-sm-none"></i>
+                        <span class="d-none d-sm-block">Close</span>
+                    </button>
+                    <button type="button" class="btn btn-primary ml-1"
+                            data-bs-dismiss="modal">
+                        <i class="bx bx-check d-block d-sm-none"></i>
+                        <span class="d-none d-sm-block">login</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade text-left example4" id="large" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel17" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+         role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel17">Register</h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
             <div class="modal-body">
-                <a class="btn btn-primary font-extrabold mr-5" href="@Url.Content("~/Internal/Index")">Register as Internal</a>
-                <a class="btn btn-primary font-extrabold" href="@Url.Content("~/Eksternal/Dashboard")">Register as External</a>
+                <div class="card-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home"
+                               role="tab" aria-controls="home" aria-selected="true">Internal</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile"
+                               role="tab" aria-controls="profile" aria-selected="false">Eksternal</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="card-body">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <form method="post" id="insertData">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <input type="text" class="form-control" id="nik" placeholder="NIK" required>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputName1">First Name</label>
+                                                            <input type="text" class="form-control" id="fName" placeholder="First Name" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail">Email</label>
+                                                            <input type="text" class="form-control" id="email" placeholder="Email" required>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputPhone">Password</label>
+                                                            <input type="password" class="form-control" id="pwd" placeholder="Min. 8 Characters"
+                                                                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="modal-footer">
+                                                    <button type="button" id="submitNew" class="btn btn btn-success" data-dismiss="modal">Submit</button>
+                                                    <button type="button" class="btn btn-danger"
+                                                            data-bs-dismiss="modal">
+                                                        <i class="bx bx-x d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Close</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <form method="post" id="insertData">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <input type="text" class="form-control" id="nik" placeholder="NIK" required>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputName1">First Name</label>
+                                                    <input type="text" class="form-control" id="fName" placeholder="First Name" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail">Email</label>
+                                                    <input type="text" class="form-control" id="email" placeholder="Email" required>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputPhone">Password</label>
+                                                    <input type="password" class="form-control" id="pwd" placeholder="Min. 8 Characters"
+                                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="modal-footer">
+                                            <button type="button" id="submitNew" class="btn btn btn-success" data-dismiss="modal">Submit</button>
+                                            <button type="button" class="btn btn-danger"
+                                                    data-bs-dismiss="modal">
+                                                <i class="bx bx-x d-block d-sm-none"></i>
+                                                <span class="d-none d-sm-block">Close</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="card-body">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane show inactive" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <form method="post" id="insertData">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <input type="text" class="form-control" id="nik" placeholder="NIK" required>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputName1">First Name</label>
+                                                            <input type="text" class="form-control" id="fName" placeholder="First Name" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail">Email</label>
+                                                            <input type="text" class="form-control" id="email" placeholder="Email" required>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputPhone">Password</label>
+                                                            <input type="password" class="form-control" id="pwd" placeholder="Min. 8 Characters"
+                                                                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="modal-footer">
+                                                    <button type="button" id="submitNew" class="btn btn btn-success" data-dismiss="modal">Submit</button>
+                                                    <button type="button" class="btn btn btn-danger" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <form method="post" id="insertData">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <input type="text" class="form-control" id="nik" placeholder="NIK" required>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputName1">First Name</label>
+                                                    <input type="text" class="form-control" id="fName" placeholder="First Name" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail">Email</label>
+                                                    <input type="text" class="form-control" id="email" placeholder="Email" required>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputPhone">Password</label>
+                                                    <input type="password" class="form-control" id="pwd" placeholder="Min. 8 Characters"
+                                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="modal-footer">
+                                            <button type="button" id="submitNew" class="btn btn btn-success" data-dismiss="modal">Submit</button>
+                                            <button type="button" class="btn btn btn-danger" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade example2-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog"
-     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
-         role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">
-                    About Us
-                </h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    Final Project MCC 52 .Net
-                    <br />From<br />Resource Placement Teams!
-                </p>
+<div class="modal fade text-left example3" id="large" tabindex="-1" role="dialog" aria-labelledby="myModalLabel17" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+             role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">
+                        Register
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+
+                @*<a class="btn btn-primary font-extrabold mr-5" href="@Url.Content("~/Internal/Index")">Register as Internal</a>
+                    <a class="btn btn-primary font-extrabold" href="@Url.Content("~/Eksternal/Dashboard")">Register as External</a>*@
             </div>
         </div>
-    </div>
+    
 </div>
