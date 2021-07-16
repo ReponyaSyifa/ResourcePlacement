@@ -1,6 +1,6 @@
 ﻿@{
-    ViewData["Title"] = "RPMS - Dashboard Internal";
-    Layout = "_EksternalDashboardLayout";
+    ViewData["Title"] = "RPMS - Trainer";
+    Layout = "_InternalLayout";
 }
 
 @*INI DASHBOARD PUNYA TRAINER*@
@@ -20,8 +20,8 @@
             </div>
             <div class="sidebar-menu">
                 <ul class="menu">
-                    <li class="sidebar-item active ">
-                        <a href="index.html" class='sidebar-link'>
+                    <li class="sidebar-item ">
+                        <a href="@Url.Content("~/Internal/Trainer")" class='sidebar-link'>
                             <i class="bi bi-grid-fill"></i>
                             <span>Main</span>
                         </a>
@@ -44,6 +44,7 @@
         </div>
     </div>
 
+@*modal add participant*@
     <div class="modal fade text-left modalAddParticipant" id="modalAddParticipant" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel17" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
@@ -57,7 +58,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    @*disini form add [artisipation*@
+                    @*disini form add partisipation*@
                     <div class="row match-height">
                         <div class="col-12">
                             <div class="card">
@@ -170,6 +171,7 @@
         </div>
     </div>
 
+@*modal change password*@
     <div class="modal fade text-left modalChangePassword" id="modalChangePassword" tabindex="-1"
          role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
@@ -202,14 +204,14 @@
                                                 <label>Old Password</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="password" id="password" class="form-control"
+                                                <input type="password" id="oldPassword" class="form-control"
                                                        name="oldPassword" placeholder="Old Password">
                                             </div>
                                             <div class="col-md-4">
                                                 <label>New Password</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="password" id="password" class="form-control"
+                                                <input type="password" id="newPassword" class="form-control"
                                                        name="newPassword" placeholder="New Password">
                                             </div>
                                         </div>
@@ -289,6 +291,8 @@
 
 <script src="~/rpms/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <script src="~/rpms/js/bootstrap.bundle.min.js"></script>
+
+<script src="~/rpms/vendors/choices.js/choices.min.js"></script>
 
 <script src="~/rpms/vendors/simple-datatables/simple-datatables.js"></script>
 <script>
