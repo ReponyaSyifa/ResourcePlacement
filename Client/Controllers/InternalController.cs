@@ -32,6 +32,16 @@ namespace Client.Controllers
             return View();
         }
 
+        public IActionResult ADD2() //landing pange
+        {
+            return View();
+        }
+
+        public IActionResult Trainer() //landing pange
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
