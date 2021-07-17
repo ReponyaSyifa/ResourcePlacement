@@ -7510,19 +7510,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\papahjahat\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\Client\\Client.csproj",
+      "projectUniqueName": "D:\\DATA\\MCC\\ResourcePlacement\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\Client\\Client.csproj",
-      "packagesPath": "C:\\Users\\papahjahat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\Client\\obj\\",
+      "projectPath": "D:\\DATA\\MCC\\ResourcePlacement\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "D:\\DATA\\MCC\\ResourcePlacement\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\papahjahat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7536,8 +7536,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj": {
-              "projectPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj"
+            "D:\\DATA\\MCC\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj": {
+              "projectPath": "D:\\DATA\\MCC\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj"
             }
           }
         }
@@ -7579,7 +7579,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

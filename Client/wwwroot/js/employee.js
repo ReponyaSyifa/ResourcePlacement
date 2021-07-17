@@ -1,5 +1,12 @@
 ﻿console.log("tezz");
 
+function Test() {
+    var obj = new Object(); //sesuaikan sendiri nama objectnya dan beserta isinya
+    //ini ngambil value dari tiap inputan di form nya
+    obj.NIK = $("#nik").val();
+    alert(obj.NIK);
+}
+
 $(document).ready(function () {
     var table = $('#myTable').DataTable({
         dom: '<"html5buttons">Blfrtip',
