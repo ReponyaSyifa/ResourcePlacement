@@ -1,4 +1,6 @@
-﻿$(document).ready(function () {
+﻿console.log("tezz");
+
+$(document).ready(function () {
     var table = $('#myTable').DataTable({
         dom: '<"html5buttons">Blfrtip',
         language: {
