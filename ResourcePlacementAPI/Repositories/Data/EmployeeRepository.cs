@@ -149,10 +149,11 @@ namespace ResourcePlacementAPI.Repositories.Data
                     myContext.CustomerUsers.Add(customer);
                     myContext.SaveChanges();
 
+                    var roleCustomer = myContext.Roles.FirstOrDefault(e => e.RoleName == "Customer");
                     AccountsRoles accountsRoles = new AccountsRoles
                     {
                         AccountId = accounts.AccountId,
-                        RolesId = registerVM.RoleId
+                        RolesId = roleCustomer.RoleId
                     };
                     myContext.AccountsRoles.Add(accountsRoles);
                     myContext.SaveChanges();

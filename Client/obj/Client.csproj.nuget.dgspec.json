@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DATA\\MCC\\ResourcePlacement\\Client\\Client.csproj": {}
+    "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\Client\\Client.csproj": {}
   },
   "projects": {
-    "D:\\DATA\\MCC\\ResourcePlacement\\Client\\Client.csproj": {
+    "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DATA\\MCC\\ResourcePlacement\\Client\\Client.csproj",
+        "projectUniqueName": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "D:\\DATA\\MCC\\ResourcePlacement\\Client\\Client.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\DATA\\MCC\\ResourcePlacement\\Client\\obj\\",
+        "projectPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\Client\\Client.csproj",
+        "packagesPath": "C:\\Users\\papahjahat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\papahjahat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\DATA\\MCC\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj": {
-                "projectPath": "D:\\DATA\\MCC\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj"
+              "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj": {
+                "projectPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj"
               }
             }
           }
@@ -72,21 +71,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\DATA\\MCC\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj": {
+    "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DATA\\MCC\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
+        "projectUniqueName": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
         "projectName": "ResourcePlacementAPI",
-        "projectPath": "D:\\DATA\\MCC\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\DATA\\MCC\\ResourcePlacement\\ResourcePlacementAPI\\obj\\",
+        "projectPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
+        "packagesPath": "C:\\Users\\papahjahat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\papahjahat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -94,7 +93,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -162,7 +160,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ResourcePlacementAPI.Base;
 using ResourcePlacementAPI.Models;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.Controllers
 {
+    [EnableCors("AllowOrigin")]
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : BaseController<Employees, EmployeeRepository, int>
