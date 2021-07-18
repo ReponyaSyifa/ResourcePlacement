@@ -23,16 +23,16 @@
         </div>
         <div class="row card-body">
             <div class="col-md-6 offset-md-3">
-                <form action="#">
+                <form action="/login/Auth" method="post">
                     <div class="modal-body">
                         <label>Email: </label>
                         <div class="form-group">
-                            <input type="text" placeholder="Email Address"
+                            <input type="text" placeholder="Email Address" name="Email"
                                    class="form-control">
                         </div>
                         <label>Password: </label>
                         <div class="form-group">
-                            <input type="password" placeholder="Password"
+                            <input type="password" placeholder="Password" name="Password"
                                    class="form-control">
                         </div>
                     </div>
@@ -42,10 +42,8 @@
                             <i class="bx bx-x d-block d-sm-none"></i>
                             <span class="d-none d-sm-block">Close</span>
                         </button>
-                        <button type="button" class="btn btn-primary ml-1"
-                                data-bs-dismiss="modal">
-                            <i class="bx bx-check d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">login</span>
+                        <button type="submit" class="btn btn-primary ml-1">
+                            <span>login</span>
                         </button>
                     </div>
                 </form>
