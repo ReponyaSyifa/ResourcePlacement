@@ -121,22 +121,79 @@ namespace ResourcePlacementAPI.Repositories.Data
         {
             //create claims details based on the user information
             var account = myContext.Accounts.FirstOrDefault(e => e.Email == email);
+            List<AccountsRoles> accountRoles = myContext.AccountsRoles.Where(a => a.AccountId == account.AccountId).ToList();
+            var accountRoleAdmin = myContext.AccountsRoles.FirstOrDefault(e => e.AccountId == account.AccountId && e.RolesId == 1);
+            var accountRoleADD2 = myContext.AccountsRoles.FirstOrDefault(e => e.AccountId == account.AccountId && e.RolesId == 2);
+            var accountRoleTrainer = myContext.AccountsRoles.FirstOrDefault(e => e.AccountId == account.AccountId && e.RolesId == 3);
 
-            var accountRole = myContext.AccountsRoles.FirstOrDefault(e => e.AccountId == account.AccountId);
-            var role = myContext.Roles.Find(accountRole.RolesId);
-            var claims = new[] {
-                new Claim("email", account.Email),
-                new Claim("role", role.RoleName)
+            if (accountRoleAdmin != null)
+            {
+                var roleName = myContext.Roles.Find(1);
+                var claims = new[] {
+                    new Claim("email", account.Email),
+                    new Claim("role", roleName.RoleName)
                 };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sdfsdfsjdbf78sdyfssdfsdfbuidfs98gdfsdbf"));
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sdfsdfsjdbf78sdyfssdfsdfbuidfs98gdfsdbf"));
 
-            var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var token = new JwtSecurityToken("API", "Test", claims, expires: DateTime.UtcNow.AddDays(1), signingCredentials: signIn);
+                var token = new JwtSecurityToken("API", "Test", claims, expires: DateTime.UtcNow.AddDays(1), signingCredentials: signIn);
 
-            var result = new JwtSecurityTokenHandler().WriteToken(token);
-            return result;
+                var result = new JwtSecurityTokenHandler().WriteToken(token);
+                return result;
+            }
+            else if (accountRoleADD2 != null)
+            {
+                var roleName = myContext.Roles.Find(2);
+                var claims = new[] {
+                    new Claim("email", account.Email),
+                    new Claim("role", roleName.RoleName)
+                };
+
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sdfsdfsjdbf78sdyfssdfsdfbuidfs98gdfsdbf"));
+
+                var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+                var token = new JwtSecurityToken("API", "Test", claims, expires: DateTime.UtcNow.AddDays(1), signingCredentials: signIn);
+
+                var result = new JwtSecurityTokenHandler().WriteToken(token);
+                return result;
+            }
+            else if (accountRoleTrainer != null)
+            {
+                var roleName = myContext.Roles.Find(3);
+                var claims = new[] {
+                    new Claim("email", account.Email),
+                    new Claim("role", roleName.RoleName)
+                };
+
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sdfsdfsjdbf78sdyfssdfsdfbuidfs98gdfsdbf"));
+
+                var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+                var token = new JwtSecurityToken("API", "Test", claims, expires: DateTime.UtcNow.AddDays(1), signingCredentials: signIn);
+
+                var result = new JwtSecurityTokenHandler().WriteToken(token);
+                return result;
+            }
+            else //role user
+            {
+                var role = myContext.Roles.Find(4);
+                var claims = new[] {
+                    new Claim("email", account.Email),
+                    new Claim("role", role.RoleName)
+                };
+
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sdfsdfsjdbf78sdyfssdfsdfbuidfs98gdfsdbf"));
+
+                var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+                var token = new JwtSecurityToken("API", "Test", claims, expires: DateTime.UtcNow.AddDays(1), signingCredentials: signIn);
+
+                var result = new JwtSecurityTokenHandler().WriteToken(token);
+                return result;
+            }
         }
     }
 }

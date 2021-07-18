@@ -40,15 +40,16 @@ namespace Client
                 {
                     ValidateAudience = true,
                     ValidateIssuer = true,
-                    ValidAudience = "Test",
-                    ValidIssuer = "API",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sdfsdfsjdbf78sdyfssdfsdfbuidfs98gdfsdbf"))
+                    ValidAudience = Configuration["Jwt:Audience"],
+                    ValidIssuer = Configuration["Jwt:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
 
                 };
             });
 
             services.AddScoped<Address>();
             services.AddScoped<EmployeeRepository>();
+            services.AddScoped<LoginRepository>();
             //services.AddScoped<ParticipantRepository>();
             services.AddControllersWithViews();
         }

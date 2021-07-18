@@ -1,6 +1,9 @@
 ﻿using Client.Models;
+using Client.Repository.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ResourcePlacementAPI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,32 +14,45 @@ namespace Client.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly ILogger<LoginController> _logger;
+        private readonly LoginRepository repository;
 
-        public LoginController(ILogger<LoginController> logger)
+        public LoginController(LoginRepository repository)
         {
-            _logger = logger;
+            this.repository = repository;
         }
 
-        public IActionResult Index() //landing pange
+        public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Login() //landing pange
+        public async Task<IActionResult> Auth(LoginVM login)
         {
-            return View();
-        }
+            var jwToken = await repository.Auth(login);
+            if (jwToken == null)
+            {
+                return RedirectToAction("index");
+            }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+            HttpContext.Session.SetString("Jwt", jwToken.Token);
+            HttpContext.Session.SetString("role", repository.JwtRole(jwToken.Token));
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var role = HttpContext.Session.GetString("role");
+            if (role == "Trainer")
+            {
+                return RedirectToAction("Trainer", "internal");
+            }
+
+            else if (role == "ADD 2")
+            {
+                return RedirectToAction("ADD2", "internal");
+            }
+
+            else
+            {
+                return RedirectToAction("dashboard", "eksternal");
+            }
+
         }
     }
 }
