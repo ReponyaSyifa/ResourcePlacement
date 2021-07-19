@@ -1,10 +1,7 @@
-﻿using Client.Base;
-using Client.Models;
-using Client.Repository.Data;
+﻿using Client.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ResourcePlacementAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,12 +11,13 @@ using System.Threading.Tasks;
 namespace Client.Controllers
 {
     //[Authorize]
-    public class InternalController : BaseController<Participants, ParticipantRepository, int>
+    public class InternalController : Controller
     {
-        private readonly ParticipantRepository repository;
-        public InternalController(ParticipantRepository repository) : base(repository)
+        private readonly ILogger<InternalController> _logger;
+
+        public InternalController(ILogger<InternalController> logger)
         {
-            this.repository = repository;
+            _logger = logger;
         }
 
         public IActionResult Index() //landing pange

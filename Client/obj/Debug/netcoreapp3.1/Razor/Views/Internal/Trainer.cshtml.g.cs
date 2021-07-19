@@ -76,7 +76,7 @@ using Client.Models;
         {
 #nullable restore
 #line 1 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\Internal\Trainer.cshtml"
-  
+
     ViewData["Title"] = "RPMS - Trainer";
     Layout = "_InternalLayout";
 
