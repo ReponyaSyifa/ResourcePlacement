@@ -6,10 +6,11 @@
         contentType: "application/json",
         data: JSON.stringify(item)
     }).done((result) => {
-        alert('berhasil');
-        window.location = "https://localhost:44320/";
+        alert('berhasil'),
+        window.location = "https://localhost:44320/"
     }).fail((error) => {
-        alert('gagal');
+        alert('gagal'),
+        window.location = "https://localhost:44320/"
     });
 };
 
@@ -51,7 +52,7 @@ function ValidationClient() {
     obj.Email = $("#email").val();
     obj.Password = $("#pwd").val();
 
-    console.log(obj.NIK);
+    //console.log(obj.NIK);
 
     // Regular Expression For Email
     emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;

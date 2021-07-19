@@ -137,3 +137,4 @@ D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\Resou
 D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.dll
 D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.pdb
 D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.genruntimeconfig.cache
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.csproj.AssemblyReference.cache

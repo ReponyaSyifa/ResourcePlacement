@@ -50,5 +50,20 @@ namespace ResourcePlacementAPI.Repositories.Data
                 return 2;
             }
         }
+
+        public IEnumerable<ShowSkillParticipantVM> ShowSkillParticipants()
+        {
+            List<ShowSkillParticipantVM> showSkillParticipants = new List<ShowSkillParticipantVM>();
+            var participantSkills = myContext.ParticipantsSkills.ToList();
+
+            foreach (var item in participantSkills)
+            {
+                ShowSkillParticipantVM showSkillParticipant = new ShowSkillParticipantVM();
+                var skill = myContext.Skills.Find(item.SkillsId);
+                showSkillParticipant.SKillName = skill.SkillName;
+                showSkillParticipants.Add(showSkillParticipant);
+            }
+            return showSkillParticipants;
+        }
     }
 }
