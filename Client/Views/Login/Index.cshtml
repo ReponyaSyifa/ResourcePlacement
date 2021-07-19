@@ -25,15 +25,18 @@
             <div class="col-md-6 offset-md-3">
                 <form action="/login/Auth" method="post">
                     <div class="modal-body">
-                        <label>Email: </label>
+                        <label class="font-bold">Email: </label>
                         <div class="form-group">
                             <input type="text" placeholder="Email Address" name="Email"
                                    class="form-control">
                         </div>
-                        <label>Password: </label>
+                        <label class="font-bold">Password: </label>
                         <div class="form-group">
                             <input type="password" placeholder="Password" name="Password"
                                    class="form-control">
+                        </div>
+                        <div class="">
+                            <p>Forgot Your password? <a class="font-bold" data-bs-toggle="modal" data-bs-target=".example5"> Reset Here</a></p>
                         </div>
                     </div>
                     <div class="modal-footer mb-24">
@@ -53,7 +56,48 @@
     <div class="card col-6 col-md-4"></div>
 </div>
 
+@*modal reset password*@
+
+<div class="modal fade example5" id="exampleModalCenter" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+         role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Reset Password</h5>
+                <button type="button" class="close" data-bs-dismiss="modal"
+                        aria-label="Close">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <div class="modal-body">
+                        <label class="font-bold">Email: </label>
+                        <div class="form-group">
+                            <input type="text" placeholder="Email Address" id="Email"
+                                   class="form-control">
+                            <p>*)check your email, and see reset password notification</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer ">
+                        <button type="button" class="btn btn-light-secondary"
+                                data-bs-dismiss="modal">
+                            <i class="bx bx-x d-block d-sm-none"></i>
+                            <span class="d-none d-sm-block">Close</span>
+                        </button>
+                        <button type="submit" id="submitReset" class="btn btn-primary ml-1" data-dismiss="modal">
+                            <span>Send Email</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @section Scripts {
+    <script type="text/javascript" src="~/js/resetpassword.js"></script>
     <script type="text/javascript" src="~/js/site.js"></script>
 }

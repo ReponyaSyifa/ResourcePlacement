@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Client.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class InternalController : Controller
     {
         private readonly ILogger<InternalController> _logger;
