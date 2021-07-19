@@ -50,6 +50,7 @@ namespace Client
             services.AddScoped<Address>();
             services.AddScoped<EmployeeRepository>();
             services.AddScoped<LoginRepository>();
+            services.AddScoped<ParticipantRepository>();
             //services.AddScoped<ParticipantRepository>();
             services.AddControllersWithViews();
         }
