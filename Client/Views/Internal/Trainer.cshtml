@@ -87,23 +87,16 @@
                                                                name="email-id-column" placeholder="Email">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 col-12">
-                                                    <div class="form-group">
-                                                        <label for="city-column">Gender</label>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                                   id="1">
-                                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                                Pria
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                                   id="2" checked>
-                                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                                Wanita
-                                                            </label>
-                                                        </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <label for="skills">Grade</label>
+                                                    <div class="input-group mb-3">
+                                                        <label class="input-group-text"
+                                                               for="inputGroupSelect01">Options</label>
+                                                        <select class="form-select" id="gender">
+                                                            <option selected>Choose...</option>
+                                                            <option value="1">Pria</option>
+                                                            <option value="2">Wanita</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-12">
@@ -125,7 +118,7 @@
                                                     <div class="input-group mb-3">
                                                         <label class="input-group-text"
                                                                for="inputGroupSelect01">Options</label>
-                                                        <select class="form-select" id="">
+                                                        <select class="form-select" id="grade">
                                                             <option selected>Choose...</option>
                                                             <option value="A">A</option>
                                                             <option value="B">B</option>
@@ -136,18 +129,11 @@
                                                     <div class="form-group">
                                                         <label for="skills">Skills</label>
                                                         <select class="choices form-select multiple-remove"
-                                                                multiple="multiple">
-                                                            <optgroup label="Figures">
-                                                                <option value="romboid">Romboid</option>
-                                                                <option value="trapeze" selected>Trapeze</option>
-                                                                <option value="triangle">Triangle</option>
-                                                                <option value="polygon">Polygon</option>
-                                                            </optgroup>
-                                                            <optgroup label="Colors">
-                                                                <option value="red">Red</option>
-                                                                <option value="green">Green</option>
-                                                                <option value="blue" selected>Blue</option>
-                                                                <option value="purple">Purple</option>
+                                                                multiple="multiple" id="skills">
+                                                            <optgroup label="Skills">
+                                                                <option value="1">PHP</option>
+                                                                <option value="2">ASP.NET Core</option>
+                                                                <option value="3">MySql</option>
                                                             </optgroup>
                                                         </select>
                                                     </div>
@@ -161,8 +147,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success ml-1"
-                            data-bs-dismiss="modal">
+                    <button type="submit" class="btn btn-success ml-1"
+                            data-bs-dismiss="modal" onclick="AddParticipant()">
                         <i class="bx bx-check d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Submit</span>
                     </button>

@@ -125,7 +125,7 @@ $.ajax({
     console.log(error);
 });
 
-
+//detail participant
 $(document).on("click", ".modalClass", function () {
     let pokemonURL = $(this).data('id');
     $.ajax({
@@ -158,6 +158,7 @@ $(document).on("click", ".modalClass", function () {
     });
 });
 
+// change password
 function PostChangePassword(item) {
     //isi dari object kalian buat sesuai dengan bentuk object yang akan di post
     $.ajax({
@@ -172,7 +173,7 @@ function PostChangePassword(item) {
         alert('gagal');
     });
 };
-
+//change password
 function ChangePassword() {
     var obj = new Object(); //sesuaikan sendiri nama objectnya dan beserta isinya
     //ini ngambil value dari tiap inputan di form nya
@@ -188,6 +189,70 @@ function ChangePassword() {
 
     if (obj.Email != '' && obj.OldPassword != '' && obj.NewPassword != '') {
         PostChangePassword(obj);
+    } else {
+        alert("Semua Harus Di Isi!!");
+    }
+};
+
+function PostParticipant(item) {
+    //isi dari object kalian buat sesuai dengan bentuk object yang akan di post
+    $.ajax({
+        url: "https://localhost:44338/api/participant/add",
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(item)
+    }).done((result) => {
+        alert('berhasil'),
+        window.location = "https://localhost:44320/Internal/Trainer"
+    }).fail((error) => {
+        alert('gagal')
+    });
+};
+
+//add participant
+function AddParticipant() {
+    var obj = new Object(); //sesuaikan sendiri nama objectnya dan beserta isinya
+    //ini ngambil value dari tiap inputan di form nya
+
+    var skills = [];
+    for (var option of document.getElementById('skills').options) {
+        if (option.selected) {
+            var skillId = parseInt(option.value);
+            skills.push(skillId);
+        }
+    }
+
+    var grade = "";
+    for (var option of document.getElementById('grade').options) {
+        if (option.selected) {
+            grade = option.value;
+        }
+    }
+
+    var gender = "";
+    for (var option of document.getElementById('gender').options) {
+        if (option.selected) {
+            var gg = parseInt(option.value);
+            gender = gg;
+        }
+    }
+    obj.FirstName = $("#fname").val();
+    obj.LastName = $("#lname").val();
+    obj.Email = $("#email").val();
+    obj.Gender = gender;
+    obj.PhoneNumber = $("#phone").val();
+    obj.BrithDate = $("#birthdate").val();
+    obj.Grade = grade;
+    obj.ListSkill = skills;
+
+    // Regular Expression For Email
+    emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    passReg = /^[0-9a-zA-Z]{8,}$/;
+
+    if (obj.FirstName != '' && obj.LastName != '' && obj.PhoneNumber != ''
+        && obj.BrithDate != '' && obj.Email != '' && obj.Gender != '' && obj.Grade != ''
+        && obj.ListSkill != '') {
+        PostParticipant(obj);
     } else {
         alert("Semua Harus Di Isi!!");
     }
