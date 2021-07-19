@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
 
+    <!-- ==================================================          Template         =================================================== -->
     <link rel="stylesheet" href="~/rpms/vendors/choices.js/choices.min.css" />
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/rpms/css/bootstrap.css">
@@ -17,10 +21,9 @@
     <link rel="stylesheet" href="~/rpms/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="~/rpms/css/app.css">
     <link rel="shortcut icon" href="~/rpms/images/favicon.svg" type="image/x-icon">
+    <!-- ==================================================          Template         =================================================== -->
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
-
-
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 
 @*~/rpms/*@
@@ -29,17 +32,24 @@
 
     @RenderBody()
 
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
-
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    
+    <!-- ==================================================          Template         =================================================== -->
     <script src="~/rpms/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="~/rpms/vendors/apexcharts/apexcharts.js"></script>
-    <script src="~/rpms/js/pages/dashboard.js"></script>
-
-    <script src="~/rpms/js/main.js"></script>
-
-    <script src="~/rpms/js/bootstrap.min.js"></script>
     <script src="~/rpms/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/rpms/vendors/choices.js/choices.min.js"></script>
+
+    <script src="~/rpms/vendors/simple-datatables/simple-datatables.js"></script>
+    @*<script>
+            // Simple Datatable
+            let table1 = document.querySelector('#table1');
+            let dataTable = new simpleDatatables.DataTable(table1);
+        </script>*@
+    <script type="text/javascript" src="~/rpms/js/main.js"></script>
+    <!-- ==================================================          Template         =================================================== -->
     @RenderSection("Scripts", required: false)
 </body>
 </html>

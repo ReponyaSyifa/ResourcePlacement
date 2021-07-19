@@ -114,8 +114,8 @@ $.ajax({
             val.phoneNumber,
             val.birthDate,
             val.grade,
-            val.status,
-            `<button class="btn btn-primary modalClass"  data-id="${val.url}" data-toggle="modal" data-target="#exampleModal">
+            val.status,//#exampleModal
+            `<button class="btn btn-primary modalClass"  data-id="${val.url}" data-toggle="modal" data-target="">
                 Detail
             </button>`
         ]).draw(false)
@@ -157,3 +157,38 @@ $(document).on("click", ".modalClass", function () {
         console.log(error);
     });
 });
+
+function PostChangePassword(item) {
+    //isi dari object kalian buat sesuai dengan bentuk object yang akan di post
+    $.ajax({
+        url: "https://localhost:44338/api/account/changepassword",
+        type: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(item)
+    }).done((result) => {
+        alert('berhasil');
+        window.location = "https://localhost:44320/Internal/Trainer";
+    }).fail((error) => {
+        alert('gagal');
+    });
+};
+
+function ChangePassword() {
+    var obj = new Object(); //sesuaikan sendiri nama objectnya dan beserta isinya
+    //ini ngambil value dari tiap inputan di form nya
+    obj.Email = $("#email-id").val();
+    obj.OldPassword = $("#oldPassword").val();
+    obj.NewPassword = $("#newPassword").val();
+
+    console.log(obj.Email);
+
+    // Regular Expression For Email
+    emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    passReg = /^[0-9a-zA-Z]{8,}$/;
+
+    if (obj.Email != '' && obj.OldPassword != '' && obj.NewPassword != '') {
+        PostChangePassword(obj);
+    } else {
+        alert("Semua Harus Di Isi!!");
+    }
+};
