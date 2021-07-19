@@ -4,12 +4,27 @@
         url: "https://localhost:44338/api/employee/RegisterRepoWithAdmin",
         type: "POST",
         contentType: "application/json",
-        data: JSON.stringify(item)
-    }).done((result) => {
+        data: JSON.stringify(item),
+        success: function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Register Success!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        },
+        error: function (err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oh Snap!',
+                text: 'Register Failed!'
+            })
+        }
+    /*}).done((result) => {
         alert('berhasil');
         window.location = "https://localhost:44320/";
     }).fail((error) => {
-        alert('gagal');
+        alert('gagal');*/
     });
 };
 
@@ -51,7 +66,7 @@ function ValidationClient() {
     obj.Email = $("#email").val();
     obj.Password = $("#pwd").val();
 
-    console.log(obj.NIK);
+    //console.log(obj.NIK);
 
     // Regular Expression For Email
     emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;

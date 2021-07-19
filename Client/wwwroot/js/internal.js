@@ -200,12 +200,22 @@ function PostParticipant(item) {
         url: "https://localhost:44338/api/participant/add",
         type: "POST",
         contentType: "application/json",
-        data: JSON.stringify(item)
-    }).done((result) => {
-        alert('berhasil'),
-        window.location = "https://localhost:44320/Internal/Trainer"
-    }).fail((error) => {
-        alert('gagal')
+        data: JSON.stringify(item),
+        success: function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'New Project Added!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        },
+        error: function (err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oh Snap!',
+                text: 'Add New Project Failed!'
+            })
+        }
     });
 };
 

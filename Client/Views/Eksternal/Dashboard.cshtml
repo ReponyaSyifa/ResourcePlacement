@@ -69,40 +69,36 @@
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
                                                         <label for="projectName-column">Project Name</label>
-                                                        <input type="text" id="projectName" class="form-control"
+                                                        <input type="text" id="ProjectName" class="form-control"
                                                                placeholder="Project Name" name="projectName-column">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
                                                         <label for="projectDesc-column">Project Description</label>
-                                                        <textarea class="form-control" id="projectDesc"
+                                                        <textarea class="form-control" id="ProjectDesc"
                                                                   rows="3"></textarea>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 col-12">
+                                                <div class="col-md-6 mb-12">
+                                                    <label for="skills">Company Name</label>
                                                     <div class="form-group">
-                                                        <label for="email-id-column">Client Name</label>
-                                                        <input type="text" id="cust-column" class="form-control"
-                                                               name="cust-column" placeholder="Client Name">
+                                                        <select class="form-select" id="custName">
+                                                            <option selected>Choose...</option>
+                                                            <option value="3">PT. Maju Jaya</option>
+                                                            <option value="2">PT. Aman Barokah</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
                                                         <label for="skills">Skills</label>
                                                         <select class="choices form-select multiple-remove"
-                                                                multiple="multiple">
-                                                            <optgroup label="Figures">
-                                                                <option value="romboid">Romboid</option>
-                                                                <option value="trapeze" selected>Trapeze</option>
-                                                                <option value="triangle">Triangle</option>
-                                                                <option value="polygon">Polygon</option>
-                                                            </optgroup>
-                                                            <optgroup label="Colors">
-                                                                <option value="red">Red</option>
-                                                                <option value="green">Green</option>
-                                                                <option value="blue" selected>Blue</option>
-                                                                <option value="purple">Purple</option>
+                                                                multiple="multiple" id="skills">
+                                                            <optgroup label="Skills">
+                                                                <option value="1">PHP</option>
+                                                                <option value="2">ASP.NET Core</option>
+                                                                <option value="3">MySql</option>
                                                             </optgroup>
                                                         </select>
                                                     </div>
@@ -116,8 +112,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success ml-1"
-                            data-bs-dismiss="modal">
+                    <button type="submit" class="btn btn-success ml-1"
+                            data-bs-dismiss="modal" onclick="AddProject()">
                         <i class="bx bx-check d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Submit</span>
                     </button>
@@ -281,7 +277,7 @@
 <script src="~/rpms/vendors/simple-datatables/simple-datatables.js"></script>
 
 @section Scripts {
-    <script type="text/javascript" src="~/js/employee.js"></script>
+    <script type="text/javascript" src="~/js/eksternal.js"></script>
     <script type="text/javascript" src="~/rpms/js/main.js"></script>
     <script type="text/javascript" src="~/js/site.js"></script>
 }
