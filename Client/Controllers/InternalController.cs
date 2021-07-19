@@ -39,6 +39,7 @@ namespace Client.Controllers
             return View();
         }
 
+        //[Authorize]
         public IActionResult Trainer() //landing pange
         {
             return View();

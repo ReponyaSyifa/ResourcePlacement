@@ -158,6 +158,28 @@ $(document).on("click", ".modalClass", function () {
     });
 });
 
+////detail participant
+//$(document).on("click", ".modalAddParticipant", function () {
+//    $.ajax({
+//        url: "https://localhost:44338/api/skill"
+//    }).done((result) => {
+//        //=====================================================================================
+//        //untuk menampilkan type
+//        skills = "";
+//        $.each(result, function (key, val) {
+//            skills += `<option value="${val.skillId}">${val.skillName}</option>`;
+//        })
+//        atas = '<label for="skills">Skills</label>';
+//        atas2 = '<select class="choices form-select multiple-remove" multiple = "multiple" id = "skills" >';
+//        atas3 = '<optgroup label="Skills">';
+//        bawah = '</optgroup></select >'
+//        $("#blabla").html(atas+atas2+atas3+skills+bawah);
+
+//    }).fail((error) => {
+//        console.log(error);
+//    });
+//});
+
 // change password
 function PostChangePassword(item) {
     //isi dari object kalian buat sesuai dengan bentuk object yang akan di post
