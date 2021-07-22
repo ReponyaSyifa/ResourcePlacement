@@ -5,7 +5,50 @@
 
 @*INI DASHBOARD PUNYA Staff*@
 
-<div id="app">
+
+<body>
+    <nav class="navbar navbar-light">
+        <div class="container d-block">
+            <a class="navbar-brand ms-4">
+                <img src="~/rpms/images/logo/logo1.png">
+            </a>
+        </div>
+    </nav>
+    <div class="col-12 col-md-11 order-md-2 order-first">
+        <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item font-extrabold"><a>Hi, Client &nbsp;</a></li>
+                <li class="sidebar-item " type="button" data-bs-toggle="modal" data-bs-target=".modalChangePassword">
+                    <a class='sidebar-link'>
+                        <i class="bi bi-gear"></i>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+
+
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-header">
+                <h4 class="card-title">Single Layout</h4>
+            </div>
+            <div class="card-body">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nemo quasi labore expedita?
+                    Veritatis
+                    at maxime id voluptates excepturi molestiae possimus blanditiis dicta consequuntur maiores suscipit,
+                    eveniet neque obcaecati doloribus.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+
+<!--<div id="app">
     <div id="sidebar" class="active">
         <div class="sidebar-wrapper active">
             <div class="sidebar-header">
@@ -42,10 +85,10 @@
             </div>
             <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
         </div>
-    </div>
+    </div>-->
 
     @*modal add participant*@
-    <div class="modal fade text-left modalAddParticipant" id="modalAddParticipant" tabindex="-1" role="dialog"
+    <!--<div class="modal fade text-left modalAddParticipant" id="modalAddParticipant" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel17" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
              role="document">
@@ -57,9 +100,9 @@
                         <i data-feather="x"></i>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body">-->
                     @*disini form add partisipation*@
-                    <div class="row match-height">
+                    <!--<div class="row match-height">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-content">
@@ -169,10 +212,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
     @*modal change password*@
-    <div class="modal fade text-left modalChangePassword" id="modalChangePassword" tabindex="-1"
+    <!--<div class="modal fade text-left modalChangePassword" id="modalChangePassword" tabindex="-1"
          role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
              role="document">
@@ -300,7 +343,7 @@
     // Simple Datatable
     let table1 = document.querySelector('#table1');
     let dataTable = new simpleDatatables.DataTable(table1);
-</script>
+</script>-->
 
 @section Scripts {
     <script type="text/javascript" src="~/js/employee.js"></script>
