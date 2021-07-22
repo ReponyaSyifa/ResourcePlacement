@@ -13,14 +13,14 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\_ViewImports.cshtml"
+#line 1 "D:\DATA\MCC\ResourcePlacement\Client\Views\_ViewImports.cshtml"
 using Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\_ViewImports.cshtml"
+#line 2 "D:\DATA\MCC\ResourcePlacement\Client\Views\_ViewImports.cshtml"
 using Client.Models;
 
 #line default
@@ -74,8 +74,8 @@ using Client.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
 #nullable restore
-#line 1 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\Eksternal\Dashboard.cshtml"
-  
+#line 1 "D:\DATA\MCC\ResourcePlacement\Client\Views\Eksternal\Dashboard.cshtml"
+
     ViewData["Title"] = "RPMS - Client";
     Layout = "_InternalLayout";
 
@@ -119,7 +119,7 @@ using Client.Models;
                         <a");
             BeginWriteAttribute("href", " href=\"", 863, "\"", 907, 1);
 #nullable restore
-#line 24 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\Eksternal\Dashboard.cshtml"
+#line 24 "D:\DATA\MCC\ResourcePlacement\Client\Views\Eksternal\Dashboard.cshtml"
 WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, false);
 
 #line default
@@ -191,26 +191,18 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
                                                     <label for=""skills"">Company Name</label>
                                                     <div class=""form-group"">
                                                         <select class=""form-select"" id=""custName"">
+");
+                WriteLiteral(@"                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class=""col-md-6 col-12"">
+                                                    <div class=""form-group"">
+                                                        <label for=""skills"">Skills</label>
+                                                        <select class=""choices form-select multiple-remove""
+                                                                multiple=""multiple"" id=""skills"">
                                                             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4216017", async() => {
-                    WriteLiteral("Choose...");
-                }
-                );
-                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
-                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
-                BeginWriteTagHelperAttribute();
-                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
-                __tagHelperExecutionContext.AddHtmlAttribute("selected", Html.Raw(__tagHelperStringValueBuffer), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.Minimized);
-                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
-                if (!__tagHelperExecutionContext.Output.IsContentModified)
-                {
-                    await __tagHelperExecutionContext.SetOutputContentAsync();
-                }
-                Write(__tagHelperExecutionContext.Output);
-                __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                WriteLiteral("\r\n                                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4217418", async() => {
-                    WriteLiteral("PT. Maju Jaya");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91ede55352f497e765a30422181dc73d09acac4f16559", async() => {
+                    WriteLiteral("PHP");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
@@ -225,49 +217,7 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4218709", async() => {
-                    WriteLiteral("PT. Aman Barokah");
-                }
-                );
-                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
-                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
-                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_4.Value;
-                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_4);
-                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
-                if (!__tagHelperExecutionContext.Output.IsContentModified)
-                {
-                    await __tagHelperExecutionContext.SetOutputContentAsync();
-                }
-                Write(__tagHelperExecutionContext.Output);
-                __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                WriteLiteral(@"
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class=""col-md-6 col-12"">
-                                                    <div class=""form-group"">
-                                                        <label for=""skills"">Skills</label>
-                                                        <select class=""choices form-select multiple-remove""
-                                                                multiple=""multiple"" id=""skills"">
-                                                            <optgroup label=""Skills"">
-                                                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4220746", async() => {
-                    WriteLiteral("PHP");
-                }
-                );
-                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
-                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
-                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
-                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
-                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
-                if (!__tagHelperExecutionContext.Output.IsContentModified)
-                {
-                    await __tagHelperExecutionContext.SetOutputContentAsync();
-                }
-                Write(__tagHelperExecutionContext.Output);
-                __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                WriteLiteral("\r\n                                                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4222031", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91ede55352f497e765a30422181dc73d09acac4f17840", async() => {
                     WriteLiteral("ASP.NET Core");
                 }
                 );
@@ -282,15 +232,15 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
                 }
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                WriteLiteral("\r\n                                                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4223325", async() => {
+                WriteLiteral("\r\n                                                            ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91ede55352f497e765a30422181dc73d09acac4f19130", async() => {
                     WriteLiteral("MySql");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
-                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_3.Value;
-                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_3);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_5.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
                 {
@@ -299,7 +249,6 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral(@"
-                                                            </optgroup>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -327,7 +276,7 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
                     </div>
                 </div>
                 <div class=""modal-footer"">
-                    <button type=""submit"" class=""btn btn-success ml-1""
+                    <button type=""submit"" id=""submitNew"" class=""btn btn-success ml-1""
                             data-bs-dismiss=""modal"" onclick=""AddProject()"">
                         <i class=""bx bx-check d-block d-sm-none""></i>
                         <span class=""d-none d-sm-block"">Submit</span>
@@ -362,7 +311,7 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
                         <div class=""card"">
                             <div class=""card-body"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4227952", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91ede55352f497e765a30422181dc73d09acac4f23701", async() => {
                 WriteLiteral(@"
                                     <div class=""form-body"">
                                         <div class=""row"">
@@ -487,11 +436,9 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
                         <table class=""table table-striped"" id=""table2"">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Grade</th>
-                                    <th>Status</th>
-                                    <th>Detail</th>
+                                    <th>Project Name</th>
+                                    <th>Project Description</th>
+                                    <th>Skill Set</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -506,7 +453,7 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
 </div>
 
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4235310", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91ede55352f497e765a30422181dc73d09acac4f30979", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -520,7 +467,7 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4236350", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91ede55352f497e765a30422181dc73d09acac4f32019", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -534,7 +481,7 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4237394", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91ede55352f497e765a30422181dc73d09acac4f33063", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -548,7 +495,7 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4238439", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91ede55352f497e765a30422181dc73d09acac4f34108", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -564,7 +511,7 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
             WriteLiteral("\r\n\r\n");
             DefineSection("Scripts", async() => {
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4239582", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91ede55352f497e765a30422181dc73d09acac4f35251", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -579,7 +526,7 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4240771", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91ede55352f497e765a30422181dc73d09acac4f36440", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -594,7 +541,7 @@ WriteAttributeValue("", 870, Url.Content("~/Eksternal/Dashboard"), 870, 37, fals
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e149d5467ed3481b4734f2e56c762c24d21dd4241960", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91ede55352f497e765a30422181dc73d09acac4f37629", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

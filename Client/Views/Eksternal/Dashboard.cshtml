@@ -84,9 +84,10 @@
                                                     <label for="skills">Company Name</label>
                                                     <div class="form-group">
                                                         <select class="form-select" id="custName">
-                                                            <option selected>Choose...</option>
-                                                            <option value="3">PT. Maju Jaya</option>
-                                                            <option value="2">PT. Aman Barokah</option>
+                                                            @*<option value="3">PT. Maju Jaya</option>
+                                                            <option value="4">PT. Jaya Barokah</option>
+                                                            <option value="5">PT. PT. Aman Barokah Jaya</option>
+                                                            <option value="6">PT. PT. Aman Maju</option>*@
                                                         </select>
                                                     </div>
                                                 </div>
@@ -95,11 +96,9 @@
                                                         <label for="skills">Skills</label>
                                                         <select class="choices form-select multiple-remove"
                                                                 multiple="multiple" id="skills">
-                                                            <optgroup label="Skills">
-                                                                <option value="1">PHP</option>
-                                                                <option value="2">ASP.NET Core</option>
-                                                                <option value="3">MySql</option>
-                                                            </optgroup>
+                                                            <option value="1">PHP</option>
+                                                            <option value="2">ASP.NET Core</option>
+                                                            <option value="3">MySql</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -112,7 +111,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success ml-1"
+                    <button type="submit" id="submitNew" class="btn btn-success ml-1"
                             data-bs-dismiss="modal" onclick="AddProject()">
                         <i class="bx bx-check d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Submit</span>
@@ -251,11 +250,9 @@
                         <table class="table table-striped" id="table2">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Grade</th>
-                                    <th>Status</th>
-                                    <th>Detail</th>
+                                    <th>Project Name</th>
+                                    <th>Project Description</th>
+                                    <th>Skill Set</th>
                                 </tr>
                             </thead>
                             <tbody>
