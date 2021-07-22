@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ResourcePlacementAPI.Models;
+using ResourcePlacementAPI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -30,6 +31,23 @@ namespace Client.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public RedirectToActionResult AddProject(AddProjectVM entity)
+        {
+            var id = (HttpContext.Session.GetString("id"));
+            var gg = Int32.Parse(id);
+            var result = repository.AddProject(entity, gg);
+            if (result == System.Net.HttpStatusCode.OK)
+            {
+                ViewBag.Message = String.Format("Berhasil");
+                return RedirectToAction("index", "client");
+            }
+            else
+            {
+                ViewBag.Message = String.Format("Gagal");
+                return RedirectToAction("index", "client");
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

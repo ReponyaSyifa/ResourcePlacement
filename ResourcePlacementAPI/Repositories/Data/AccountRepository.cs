@@ -145,10 +145,12 @@ namespace ResourcePlacementAPI.Repositories.Data
             }
             else if (accountRoleADD2 != null)
             {
+                var employee = myContext.Employees.FirstOrDefault(e => e.AccountId == account.AccountId);
                 var roleName = myContext.Roles.Find(2);
                 var claims = new[] {
                     new Claim("email", account.Email),
-                    new Claim("role", roleName.RoleName)
+                    new Claim("role", roleName.RoleName),
+                    new Claim("id", employee.EmployeeId.ToString())
                 };
 
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sdfsdfsjdbf78sdyfssdfsdfbuidfs98gdfsdbf"));
@@ -162,10 +164,12 @@ namespace ResourcePlacementAPI.Repositories.Data
             }
             else if (accountRoleTrainer != null)
             {
+                var employee = myContext.Employees.FirstOrDefault(e => e.AccountId == account.AccountId);
                 var roleName = myContext.Roles.Find(3);
                 var claims = new[] {
                     new Claim("email", account.Email),
-                    new Claim("role", roleName.RoleName)
+                    new Claim("role", roleName.RoleName),
+                    new Claim("id", employee.EmployeeId.ToString())
                 };
 
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sdfsdfsjdbf78sdyfssdfsdfbuidfs98gdfsdbf"));
@@ -179,10 +183,12 @@ namespace ResourcePlacementAPI.Repositories.Data
             }
             else //role user
             {
+                var customer = myContext.CustomerUsers.FirstOrDefault(e => e.AccountId == account.AccountId);
                 var role = myContext.Roles.Find(4);
                 var claims = new[] {
                     new Claim("email", account.Email),
-                    new Claim("role", role.RoleName)
+                    new Claim("role", role.RoleName),
+                    new Claim("id", customer.CustomerUserId.ToString())
                 };
 
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sdfsdfsjdbf78sdyfssdfsdfbuidfs98gdfsdbf"));

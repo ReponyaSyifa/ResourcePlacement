@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    @*modal add participant*@
+    @*modal add project*@
     <div class="modal fade text-left modalAddParticipant" id="modalAddParticipant" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel17" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
@@ -64,37 +64,37 @@
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form">
+                                        <form action="/client/addproject" method="post" class="form">
                                             <div class="row">
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
                                                         <label for="projectName-column">Project Name</label>
                                                         <input type="text" id="ProjectName" class="form-control"
-                                                               placeholder="Project Name" name="projectName-column">
+                                                               placeholder="Project Name" name="ProjectName">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
                                                         <label for="projectDesc-column">Project Description</label>
                                                         <textarea class="form-control" id="ProjectDesc"
-                                                                  rows="3"></textarea>
+                                                                  rows="3" name="ProjectDesc"></textarea>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 mb-12">
-                                                    <label for="skills">Company Name</label>
-                                                    <div class="form-group">
-                                                        <select class="form-select" id="custName">
-                                                            <option selected>Choose...</option>
-                                                            <option value="3">PT. Maju Jaya</option>
-                                                            <option value="2">PT. Aman Barokah</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
+                                                @*<div class="col-md-6 mb-12">
+                <label for="skills">Company Name</label>
+                <div class="form-group">
+                    <select class="form-select" id="custName">
+                        <option selected>Choose...</option>
+                        <option value="3">PT. Maju Jaya</option>
+                        <option value="2">PT. Aman Barokah</option>
+                    </select>
+                </div>
+            </div>*@
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
                                                         <label for="skills">Skills</label>
                                                         <select class="choices form-select multiple-remove"
-                                                                multiple="multiple" id="skills">
+                                                                multiple="multiple" id="skills" name="ListSkill">
                                                             <optgroup label="Skills">
                                                                 <option value="1">PHP</option>
                                                                 <option value="2">ASP.NET Core</option>
@@ -103,6 +103,16 @@
                                                         </select>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="modal-footer mb-24">
+                                                <button type="button" class="btn btn-light-secondary"
+                                                        data-bs-dismiss="modal">
+                                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                                    <span class="d-none d-sm-block">Close</span>
+                                                </button>
+                                                <button type="submit" class="btn btn-primary ml-1">
+                                                    <span>Submit</span>
+                                                </button>
                                             </div>
                                         </form>
                                     </div>
@@ -113,7 +123,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-success ml-1"
-                            data-bs-dismiss="modal" onclick="AddProject()">
+                            data-bs-dismiss="modal" onclick="">
                         <i class="bx bx-check d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Submit</span>
                     </button>
@@ -179,7 +189,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary ml-1"
-                            data-bs-dismiss="modal">
+                            data-bs-dismiss="modal" onclick="ChangePassword()">
                         <i class="bx bx-check d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Change Password</span>
                     </button>

@@ -48,12 +48,20 @@ namespace Client.Repository.Data
             return token;
         }
 
-        public string JwtRole(string token)
+        public string GetRole(string token)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             JwtSecurityToken result = tokenHandler.ReadJwtToken(token);
 
             return result.Claims.FirstOrDefault(claim => claim.Type.Equals("role")).Value;
+        }
+
+        public string GetId(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            JwtSecurityToken result = tokenHandler.ReadJwtToken(token);
+
+            return result.Claims.FirstOrDefault(claim => claim.Type.Equals("id")).Value;
         }
     }
 }

@@ -13,14 +13,14 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "D:\DATA\MCC\ResourcePlacement\Client\Views\_ViewImports.cshtml"
+#line 1 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\_ViewImports.cshtml"
 using Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\DATA\MCC\ResourcePlacement\Client\Views\_ViewImports.cshtml"
+#line 2 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\_ViewImports.cshtml"
 using Client.Models;
 
 #line default
@@ -70,8 +70,8 @@ using Client.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
 #nullable restore
-#line 1 "D:\DATA\MCC\ResourcePlacement\Client\Views\Internal\Trainer.cshtml"
-
+#line 1 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\Internal\Trainer.cshtml"
+  
     ViewData["Title"] = "RPMS - Trainer";
     Layout = "_InternalLayout";
 
@@ -87,7 +87,7 @@ using Client.Models;
                 <div class=""d-flex justify-content-between"">
                     <div class=""logo"">
                         <a>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "51ea09f8eff6f96463f45bd71d6884661192533e7936", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8d9ec367a6e8d1afdb44e4dce5020a2d4ac28688052", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -115,7 +115,7 @@ using Client.Models;
                         <a");
             BeginWriteAttribute("href", " href=\"", 865, "\"", 906, 1);
 #nullable restore
-#line 24 "D:\DATA\MCC\ResourcePlacement\Client\Views\Internal\Trainer.cshtml"
+#line 24 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\Internal\Trainer.cshtml"
 WriteAttributeValue("", 872, Url.Content("~/Internal/Trainer"), 872, 34, false);
 
 #line default
@@ -164,7 +164,7 @@ WriteAttributeValue("", 872, Url.Content("~/Internal/Trainer"), 872, 34, false);
                                 <div class=""card-content"">
                                     <div class=""card-body"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51ea09f8eff6f96463f45bd71d6884661192533e12190", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8d9ec367a6e8d1afdb44e4dce5020a2d4ac286812335", async() => {
                 WriteLiteral(@"
                                             <div class=""row"">
                                                 <div class=""col-md-6 col-12"">
@@ -197,7 +197,7 @@ WriteAttributeValue("", 872, Url.Content("~/Internal/Trainer"), 872, 34, false);
                                                                for=""inputGroupSelect01"">Options</label>
                                                         <select class=""form-select"" id=""gender"">
                                                             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51ea09f8eff6f96463f45bd71d6884661192533e15026", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8d9ec367a6e8d1afdb44e4dce5020a2d4ac286815171", async() => {
                     WriteLiteral("Choose...");
                 }
                 );
@@ -214,7 +214,7 @@ WriteAttributeValue("", 872, Url.Content("~/Internal/Trainer"), 872, 34, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51ea09f8eff6f96463f45bd71d6884661192533e16427", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8d9ec367a6e8d1afdb44e4dce5020a2d4ac286816572", async() => {
                     WriteLiteral("Pria");
                 }
                 );
@@ -230,7 +230,7 @@ WriteAttributeValue("", 872, Url.Content("~/Internal/Trainer"), 872, 34, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51ea09f8eff6f96463f45bd71d6884661192533e17709", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8d9ec367a6e8d1afdb44e4dce5020a2d4ac286817854", async() => {
                     WriteLiteral("Wanita");
                 }
                 );
@@ -271,7 +271,7 @@ WriteAttributeValue("", 872, Url.Content("~/Internal/Trainer"), 872, 34, false);
                                                                for=""inputGroupSelect01"">Options</label>
                                                         <select class=""form-select"" id=""grade"">
                                                             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51ea09f8eff6f96463f45bd71d6884661192533e20990", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8d9ec367a6e8d1afdb44e4dce5020a2d4ac286821135", async() => {
                     WriteLiteral("Choose...");
                 }
                 );
@@ -288,7 +288,7 @@ WriteAttributeValue("", 872, Url.Content("~/Internal/Trainer"), 872, 34, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51ea09f8eff6f96463f45bd71d6884661192533e22391", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8d9ec367a6e8d1afdb44e4dce5020a2d4ac286822536", async() => {
                     WriteLiteral("A");
                 }
                 );
@@ -304,7 +304,7 @@ WriteAttributeValue("", 872, Url.Content("~/Internal/Trainer"), 872, 34, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51ea09f8eff6f96463f45bd71d6884661192533e23670", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8d9ec367a6e8d1afdb44e4dce5020a2d4ac286823815", async() => {
                     WriteLiteral("B");
                 }
                 );
@@ -330,7 +330,7 @@ WriteAttributeValue("", 872, Url.Content("~/Internal/Trainer"), 872, 34, false);
                                                                 multiple=""multiple"" id=""skills"">
                                                             <optgroup label=""Skills"">
                                                                 ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51ea09f8eff6f96463f45bd71d6884661192533e25706", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8d9ec367a6e8d1afdb44e4dce5020a2d4ac286825851", async() => {
                     WriteLiteral("PHP");
                 }
                 );

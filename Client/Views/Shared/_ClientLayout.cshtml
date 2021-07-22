@@ -27,6 +27,16 @@
     <title>Hello, world!</title>
 </head>
 <body>
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+        </script>
+
+    }
     @RenderBody()
 
     <!-- Optional JavaScript; choose one of the two! -->

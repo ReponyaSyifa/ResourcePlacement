@@ -35,7 +35,8 @@ namespace Client.Controllers
             }
 
             HttpContext.Session.SetString("Jwt", jwToken.Token);
-            HttpContext.Session.SetString("role", repository.JwtRole(jwToken.Token));
+            HttpContext.Session.SetString("role", repository.GetRole(jwToken.Token));
+            HttpContext.Session.SetString("id", repository.GetId(jwToken.Token));
 
             var role = HttpContext.Session.GetString("role");
             if (role == "Trainer")
@@ -50,7 +51,8 @@ namespace Client.Controllers
 
             else
             {
-                return RedirectToAction("dashboard", "eksternal");
+                //return RedirectToAction("dashboard", "eksternal");
+                return RedirectToAction("index", "client");
             }
 
         }
