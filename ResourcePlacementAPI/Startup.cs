@@ -70,7 +70,7 @@ namespace ResourcePlacementAPI
             services.AddCors(c =>
             {
                 //wajib tuh ditambahin .AllowAnyHeader().AllowAnyMethod().AllowCredentials() biar bisa dipakai semua header, method, dan credentialsnya
-                c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:44320").AllowAnyHeader().AllowAnyMethod().AllowCredentials());
+                c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:44320").AllowAnyMethod().AllowCredentials().AllowAnyHeader().AllowAnyHeader());
             });
         }
 

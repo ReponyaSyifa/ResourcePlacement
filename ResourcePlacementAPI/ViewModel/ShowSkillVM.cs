@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ResourcePlacementAPI.ViewModel
 {
-    public class ShowSkillParticipantVM
+    public class ShowSkillVM
     {
         public string SKillName { get; set; }
     }

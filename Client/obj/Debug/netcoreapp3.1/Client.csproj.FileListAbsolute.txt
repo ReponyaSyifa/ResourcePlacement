@@ -214,3 +214,6 @@ D:\DATA\MCC\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Client.csproj.CopyC
 D:\DATA\MCC\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Client.dll
 D:\DATA\MCC\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Client.pdb
 D:\DATA\MCC\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Client.genruntimeconfig.cache
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ClientLayout.cshtml.g.cs
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Client\Index.cshtml.g.cs
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Client\Privacy.cshtml.g.cs

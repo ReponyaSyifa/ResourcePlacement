@@ -1,9 +1,9 @@
 ﻿@{
-    ViewData["Title"] = "RPMS - Trainer";
-    Layout = "_InternalLayout";
+    ViewData["Title"] = "RPMS - Client";
+    Layout = "_ClientLayout";
 }
 
-@*INI DASHBOARD PUNYA TRAINER*@
+@*INI DASHBOARD PUNYA CLIENT*@
 
 <div id="app">
     <div id="sidebar" class="active">
@@ -21,7 +21,7 @@
             <div class="sidebar-menu">
                 <ul class="menu">
                     <li class="sidebar-item ">
-                        <a href="@Url.Content("~/Internal/Trainer")" class='sidebar-link'>
+                        <a href="@Url.Content("~/Eksternal/Dashboard")" class='sidebar-link'>
                             <i class="bi bi-grid-fill"></i>
                             <span>Main</span>
                         </a>
@@ -29,7 +29,7 @@
                     <li class="sidebar-item" type="button" data-bs-toggle="modal" data-bs-target=".modalAddParticipant">
                         <a class='sidebar-link'>
                             <i class="bi bi-plus-circle"></i>
-                            <span>Add Participant</span>
+                            <span>Add Project</span>
                         </a>
                     </li>
                     <li class="sidebar-item " type="button" data-bs-toggle="modal" data-bs-target=".modalChangePassword">
@@ -51,14 +51,14 @@
              role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel17">Add Participant</h4>
+                    <h4 class="modal-title" id="myModalLabel17">Add Project</h4>
                     <button type="button" class="close" data-bs-dismiss="modal"
                             aria-label="Close">
                         <i data-feather="x"></i>
                     </button>
                 </div>
                 <div class="modal-body">
-                    @*disini form add partisipation*@
+                    @*disini form add project*@
                     <div class="row match-height">
                         <div class="col-12">
                             <div class="card">
@@ -68,65 +68,30 @@
                                             <div class="row">
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
-                                                        <label for="first-name-column">First Name</label>
-                                                        <input type="text" id="fname" class="form-control"
-                                                               placeholder="First Name" name="fname-column">
+                                                        <label for="projectName-column">Project Name</label>
+                                                        <input type="text" id="ProjectName" class="form-control"
+                                                               placeholder="Project Name" name="projectName-column">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
-                                                        <label for="last-name-column">Last Name</label>
-                                                        <input type="text" id="lname" class="form-control"
-                                                               placeholder="Last Name" name="lname-column">
+                                                        <label for="projectDesc-column">Project Description</label>
+                                                        <textarea class="form-control" id="ProjectDesc"
+                                                                  rows="3"></textarea>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 col-12">
+                                                <div class="col-md-6 mb-12">
+                                                    <label for="skills">Company Name</label>
                                                     <div class="form-group">
-                                                        <label for="email-id-column">Email</label>
-                                                        <input type="email" id="email" class="form-control"
-                                                               name="email-id-column" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <label for="skills">Gender</label>
-                                                    <div class="input-group">
-                                                        <label class="input-group-text"
-                                                               for="inputGroupSelect01">Options</label>
-                                                        <select class="form-select" id="gender">
+                                                        <select class="form-select" id="custName">
                                                             <option selected>Choose...</option>
-                                                            <option value="1">Pria</option>
-                                                            <option value="2">Wanita</option>
+                                                            <option value="3">PT. Maju Jaya</option>
+                                                            <option value="2">PT. Aman Barokah</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
-                                                        <label for="country-floating">Phone Number</label>
-                                                        <input type="text" id="phone" class="form-control"
-                                                               name="country-floating" placeholder="PhoneNumber">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-12">
-                                                    <div class="form-group">
-                                                        <label for="birthdate">Birthdate</label>
-                                                        <input type="date" id="birthdate" class="form-control"
-                                                               name="birthdate" placeholder="dd/mm/yyyy">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <label for="skills">Grade</label>
-                                                    <div class="input-group mb-3">
-                                                        <label class="input-group-text"
-                                                               for="inputGroupSelect01">Options</label>
-                                                        <select class="form-select" id="grade">
-                                                            <option selected>Choose...</option>
-                                                            <option value="A">A</option>
-                                                            <option value="B">B</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-12">
-                                                    <div class="form-group" id="blabla">
                                                         <label for="skills">Skills</label>
                                                         <select class="choices form-select multiple-remove"
                                                                 multiple="multiple" id="skills">
@@ -148,7 +113,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-success ml-1"
-                            data-bs-dismiss="modal" onclick="AddParticipant()">
+                            data-bs-dismiss="modal" onclick="AddProject()">
                         <i class="bx bx-check d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Submit</span>
                     </button>
@@ -214,7 +179,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary ml-1"
-                            data-bs-dismiss="modal" onclick="ChangePassword()">
+                            data-bs-dismiss="modal">
                         <i class="bx bx-check d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Change Password</span>
                     </button>
@@ -239,12 +204,12 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-12 col-md-6 order-md-1 order-last mb-5 font-extrabold">
-                        <h2>Trainer Area</h2>
+                        <h2>Client Area</h2>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item font-extrabold"><a>Hi, Trainer</a></li>
+                                <li class="breadcrumb-item font-extrabold"><a>Hi, Client</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -257,23 +222,41 @@
                 <div class="card">
                     <div class="card-header">
                         <h3>Participant Lists</h3>
-                        <p>Participant Lists Need To Be Assess</p>
+                        <p class="text-subtitle text-muted">Participant Lists Need Approval by Client</p>
                     </div>
                     <div class="card-body">
-                        @*ini table*@
                         <table class="table table-striped" id="table1">
                             <thead>
                                 <tr>
-                                    <th>No</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Gender</th>
-                                    <th>Phone Number</th>
-                                    <th>Birth Date</th>
                                     <th>Grade</th>
+                                    <th>Birth Date</th>
                                     <th>Status</th>
-                                    <th>ParticipantId</th>
+                                    <th>Gender</th>
+                                    <th>Grade</th>
                                     <th>Detail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Project Lists</h3>
+                        <p class="text-subtitle text-muted">List of Project from Client</p>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped" id="table2">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Description</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -285,55 +268,10 @@
         </div>
 
     </div>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-capitalize" id="titleModelPokemon"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="modalBody">
-                    <div class="text-center" id="img">
-
-                    </div>
-                    <div class="row mt-3 p-1">
-                        <div class="col-4">Name</div>
-                        <div class="col-1">:</div>
-                        <div class="col font-weight-bold text-capitalize" id="namePokemon">1</div>
-                    </div>
-                    <div class="row mt-3 p-1">
-                        <div class="col-4">Height</div>
-                        <div class="col-1">:</div>
-                        <div class="col font-weight-bold text-capitalize" id="heightPokemom">d</div>
-                    </div>
-                    <div class="row mt-3 p-1">
-                        <div class="col-4">Weight</div>
-                        <div class="col-1">:</div>
-                        <div class="col font-weight-bold text-capitalize" id="weightPokemon"></div>
-                    </div>
-                    <div class="row mt-3 p-1">
-                        <div class="col-4">Abilities</div>
-                        <div class="col-1">:</div>
-                        <div class="col font-weight-bold text-capitalize" id="abilitiesPokemon"></div>
-                    </div>
-                    <div class="row mt-3 p-1">
-                        <div class="col-4">Type</div>
-                        <div class="col-">:</div>
-                        <div class="col font-weight-bold text-capitalize" id="typePokemon"></div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
+
+
 @section Scripts {
-    <script type="text/javascript" src="~/js/trainer.js"></script>
+    <script type="text/javascript" src="~/js/client.js"></script>
 }

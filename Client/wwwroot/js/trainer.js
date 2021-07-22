@@ -92,6 +92,7 @@
 //});
 
 // berhasil ini
+
 let t = $('#table1').DataTable();
 $.ajax({
     url: "https://localhost:44338/api/participant"
@@ -115,7 +116,8 @@ $.ajax({
             val.birthDate,
             val.grade,
             val.status,//#exampleModal
-            `<button class="btn btn-primary modalClass"  data-id="${val.url}" data-toggle="modal" data-target="">
+            val.participantId,//#exampleModal
+            `<button class="btn btn-primary modalClass"  data-id="${val.participantId}" data-toggle="modal" data-target="#exampleModal">
                 Detail
             </button>`
         ]).draw(false)
@@ -126,32 +128,24 @@ $.ajax({
 });
 
 //detail participant
-$(document).on("click", ".modalClass", function () {
-    let pokemonURL = $(this).data('id');
+$(document).on("click", ".modalClass", function () { // untuk ambil data-id wajib menggunakan class yang ada di button
+    var nik = $(this).data('id');
+    //console.log(nik)
     $.ajax({
-        url: pokemonURL
+        url: "https://localhost:44338/api/participant/ShowSkillParticipant/" + nik
     }).done((result) => {
-        $("#img").html('<img class=" w-50" src="' + result.sprites.other.dream_world.front_default + '" alt="" />'); //menampilkan foto di API
-        //$("#titleModelPokemon").html("Detail " + result.name); //judul di MODAL
-        $("#namePokemon").html(result.name); //menampilkan dalam bentuk html untuk nama pokemon
-        $("#heightPokemom").html(result.height + ' cm'); //menampilkan tinggi pokemon
-        $("#weightPokemon").html(result.weight + ' Kg'); //menampilkan berat pokemon
 
+        console.log(result.skillName);
         //=====================================================================================
         //untuk menampilkan ability
         abilityPokemon = "";
-        $.each(result.abilities, function (key, val) {
-            abilityPokemon += `<span>${val.ability.name}</span> `;
+        $.each(result, function (key, val) {
+            abilityPokemon += `<span>${val.skillName}</span> `;
         })
         $("#abilitiesPokemon").html(abilityPokemon);
 
         //=====================================================================================
-        //untuk menampilkan type
-        typePokemon = "";
-        $.each(result.types, function (key, val) {
-            typePokemon += `<span>${val.type.name}</span><br> `;
-        })
-        $("#typePokemon").html(typePokemon);
+
 
     }).fail((error) => {
         console.log(error);
@@ -272,8 +266,8 @@ function AddParticipant() {
     obj.LastName = $("#lname").val();
     obj.Email = $("#email").val();
     obj.Gender = gender;
-    obj.PhoneNumber = $("#phone").val();
-    obj.BrithDate = $("#birthdate").val();
+    obj.PhoneNumber = $("#phone").val(); 
+    obj.BirthDate = $('#birthdate').val();
     obj.Grade = grade;
     obj.ListSkill = skills;
 

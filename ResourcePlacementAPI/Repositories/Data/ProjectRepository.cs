@@ -41,5 +41,20 @@ namespace ResourcePlacementAPI.Repositories.Data
             }
             return 2;
         }
+
+        public IEnumerable<ShowSkillVM> ShowSkillProjects(int projectId)
+        {
+            List<ShowSkillVM> showSkillProjects = new List<ShowSkillVM>();
+            var projectSkills = myContext.ProjectsSkills.Where(e => e.ProjectsId == projectId).ToList();
+
+            foreach (var item in projectSkills)
+            {
+                ShowSkillVM showSkillProject = new ShowSkillVM();
+                var skill = myContext.Skills.Find(item.SkillsId);
+                showSkillProject.SKillName = skill.SkillName;
+                showSkillProjects.Add(showSkillProject);
+            }
+            return showSkillProjects;
+        }
     }
 }

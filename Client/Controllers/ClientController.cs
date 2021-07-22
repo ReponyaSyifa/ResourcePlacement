@@ -15,10 +15,10 @@ using System.Threading.Tasks;
 
 namespace Client.Controllers
 {
-    public class ParticipantController : BaseController<Participants, ParticipantRepository, int>
+    public class ClientController : BaseController<Projects, ClientRepository, int>
     {
-        private readonly ParticipantRepository repository;
-        public ParticipantController(ParticipantRepository repository) : base(repository)
+        private readonly ClientRepository repository;
+        public ClientController(ClientRepository repository) : base(repository)
         {
             this.repository = repository;
         }

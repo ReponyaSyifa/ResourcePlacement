@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Client.Repository.Data
 {
-    public class ParticipantRepository : GeneralRepository<Participants, int>
+    public class ClientRepository : GeneralRepository<Projects, int>
     {
         private readonly Address address;
         private readonly string request;
         private readonly IHttpContextAccessor _contextAccessor;
         private readonly HttpClient httpClient;
-        public ParticipantRepository(Address address, string request = "participant/") : base(address, request)
+        public ClientRepository(Address address, string request = "project/") : base(address, request)
         {
             this.address = address;
             this.request = request;

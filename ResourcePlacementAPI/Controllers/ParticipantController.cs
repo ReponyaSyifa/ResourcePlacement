@@ -36,10 +36,10 @@ namespace ResourcePlacementAPI.Controllers
             }
         }
 
-        [HttpGet("ShowSkillParticipant")]
-        public ActionResult ShowSkillParticipant()
+        [HttpGet("ShowSkillParticipant/{participantId}")]
+        public ActionResult ShowSkillParticipant(int participantId)
         {
-            var add = repository.ShowSkillParticipants();
+            var add = repository.ShowSkillParticipants(participantId);
             if (add == null)
             {
                 return Ok(add);

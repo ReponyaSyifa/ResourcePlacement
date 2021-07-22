@@ -51,6 +51,7 @@ namespace Client
             services.AddScoped<EmployeeRepository>();
             services.AddScoped<LoginRepository>();
             services.AddScoped<ParticipantRepository>();
+            services.AddScoped<ClientRepository>();
             //services.AddScoped<ParticipantRepository>();
             services.AddControllersWithViews();
         }

@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/rpms/css/bootstrap.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css" />
+
+    <link rel="stylesheet" href="~/rpms/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="~/rpms/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/rpms/css/app.css">
+    <link rel="shortcut icon" href="~/rpms/images/favicon.svg" type="image/x-icon">
+
+    @*<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/rpms/css/bootstrap.css">
+
+    <link rel="stylesheet" href="~/rpms/vendors/bootstrap-icons/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="~/rpms/css/app.css">
+    <link rel="stylesheet" href="~/rpms/css/pages/auth.css">*@
+    <title>Hello, world!</title>
+</head>
+<body>
+    @RenderBody()
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/rpms/js/bootstrap.bundle.min.js"></script>
+    <script src="~/rpms/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
+
+    @*
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/rpms/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="~/rpms/js/bootstrap.bundle.min.js"></script>
+
+        <script src="~/rpms/vendors/choices.js/choices.min.js"></script>
+
+        <script src="~/rpms/vendors/simple-datatables/simple-datatables.js"></script>*@
+    <script type="text/javascript" src="~/rpms/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://sweetalert2.min.js"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

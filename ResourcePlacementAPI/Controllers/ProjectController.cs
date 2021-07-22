@@ -35,5 +35,19 @@ namespace ResourcePlacementAPI.Controllers
                 return BadRequest(new { status = HttpStatusCode.BadRequest, result = add, message = "Add Project Failed!" });
             }
         }
+
+        [HttpGet("ShowSkillProjects/{projectId}")]
+        public ActionResult ShowSkillProjects(int projectId)
+        {
+            var add = repository.ShowSkillProjects(projectId);
+            if (add == null)
+            {
+                return Ok(add);
+            }
+            else
+            {
+                return BadRequest(add);
+            }
+        }
     }
 }

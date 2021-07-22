@@ -51,14 +51,14 @@ namespace ResourcePlacementAPI.Repositories.Data
             }
         }
 
-        public IEnumerable<ShowSkillParticipantVM> ShowSkillParticipants()
+        public IEnumerable<ShowSkillVM> ShowSkillParticipants(int participantId)
         {
-            List<ShowSkillParticipantVM> showSkillParticipants = new List<ShowSkillParticipantVM>();
-            var participantSkills = myContext.ParticipantsSkills.ToList();
+            List<ShowSkillVM> showSkillParticipants = new List<ShowSkillVM>();
+            var participantSkills = myContext.ParticipantsSkills.Where(e => e.ParticipantsId == participantId).ToList();
 
             foreach (var item in participantSkills)
             {
-                ShowSkillParticipantVM showSkillParticipant = new ShowSkillParticipantVM();
+                ShowSkillVM showSkillParticipant = new ShowSkillVM();
                 var skill = myContext.Skills.Find(item.SkillsId);
                 showSkillParticipant.SKillName = skill.SkillName;
                 showSkillParticipants.Add(showSkillParticipant);
