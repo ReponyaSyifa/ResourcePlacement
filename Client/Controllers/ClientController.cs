@@ -50,6 +50,15 @@ namespace Client.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<JsonResult> AllChoosedParticipant()
+        {
+            var id = (HttpContext.Session.GetString("id"));
+            var gg = Int32.Parse(id);
+            var result = await repository.AllChoosedParticipant(gg);
+            return Json(result);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

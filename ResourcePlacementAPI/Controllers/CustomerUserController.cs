@@ -41,10 +41,10 @@ namespace ResourcePlacementAPI.Controllers
         }
 
         // List participant yang di akan tampil di User, yang telah di rekomendasi oleh ADD2
-        [HttpGet("AllChoosedParticipants")]
-        public ActionResult AllChoosedParticipants()
+        [HttpGet("AllChoosedParticipants/{customerUserId}")]
+        public ActionResult AllChoosedParticipants(int customerUserId)
         {
-            var get = repository.AllChoosedParticipants();
+            var get = repository.AllChoosedParticipants(customerUserId);
             return Ok(get);
         }
     }

@@ -40,5 +40,17 @@ namespace Client.Repository.Data
             var result = httpClient.PostAsync(address.link + "project/addproject/", content).Result;
             return result.StatusCode;
         }
+
+        public async Task<List<Participants>> AllChoosedParticipant(int customerUserId)
+        {
+            List<Participants> entities = new List<Participants>();
+
+            using (var response = await httpClient.GetAsync("customeruser/AllChoosedParticipants/"+customerUserId))
+            {
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                entities = JsonConvert.DeserializeObject<List<Participants>>(apiResponse);
+            }
+            return entities;
+        }
     }
 }

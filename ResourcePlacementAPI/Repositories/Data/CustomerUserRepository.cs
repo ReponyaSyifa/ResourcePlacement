@@ -66,17 +66,21 @@ namespace ResourcePlacementAPI.Repositories.Data
         }
 
         // method ini digunakan untuk menampilkan Participant yang dapat dilihat oleh User
-        public IEnumerable<Participants> AllChoosedParticipants()
+        public IEnumerable<Participants> AllChoosedParticipants(int customerUserId)
         {
             List<Participants> participants = new List<Participants>();
 
             List<Participants> participantsInDatabase = myContext.Participants.ToList();
 
             foreach (var item in participantsInDatabase)
-            {
+            {  
                 if (item.ProjectId != null)
                 {
-                    participants.Add(item);
+                    var customer = myContext.CustomerUsers.FirstOrDefault(e => e.CustomerUserId == customerUserId);
+                    if (true)
+                    {
+                        participants.Add(item);
+                    }
                 }                
             }
 

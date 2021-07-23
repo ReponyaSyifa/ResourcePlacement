@@ -2,7 +2,7 @@
     var table = $("#table1").DataTable(
         {
         'ajax': {
-            url: "/participant/getall/",
+                url: "/client/AllChoosedParticipant/",
             dataType: "json",
             dataSrc: ""
         },
@@ -102,10 +102,10 @@
         }
     );
 
-    setInterval(function () {
-        table.ajax.reload();
-        table2.ajax.reload();
-    }, 30000)
+    //setInterval(function () {
+    //    table.ajax.reload();
+    //    table2.ajax.reload();
+    //}, 30000)
 });
 
 function PostProject(item) {
