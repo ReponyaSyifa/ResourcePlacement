@@ -81,15 +81,15 @@
                                                     </div>
                                                 </div>
                                                 @*<div class="col-md-6 mb-12">
-                <label for="skills">Company Name</label>
-                <div class="form-group">
-                    <select class="form-select" id="custName">
-                        <option selected>Choose...</option>
-                        <option value="3">PT. Maju Jaya</option>
-                        <option value="2">PT. Aman Barokah</option>
-                    </select>
-                </div>
-            </div>*@
+                                                        <label for="skills">Company Name</label>
+                                                        <div class="form-group">
+                                                            <select class="form-select" id="custName">
+                                                                <option selected>Choose...</option>
+                                                                <option value="3">PT. Maju Jaya</option>
+                                                                <option value="2">PT. Aman Barokah</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>*@
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
                                                         <label for="skills">Skills</label>
@@ -204,12 +204,6 @@
     </div>
 
     <div id="main">
-        <header class="mb-3">
-            <a href="#" class="burger-btn d-block d-xl-none">
-                <i class="bi bi-justify fs-3"></i>
-            </a>
-        </header>
-
         <div class="page-heading">
             <div class="page-title">
                 <div class="row">
@@ -245,7 +239,7 @@
                                     <th>Status</th>
                                     <th>Gender</th>
                                     <th>Grade</th>
-                                    <th>Detail</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -266,7 +260,7 @@
                                 <tr>
                                     <th>Project Name</th>
                                     <th>Description</th>
-                                    <th>Action</th>
+                                    @*<th>Action</th>*@
                                 </tr>
                             </thead>
                             <tbody>
@@ -276,7 +270,42 @@
                 </div>
             </section>
         </div>
+    </div>
 
+    @*modal choose participant*@
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">Skills</div>
+                        <div class="col-1">:</div>
+                        <div class="col font-weight-bold skill"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <form action="/client/ChooseParticipant/" method="post">
+                        <button type="submit" class="btn btn-success ml-1" value="Approved" name="Status">
+                            <span>Approved</span>
+                        </button>
+                    </form>
+                    <form action="/client/ChooseParticipant/" method="post">
+                        <button type="submit" class="btn btn-warning ml-1" value="Rejected" name="Status">
+                            <span>Reject</span>
+                        </button>
+                    </form>
+                    @*<button type="submit" id="statusReject" value="Rejected" class="btn btn-warning">Reject</button>
+        <input id="someId" type="submit" name="Rejected" value="Rejected">*@
+                    @*<button type="submit" id="statusSuccess" value="Approved" class="btn btn-success" onclick="">Accept</button>*@
+                    @*<button type="submit" id="statusReject" value="Rejected" class="btn btn-warning" onclick="RejectParticipant()">Reject</button>*@
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

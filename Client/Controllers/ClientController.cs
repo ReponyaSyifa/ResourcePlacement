@@ -25,7 +25,21 @@ namespace Client.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var message = HttpContext.Session.GetString("message");
+            if (message == "Berhasil")
+            {
+                ViewBag.Message = string.Format("Berhasil");
+                return View();
+            }
+            else if (message == "Gagal")
+            {
+                ViewBag.Message = string.Format("Gagal");
+                return View();
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public IActionResult Privacy()
@@ -40,12 +54,28 @@ namespace Client.Controllers
             var result = repository.AddProject(entity, gg);
             if (result == System.Net.HttpStatusCode.OK)
             {
-                ViewBag.Message = String.Format("Berhasil");
+                HttpContext.Session.SetString("message", "Berhasil");
                 return RedirectToAction("index", "client");
             }
             else
             {
-                ViewBag.Message = String.Format("Gagal");
+                HttpContext.Session.SetString("message", "Gagal");
+                return RedirectToAction("index", "client");
+            }
+        }
+
+        public RedirectToActionResult ChooseParticipant(ChooseParticipantVM chooseParticipant)
+        {
+            var participantId = Int32.Parse(HttpContext.Session.GetString("participantId"));
+            var result = repository.ChooseParticipant(chooseParticipant, participantId);
+            if (result == System.Net.HttpStatusCode.OK)
+            {
+                HttpContext.Session.SetString("message", "Berhasil");
+                return RedirectToAction("index", "client");
+            }
+            else
+            {
+                HttpContext.Session.SetString("message", "Gagal");
                 return RedirectToAction("index", "client");
             }
         }
@@ -56,6 +86,15 @@ namespace Client.Controllers
             var id = (HttpContext.Session.GetString("id"));
             var gg = Int32.Parse(id);
             var result = await repository.AllChoosedParticipant(gg);
+            return Json(result);
+        }
+
+        [HttpGet("Client/AllSkillParticipant/{nik}")]
+        public async Task<JsonResult> AllSkillParticipant(int nik)
+        {
+            var nikString = nik.ToString();
+            HttpContext.Session.SetString("participantId", nikString);
+            var result = await repository.AllSkillParticipant(nik);
             return Json(result);
         }
 

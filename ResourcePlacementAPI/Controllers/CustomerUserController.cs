@@ -22,21 +22,21 @@ namespace ResourcePlacementAPI.Controllers
             this.repository = repository;
         }
 
-        [HttpPut("ChooseParticipant/{participantId}")]
+        [HttpPost("ChooseParticipant/{participantId}")]
         public ActionResult ChooseParticipant(ChooseParticipantVM chooseParticipantVM, int participantId)
         {
             var choose = repository.ChooseParticipant(chooseParticipantVM, participantId);
             if (choose == 0)
             {
-                return Ok(new { status = HttpStatusCode.BadRequest, result = choose, message = "Salah Input" });
+                return BadRequest(choose);
             }
             else if(choose == 1)
             {
-                return Ok(new { status = HttpStatusCode.OK, result = choose, message = "Status On Project" });
+                return Ok(choose);
             }
             else
             {
-                return Ok(new { status = HttpStatusCode.OK, result = choose, message = "Status Idle" });
+                return Ok(choose);
             }
         }
 

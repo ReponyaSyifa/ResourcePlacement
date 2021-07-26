@@ -57,15 +57,13 @@
             },
             {
                 "data": null,
-                "render": function (data, type, row) {
-                    return `<button type="button" class="btn btn-primary" data-toggle="modal" data-target="">
-                                  Edit
-                            </button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="">
-                                  Delete
-                            </button>
-                            `;
-                }
+                "render": function (data, type, row) { // wajib pakai bootstrap 5 untuk ini template
+                    return `<button type="button" class="btn btn-primary modalClass" data-id="${row["participantId"]}" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                  Detail
+                            </button>`;
+                },
+                searchable: false,
+                orderable: false
             }
         ]
         }
@@ -85,19 +83,19 @@
                 },
                 {
                     "data": "projectDesc"
-                },
-                {
-                    "data": null,
-                    "render": function (data, type, row) {
-                        return `<button type="button" class="btn btn-primary" data-toggle="modal" data-target="">
-                                  Edit
-                            </button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="">
-                                  Delete
-                            </button>
-                            `;
-                    }
                 }
+                //,{
+                //    "data": null,
+                //    "render": function (data, type, row) {
+                //        return `<button type="button" class="btn btn-primary" data-toggle="modal" data-target="">
+                //                  Edit
+                //            </button>
+                //            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="">
+                //                  Delete
+                //            </button>
+                //            `;
+                //    }
+                //}
             ]
         }
     );
@@ -138,7 +136,6 @@ function PostProject(item) {
         });*/
     });
 };
-
 //tambah projek baru
 function AddProjectJS() {
     var obj = new Object();
@@ -205,4 +202,65 @@ function ChangePassword() {
     } else {
         alert("Semua Harus Di Isi!!");
     }
+};
+
+//detail participant
+$(document).on("click", ".modalClass", function () { // untuk ambil data-id wajib menggunakan class yang ada di button
+    var nik = $(this).data('id');
+    console.log(nik);
+    $.ajax({
+        url: "/Client/AllSkillParticipant/" + nik
+    }).done((result) => {
+
+
+        //for (var i = 0; i < result.length; i++) {
+        //    console.log(result[i].skillName);
+        //}
+        //=====================================================================================
+        //untuk menampilkan ability
+        abilityPokemon = "";
+        $.each(result, function (key, val) {
+            console.log(val.sKillName);
+            abilityPokemon += `<span class="badge bg-info">${val.sKillName}</span> `;
+        })
+        $(".skill").html(abilityPokemon);
+
+        //=====================================================================================
+
+
+    }).fail((error) => {
+        console.log(error);
+    });
+});
+
+// choose participant
+function RejectParticipant() {
+    var obj = new Object();
+
+    obj.Status = $("#statusReject").val();
+    $.ajax({
+        url: "/client/ChooseParticipant/",
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(obj),
+        success: function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Rejected Participant!!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        },
+        error: function (err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oh Snap!',
+                text: 'Add New Project Failed!'
+            })
+        }
+        //}).done((result) => {
+        //    console.log(result);
+        //}).fail((error) => {
+        //    alert('gagal')
+    });
 };

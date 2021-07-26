@@ -52,5 +52,24 @@ namespace Client.Repository.Data
             }
             return entities;
         }
+
+        public async Task<List<ShowSkillVM>> AllSkillParticipant(int participantId)
+        {
+            List<ShowSkillVM> entities = new List<ShowSkillVM>();
+
+            using (var response = await httpClient.GetAsync("participant/showskillparticipant/" + participantId))
+            {
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                entities = JsonConvert.DeserializeObject<List<ShowSkillVM>>(apiResponse);
+            }
+            return entities;
+        }
+
+        public HttpStatusCode ChooseParticipant(ChooseParticipantVM chooseParticipant, int participantId)
+        {
+            StringContent content = new StringContent(JsonConvert.SerializeObject(chooseParticipant), Encoding.UTF8, "application/json");
+            var result = httpClient.PostAsync(address.link + "customeruser/ChooseParticipant/" + participantId, content).Result;
+            return result.StatusCode;
+        }
     }
 }
