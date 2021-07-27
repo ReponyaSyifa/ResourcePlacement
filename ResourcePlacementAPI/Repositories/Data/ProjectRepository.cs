@@ -56,5 +56,38 @@ namespace ResourcePlacementAPI.Repositories.Data
             }
             return showSkillProjects;
         }
+
+        public IEnumerable<ShowDetailProjectVM> ShowDetailProjectVM()
+        {
+            List<ShowDetailProjectVM> showDetailProjects = new List<ShowDetailProjectVM>();
+            var projects = myContext.Projects.ToList();
+            //var clients = myContext.CustomerUsers.ToList();
+
+            foreach (var item in projects)
+            {
+                ShowDetailProjectVM showDetailProject = new ShowDetailProjectVM();
+                var client = myContext.CustomerUsers.FirstOrDefault(e => e.CustomerUserId == item.CustomerUserId);
+                showDetailProject.ProjectName = item.ProjectName;
+                showDetailProject.ProjectDesc = item.ProjectDesc;
+                showDetailProject.ProjectPlace = client.CompanyName;
+                showDetailProject.ProjectClient = client.Name;
+                showDetailProject.ListSKillProject =  ShowSkillProjects(item.ProjectId);
+                showDetailProjects.Add(showDetailProject);
+            }
+            return showDetailProjects;
+        }
+
+        public ShowDetailProjectVM ShowDetailProjectVM(int projectId)
+        {
+            ShowDetailProjectVM showDetailProject = new ShowDetailProjectVM();
+            var project = myContext.Projects.Find(projectId);
+            var client = myContext.CustomerUsers.FirstOrDefault(e => e.CustomerUserId == project.CustomerUserId);
+            showDetailProject.ProjectName = project.ProjectName;
+            showDetailProject.ProjectDesc = project.ProjectDesc;
+            showDetailProject.ProjectPlace = client.CompanyName;
+            showDetailProject.ProjectClient = client.Name;
+            showDetailProject.ListSKillProject = ShowSkillProjects(project.ProjectId);
+            return showDetailProject;
+        }
     }
 }

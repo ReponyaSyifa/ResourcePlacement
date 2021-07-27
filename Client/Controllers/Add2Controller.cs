@@ -48,6 +48,13 @@ namespace Client.Controllers
             return View();
         }
 
+        [HttpGet]
+        public async Task<JsonResult> ShowDetailProject()
+        {
+            var result = await repository.ShowDetailProjects();
+            return Json(result);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

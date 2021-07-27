@@ -49,5 +49,33 @@ namespace ResourcePlacementAPI.Controllers
                 return BadRequest(add);
             }
         }
+
+        [HttpGet("ShowDetailProject")]
+        public ActionResult ShowDetailProject()
+        {
+            var add = repository.ShowDetailProjectVM();
+            if (add == null)
+            {
+                return Ok(add);
+            }
+            else
+            {
+                return BadRequest(add);
+            }
+        }
+
+        [HttpGet("ShowDetailProject/{projectId}")]
+        public ActionResult ShowDetailProject(int projectId)
+        {
+            var add = repository.ShowDetailProjectVM(projectId);
+            if (add == null)
+            {
+                return Ok(add);
+            }
+            else
+            {
+                return BadRequest(add);
+            }
+        }
     }
 }
