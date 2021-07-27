@@ -67,11 +67,11 @@ namespace ResourcePlacementAPI.Repositories.Data
 
                 using (MailMessage message = new MailMessage("hostmail.onlytest@gmail.com", resetPwd.Email))
                 {
-                    message.Subject = "[No Reply] Reset Password";
+                    message.Subject = "[No-Reply] Reset Password";
                     string bodyMail = "Hi There!, ";
                     bodyMail += "\n\nPlease copy these following GUID code and paste on to your login form:\n\n";
                     bodyMail += guid;
-                    bodyMail += "\n\nThanks!\n\n";
+                    bodyMail += "\n\nThanks!\n";
                     bodyMail += "\n\nRegards,\nReset Password Teams!\n";
                     message.Body = bodyMail;
 

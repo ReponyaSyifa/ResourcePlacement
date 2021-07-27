@@ -1,5 +1,6 @@
 ﻿using Client.Models;
 using Client.Repository.Data;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -56,5 +57,14 @@ namespace Client.Controllers
             }
 
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            HttpContext.Session.Clear();
+           // await HttpContext.SignOutAsync();
+            return RedirectToAction("index", "home");
+        }
+
     }
 }

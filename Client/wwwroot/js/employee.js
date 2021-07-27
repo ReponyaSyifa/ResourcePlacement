@@ -1,5 +1,25 @@
 ﻿console.log("tezz");
 
+let table = $('#tableA').DataTable();
+$.ajax({
+    url: "https://localhost:44338/API/Participant/GetListParticipant"
+}).done((result) => {
+    console.log(result);
+    text = "";
+    no = 1;
+    $.each(result, function (key, value) {
+        table.row.add([
+            no,
+            value.firstName + " " + value.lastName,
+            value.projectName,
+            value.companyName
+        ])
+        no++;
+    })
+}).fail((err) => {
+    console.log(err);
+});
+
 function Test() {
     var obj = new Object(); //sesuaikan sendiri nama objectnya dan beserta isinya
     //ini ngambil value dari tiap inputan di form nya
