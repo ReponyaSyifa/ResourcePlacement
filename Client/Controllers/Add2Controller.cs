@@ -55,6 +55,13 @@ namespace Client.Controllers
             return Json(result);
         }
 
+        [HttpGet]
+        public async Task<JsonResult> GetListParticipant()
+        {
+            var result = await repository.GetAllParticipant();
+            return Json(result);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

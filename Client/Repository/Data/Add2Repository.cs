@@ -1,4 +1,5 @@
 ﻿using Client.Base;
+using Client.Models;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using ResourcePlacementAPI.Models;
@@ -39,6 +40,18 @@ namespace Client.Repository.Data
             {
                 string apiResponse = await response.Content.ReadAsStringAsync();
                 entities = JsonConvert.DeserializeObject<List<ShowDetailProjectVM>>(apiResponse);
+            }
+            return entities;
+        }
+
+        public async Task<List<GetAllParticipant>> GetAllParticipant()
+        {
+            List<GetAllParticipant> entities = new List<GetAllParticipant>();
+
+            using (var response = await httpClient.GetAsync("participant/GetListParticipant/"))
+            {
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                entities = JsonConvert.DeserializeObject<List<GetAllParticipant>>(apiResponse);
             }
             return entities;
         }

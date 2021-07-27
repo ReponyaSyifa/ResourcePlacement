@@ -2,6 +2,7 @@
 using Client.Models;
 using Client.Repository;
 using Client.Repository.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -16,6 +17,7 @@ using System.Threading.Tasks;
 
 namespace Client.Controllers
 {
+    //[Authorize]
     public class ClientController : BaseController<Projects, ClientRepository, int>
     {
         private readonly ClientRepository repository;

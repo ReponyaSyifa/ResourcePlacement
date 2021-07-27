@@ -47,7 +47,7 @@ namespace Client.Controllers
 
             else if (role == "ADD 2")
             {
-                return RedirectToAction("ADD2", "internal");
+                return RedirectToAction("index", "add2");
             }
 
             else
