@@ -38,6 +38,12 @@
                             <span>Change Password</span>
                         </a>
                     </li>
+                    <li class="sidebar-item " type="button" >
+                        <a class='sidebar-link' href="/login/Logout" method="get" >
+                            <i class="bi bi-door-open-fill"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
@@ -128,12 +134,14 @@
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group" id="blabla">
                                                         <label for="skills">Skills</label>
-                                                        <select class="choices form-select multiple-remove"
+                                                        <select class="choices form-select multiple-remove" name="skills[]" onchange="update_div(this)"
                                                                 multiple="multiple" id="skills">
                                                             <optgroup label="Skills">
                                                                 <option value="1">PHP</option>
                                                                 <option value="2">ASP.NET Core</option>
                                                                 <option value="3">MySql</option>
+                                                                <option value="4">Java</option>
+                                                                <option value="5">JavaScript</option>
                                                             </optgroup>
                                                         </select>
                                                     </div>
@@ -261,7 +269,7 @@
                     </div>
                     <div class="card-body">
                         @*ini table*@
-                        <table class="table table-striped" id="table1">
+                        <table class="table table-striped text-center" id="table1">
                             <thead>
                                 <tr>
                                     <th>No</th>

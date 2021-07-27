@@ -87,6 +87,5 @@ namespace ResourcePlacementAPI.Controllers
                 return Ok(new { status = HttpStatusCode.BadRequest, result = result, message = "Password yang lama tidak cocok" });
             }
         }
-
     }
 }

@@ -2,6 +2,7 @@
 using ResourcePlacementAPI.Models;
 using ResourcePlacementAPI.ViewModel;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -64,6 +65,26 @@ namespace ResourcePlacementAPI.Repositories.Data
                 showSkillParticipants.Add(showSkillParticipant);
             }
             return showSkillParticipants;
+        }
+
+        public IEnumerable GetParticipantByUser()
+        {
+            Participants par = new Participants();
+            using (var db = myContext)
+            {
+                var listPar = (from a in myContext.Participants
+                               join b in myContext.Projects on a.ProjectId equals b.ProjectId
+                               join c in myContext.CustomerUsers on b.CustomerUserId equals c.CustomerUserId
+                               where a.Status != "Idle"
+                               select new
+                               {
+                                   a.FirstName,
+                                   a.LastName,
+                                   c.CompanyName,
+                                   b.ProjectName
+                               });
+                return listPar.ToList();
+            }
         }
     }
 }

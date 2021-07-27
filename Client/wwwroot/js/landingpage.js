@@ -6,11 +6,26 @@
         contentType: "application/json",
         data: JSON.stringify(item)
     }).done((result) => {
-        alert('berhasil'),
-        window.location = "https://localhost:44320/"
+        Swal.fire({
+            icon: 'success',
+            title: 'New Registration Succeed!',
+            showConfirmButton: true
+            //,timer: 1500
+        }),
+        $('#largeModal').modal('hide');
+        //alert('berhasil'),
+        //window.location = "https://localhost:44320/" //https://localhost:44320/Login/Index
     }).fail((error) => {
-        alert('gagal'),
-        window.location = "https://localhost:44320/"
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Registrasi Failed, Something Went Wrong!',
+            showConfirmButton: true
+            //,timer: 1800
+        }),
+        $('#largeModal').modal('hide');
+        /*alert('gagal'),*/
+        //window.location = "https://localhost:44320/" /*https://localhost:44320/Login/Index*/
     });
 };
 
@@ -40,7 +55,14 @@ function ValidationEmployee() {
         && obj.Email != '' && obj.Password != '' ) {
         Insert(obj);
     } else {
-        alert("Semua Harus Di Isi!!");
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Semua Harus Di Isi!!',
+            showConfirmButton: false,
+            timer: 1800
+        })
+        //alert("Semua Harus Di Isi!!");
     }
 };
 
@@ -62,6 +84,13 @@ function ValidationClient() {
         && obj.Email != '' && obj.Password != '') {
         Insert(obj);
     } else {
-        alert("Semua Harus Di Isi!!");
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Semua Harus Di Isi!!',
+            showConfirmButton: false,
+            timer: 1800
+        })
+        //alert("Semua Harus Di Isi!!");
     }
 }

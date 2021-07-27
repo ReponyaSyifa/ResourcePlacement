@@ -12,38 +12,174 @@
             <a class="navbar-brand ms-4">
                 <img src="~/rpms/images/logo/logo1.png">
             </a>
+            <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                <ol class="breadcrumb">
+                    <li class="btn-group dropleft">
+                        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Hi, Staff!
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item bi bi-gear mb-3" href="button" data-bs-toggle="modal" data-bs-target=".modalChangePassword">&nbsp;&nbsp;&nbsp;Change Password</a>
+                            <a href="/login/Logout" method="get" class="dropdown-item bi bi-door-open-fill mb-3">&nbsp;&nbsp;&nbsp;Logout</a>
+                        </div>
+                    </li>
+                </ol>
+        </nav>
+
+        </div>
+        <div class="col-12 col-md-11 order-md-2 order-first">
+
         </div>
     </nav>
-    <div class="col-12 col-md-11 order-md-2 order-first">
-        <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item font-extrabold"><a>Hi, Client &nbsp;</a></li>
-                <li class="sidebar-item " type="button" data-bs-toggle="modal" data-bs-target=".modalChangePassword">
-                    <a class='sidebar-link'>
-                        <i class="bi bi-gear"></i>
-                    </a>
-                </li>
-            </ol>
-        </nav>
+
+
+    <div class="container d-block">
+        <a class="navbar-brand ms-4">
+            <h1 class="card-title mr-3">Staff Area</h1>
+        </a>
     </div>
 
-
-    <div class="container">
-        <div class="card mt-5">
-            <div class="card-header">
-                <h4 class="card-title">Single Layout</h4>
-            </div>
+    <div class="container mt-3">
+        <div class="card mt-0">
             <div class="card-body">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nemo quasi labore expedita?
-                    Veritatis
-                    at maxime id voluptates excepturi molestiae possimus blanditiis dicta consequuntur maiores suscipit,
-                    eveniet neque obcaecati doloribus.
-                </p>
+                <div class="page-heading">
+
+                    <div class="row">
+                    </div>
+                    <section class="section">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Participant Lists</h3>
+                                <p>Recommended Participant Lists by Trainer</p>
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-striped text-center" id="table1">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Grade</th>
+                                            <th>Status</th>
+                                            <th>Detail</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-6">
+                <div class="card col-md-12">
+                    <div class="card-header">
+                        <h4 class="card-title">Participant "On Project"</h4>
+                    </div>
+                    <div class="card-body">
+                        @*tabel participant on project*@
+                        <table class="table table-striped text-center" id="tableA">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Name</th>
+                                    <th>Project Name</th>
+                                    <th>Company Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card col-md-12">
+                    <div class="">
+                        <div class="card-header">
+                            <h4 class="card-title">User Project Lists</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Tabel List Project dari User dengan detail skill nya
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    
+    @*modal change password*@
+    <div class="modal fade text-left modalChangePassword" id="modalChangePassword" tabindex="-1"
+         role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+             role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel18">
+                        Change Password
+                    </h4>
+                    <button type="button" class="close" data-bs-dismiss="modal"
+                            aria-label="Close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12 col-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form form-horizontal">
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-8 form-group">
+                                                <input type="email" id="email-id" class="form-control"
+                                                       name="email-id" placeholder="Email">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Old Password</label>
+                                            </div>
+                                            <div class="col-md-8 form-group">
+                                                <input type="password" id="oldPassword" class="form-control"
+                                                       name="oldPassword" placeholder="Old Password">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>New Password</label>
+                                            </div>
+                                            <div class="col-md-8 form-group">
+                                                <input type="password" id="newPassword" class="form-control"
+                                                       name="newPassword" placeholder="New Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary ml-1"
+                            data-bs-dismiss="modal">
+                        <i class="bx bx-check d-block d-sm-none"></i>
+                        <span class="d-none d-sm-block">Change Password</span>
+                    </button>
+                    <button type="button" class="btn btn-light-secondary"
+                            data-bs-dismiss="modal">
+                        <i class="bx bx-x d-block d-sm-none"></i>
+                        <span class="d-none d-sm-block">Close</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

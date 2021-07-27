@@ -137,6 +137,7 @@ $(document).on("click", ".modalClass", function () { // untuk ambil data-id waji
 
         console.log(result.skillName);
         //=====================================================================================
+
         //untuk menampilkan ability
         abilityPokemon = "";
         $.each(result, function (key, val) {
@@ -234,6 +235,24 @@ function PostParticipant(item) {
         }
     });
 };
+
+/*jQuery(function () {
+    jQuery("#skills").change(function () {
+        var ids = $(this).val();
+        console.log(ids);
+        jQuery.ajax({
+            url: "https://localhost:44338/API/Skill",
+            type: "GET",
+            data: {
+                "ids": "skillId"
+            },
+            dataType: "html",
+            success: function (data) {
+                jQuery('#skills').html(data);
+            }
+        });
+    });
+});*/
 
 //add participant
 function AddParticipant() {
