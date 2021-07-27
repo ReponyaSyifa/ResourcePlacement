@@ -52,6 +52,7 @@ namespace Client
             services.AddScoped<LoginRepository>();
             services.AddScoped<ParticipantRepository>();
             services.AddScoped<ClientRepository>();
+            services.AddScoped<Add2Repository>();
             //services.AddScoped<ParticipantRepository>();
             services.AddControllersWithViews();
         }

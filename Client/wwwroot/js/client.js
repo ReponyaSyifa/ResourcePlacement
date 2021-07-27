@@ -233,7 +233,7 @@ $(document).on("click", ".modalClass", function () { // untuk ambil data-id waji
     });
 });
 
-// choose participant
+// choose participant gak dipakai
 function RejectParticipant() {
     var obj = new Object();
 
