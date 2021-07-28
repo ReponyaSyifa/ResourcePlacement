@@ -219,3 +219,4 @@ C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netc
 C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Client\Privacy.cshtml.g.cs
 C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Add2\Index.cshtml.g.cs
 C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Add2\Privacy.cshtml.g.cs
+C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\obj\Debug\netcoreapp3.1\Razor\Views\Add2\ProjectPlotting.cshtml.g.cs

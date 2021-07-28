@@ -86,5 +86,29 @@ namespace ResourcePlacementAPI.Repositories.Data
                 return listPar.ToList();
             }
         }
+
+        public IEnumerable GetParticipantByADD2()
+        {
+            Participants par = new Participants();
+            using (var db = myContext)
+            {
+                var listPar = (from a in myContext.Participants
+                               //join b in myContext.ParticipantsSkills on a.ParticipantId equals b.ParticipantsId
+                               //join c in myContext.Skills on b.SkillsId equals c.SkillId
+
+                               where a.Status == "Idle" && a.ProjectId == null
+                               select new
+                               {
+                                   a.FirstName,
+                                   a.ParticipantId,
+                                   a.LastName,
+                                   a.Status,
+                                   a.Grade,
+                                   a.Email
+                                   //c.SkillName
+                               });
+                return listPar.ToList();
+            }
+        }
     }
 }

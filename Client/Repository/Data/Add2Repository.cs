@@ -55,5 +55,12 @@ namespace Client.Repository.Data
             }
             return entities;
         }
+
+        public HttpStatusCode Ploting(ProjectPlottingVM projectPlotting, int participantId)
+        {
+            StringContent content = new StringContent(JsonConvert.SerializeObject(projectPlotting), Encoding.UTF8, "application/json");
+            var result = httpClient.PostAsync(address.link + "employee/ProjectPlotting/" + participantId, content).Result;
+            return result.StatusCode;
+        }
     }
 }

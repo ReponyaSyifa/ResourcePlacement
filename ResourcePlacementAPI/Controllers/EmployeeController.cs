@@ -46,7 +46,7 @@ namespace ResourcePlacementAPI.Controllers
             }
         }
 
-        [HttpPut("ProjectPlotting/{participantId}")]
+        [HttpPost("ProjectPlotting/{participantId}")]
         public ActionResult ProjectPlotting(ProjectPlottingVM projectPlottingVM, int participantId)
         {
             var plotting = repository.ProjectPlotting(projectPlottingVM, participantId);

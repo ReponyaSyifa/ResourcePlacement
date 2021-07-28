@@ -67,5 +67,48 @@ namespace Client.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult ProjectPlotting()
+        {
+            var message = HttpContext.Session.GetString("message");
+            if (message == "Berhasil")
+            {
+                ViewBag.Message = string.Format("Berhasil");
+                return View();
+            }
+            else if (message == "Gagal")
+            {
+                ViewBag.Message = string.Format("Gagal");
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpGet("Add2/GetParticipantId/{participantId}")]
+        public int GetParticipantId(int participantId)
+        {
+            var participantIdString = participantId.ToString();
+            HttpContext.Session.SetString("participantId", participantIdString);
+            return participantId;
+        }
+
+        public RedirectToActionResult ChooseParticipant(ProjectPlottingVM projectPlotting)
+        {
+            var participantId = Int32.Parse(HttpContext.Session.GetString("participantId"));
+            var result = repository.Ploting(projectPlotting, participantId);
+            if (result == System.Net.HttpStatusCode.OK)
+            {
+                HttpContext.Session.SetString("message", "Berhasil");
+                return RedirectToAction("projectplotting", "add2");
+            }
+            else
+            {
+                HttpContext.Session.SetString("message", "Gagal");
+                return RedirectToAction("projectplotting", "add2");
+            }
+        }
     }
 }

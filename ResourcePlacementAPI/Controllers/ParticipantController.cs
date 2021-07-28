@@ -56,5 +56,12 @@ namespace ResourcePlacementAPI.Controllers
             var get = repository.GetParticipantByUser();
             return Ok(get);
         }
+
+        [HttpGet("GetListParticipantAdd2")]
+        public ActionResult GetParticipantByADD2()
+        {
+            var get = repository.GetParticipantByADD2();
+            return Ok(get);
+        }
     }
 }

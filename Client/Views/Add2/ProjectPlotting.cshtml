@@ -58,8 +58,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-    @*disini form add partisipation*@
-    <div class="row match-height">
+                    @*disini form add partisipation*@
+                    <div class="row match-height">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-content">
@@ -172,9 +172,9 @@
     </div>
     @*modal change password*@
     <div class="modal fade text-left modalChangePassword" id="modalChangePassword" tabindex="-1"
-             role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
+         role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-                role="document">
+             role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="myModalLabel18">
@@ -197,21 +197,21 @@
                                             </div>
                                             <div class="col-md-8 form-group">
                                                 <input type="email" id="email-id" class="form-control"
-                                                        name="email-id" placeholder="Email">
+                                                       name="email-id" placeholder="Email">
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Old Password</label>
                                             </div>
                                             <div class="col-md-8 form-group">
                                                 <input type="password" id="oldPassword" class="form-control"
-                                                        name="oldPassword" placeholder="Old Password">
+                                                       name="oldPassword" placeholder="Old Password">
                                             </div>
                                             <div class="col-md-4">
                                                 <label>New Password</label>
                                             </div>
                                             <div class="col-md-8 form-group">
                                                 <input type="password" id="newPassword" class="form-control"
-                                                        name="newPassword" placeholder="New Password">
+                                                       name="newPassword" placeholder="New Password">
                                             </div>
                                         </div>
                                     </div>
@@ -260,7 +260,7 @@
                 <hr />
             </div>
             @*<div class="row">
-        </div>*@
+                </div>*@
             <section class="section">
                 <div class="card">
                     <div class="card-header">
@@ -275,62 +275,55 @@
                                     <th>Email</th>
                                     <th>Grade</th>
                                     <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Project Lists</h3>
-                        <p>Uploaded Project Lists by Trainer</p>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-striped" id="table2">
-                            <thead>
-                                <tr>
-                                    <th>Project Name</th>
-                                    <th>Place</th>
-                                    <th>Pic</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Employee Placement</h4>
-                    </div>
-                    <div class="card-body">
-                        <div id="placement"></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Participant Grade</h4>
-                    </div>
-                    <div class="card-body">
-                        <div id="grading"></div>
                     </div>
                 </div>
             </section>
         </div>
     </div>
 
- </div>
+    @*modal choose participant*@
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/add2/ChooseParticipant" method="post">
+                        <div class="col-md-6 mb-12">
+                            <label for="skills">Project</label>
+                            <div class="form-group">
+                                <select class="form-select" id="project" name="ProjectId">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light-secondary"
+                                    data-bs-dismiss="modal">
+                                <i class="bx bx-x d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Close</span>
+                            </button>
+                            <button type="submit" class="btn btn-primary ml-1">
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
     @section Scripts {
-        <script type="text/javascript" src="~/js/add2.js"></script>
+        <script type="text/javascript" src="~/js/projectplotting.js"></script>
     }
