@@ -28,21 +28,7 @@ namespace Client.Controllers
         }
         public IActionResult Index()
         {
-            /*var message = HttpContext.Session.GetString("message");
-            if (message == "Berhasil")
-            {
-                ViewBag.Message = string.Format("Berhasil");
-                return View();
-            }
-            else if (message == "Gagal")
-            {
-                ViewBag.Message = string.Format("Gagal");
-                return View();
-            }
-            else
-            {
-                return View();
-            }*/
+            Alert("Welcome!", "On Clinet Page", NotificationType.success);
             return View();
         }
 
@@ -58,13 +44,13 @@ namespace Client.Controllers
             var result = repository.AddProject(entity, gg);
             if (result == System.Net.HttpStatusCode.OK)
             {
-                Alert("Add New Project Succeed!", NotificationType.success, 1500);
+                Alert("Nice!", "Add New Project Succeed!", NotificationType.success);
                 var reload = RedirectToAction("index", "client");
                 return reload;
             }
             else
             {
-                Alert("Add New Project Failed!", NotificationType.error, 1500);
+                Alert("Oh Snap!", "Add New Project Failed!", NotificationType.error);
                 var reload = RedirectToAction("index", "client");
                 return reload;
             }
@@ -76,13 +62,13 @@ namespace Client.Controllers
             var result = repository.ChooseParticipant(chooseParticipant, participantId);
             if (result == System.Net.HttpStatusCode.OK)
             {
-                Alert("Participant Choosed!", NotificationType.success, 1500);
+                Alert("Nice!", "Participant Choosed!", NotificationType.success);
                 var reload = RedirectToAction("index", "client");
                 return reload;
             }
             else
             {
-                Alert("Choose Participant Failed!", NotificationType.error, 1500);
+                Alert("Oh Snap!", "Choose Participant Failed!", NotificationType.error);
                 var reload = RedirectToAction("index", "client");
                 return reload;
             }

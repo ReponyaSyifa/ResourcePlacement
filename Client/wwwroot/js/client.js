@@ -182,7 +182,7 @@ function PostChangePassword(item) {
         /*alert('berhasil');
         window.location = "https://localhost:44320/Client";*/
     }).fail((error) => {
-        alert('gagal');
+        swal("Nice!", "Cahnge Password Failed!", "error");
     });
 };
 //change password

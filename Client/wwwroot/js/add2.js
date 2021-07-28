@@ -111,7 +111,7 @@ console.log(LabelsPlacement());
 
 let optionsVisitorsProfile = {
     series: [70, 30],
-    labels: labes,
+    labels: ['Grade A', 'Grade B'],
     colors: ['#435ebe', '#55c6e8'],
     chart: {
         type: 'donut',
@@ -130,7 +130,29 @@ let optionsVisitorsProfile = {
     }
 };
 
-var chartPlacement = new ApexCharts(document.getElementById('placement'), optionsVisitorsProfile);
 var chartGrading = new ApexCharts(document.getElementById('grading'), optionsVisitorsProfile);
-chartPlacement.render();
 chartGrading.render();
+
+let optionsVisitorsProfileB = {
+    series: [60, 25, 15],
+    labels: ['PT. ABC', 'PT. DEF', 'PT. GHI'],
+    colors: ['#435ebe', '#55c6e8', '#9ae6fc'],
+    chart: {
+        type: 'donut',
+        width: '100%',
+        height: '350px'
+    },
+    legend: {
+        position: 'bottom'
+    },
+    plotOptions: {
+        pie: {
+            donut: {
+                size: '30%'
+            }
+        }
+    }
+};
+
+var chartPlacement = new ApexCharts(document.getElementById('placement'), optionsVisitorsProfileB);
+chartPlacement.render();

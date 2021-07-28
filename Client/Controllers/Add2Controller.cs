@@ -13,6 +13,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using static Client.Enums.Enums;
 
 namespace Client.Controllers
 {
@@ -26,21 +27,8 @@ namespace Client.Controllers
 
         public IActionResult Index()
         {
-            var message = HttpContext.Session.GetString("message");
-            if (message == "Berhasil")
-            {
-                ViewBag.Message = string.Format("Berhasil");
-                return View();
-            }
-            else if (message == "Gagal")
-            {
-                ViewBag.Message = string.Format("Gagal");
-                return View();
-            }
-            else
-            {
-                return View();
-            }
+            Alert("Welcome!", "On ADD 2 Page", NotificationType.success);
+            return View();
         }
 
         public IActionResult Privacy()
@@ -70,21 +58,8 @@ namespace Client.Controllers
 
         public IActionResult ProjectPlotting()
         {
-            var message = HttpContext.Session.GetString("message");
-            if (message == "Berhasil")
-            {
-                ViewBag.Message = string.Format("Berhasil");
-                return View();
-            }
-            else if (message == "Gagal")
-            {
-                ViewBag.Message = string.Format("Gagal");
-                return View();
-            }
-            else
-            {
-                return View();
-            }
+            Alert("Welcome!", "On Placement Page", NotificationType.success);
+            return View();
         }
 
         [HttpGet("Add2/GetParticipantId/{participantId}")]
@@ -101,12 +76,12 @@ namespace Client.Controllers
             var result = repository.Ploting(projectPlotting, participantId);
             if (result == System.Net.HttpStatusCode.OK)
             {
-                HttpContext.Session.SetString("message", "Berhasil");
+                Alert("Great!", "Participant Plotting Succeed!", NotificationType.success);
                 return RedirectToAction("projectplotting", "add2");
             }
             else
             {
-                HttpContext.Session.SetString("message", "Gagal");
+                Alert("Oops!", "Participant Plotting Failed!", NotificationType.error);
                 return RedirectToAction("projectplotting", "add2");
             }
         }

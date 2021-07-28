@@ -12,7 +12,8 @@ namespace Client.Enums
             error,
             success,
             warning,
-            info
+            info,
+            question
         }
     }
 }
