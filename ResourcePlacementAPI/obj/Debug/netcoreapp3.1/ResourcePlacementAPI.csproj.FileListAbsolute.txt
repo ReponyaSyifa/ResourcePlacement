@@ -124,7 +124,6 @@ D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\bin\Debug\netcoreapp3.1\runti
 D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.csproj.AssemblyReference.cache
 D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.AssemblyInfoInputs.cache
 D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.AssemblyInfo.cs
 D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.csproj.CoreCompileInputs.cache
@@ -138,3 +137,4 @@ D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\Resou
 D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.pdb
 D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.genruntimeconfig.cache
 C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.csproj.AssemblyReference.cache
+D:\DATA\MCC\ResourcePlacement\ResourcePlacementAPI\obj\Debug\netcoreapp3.1\ResourcePlacementAPI.csproj.AssemblyReference.cache

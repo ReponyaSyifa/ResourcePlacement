@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static Client.Enums.Enums;
 
 namespace Client.Base
 {
@@ -12,6 +13,34 @@ namespace Client.Base
             where TRepository : IRepository<TEntity, TId>
     {
         private readonly TRepository repository;
+
+        public void Alert(string message, NotificationType notificationType, int timer)
+        {
+        //Swal.fire({icon: 'error', title: 'Oops...', text: 'Something went wrong!'})
+            var msg = "<script language='javascript'>swal('" + notificationType.ToString().ToUpper() + "', '" + message + "','" + notificationType + "','" + timer + "')" + "</script>";
+            TempData["notification"] = msg;
+        }
+        public void Message(string message, NotificationType notifyType)
+        {
+            TempData["Notification2"] = message;
+
+            switch (notifyType)
+            {
+                case NotificationType.success:
+                    TempData["NotificationCSS"] = "alert-box success";
+                    break;
+                case NotificationType.error:
+                    TempData["NotificationCSS"] = "alert-box errors";
+                    break;
+                case NotificationType.warning:
+                    TempData["NotificationCSS"] = "alert-box warning";
+                    break;
+
+                case NotificationType.info:
+                    TempData["NotificationCSS"] = "alert-box notice";
+                    break;
+            }
+        }
 
         public BaseController(TRepository repository)
         {

@@ -128,13 +128,14 @@ function PostProject(item) {
                 text: 'Add New Project Failed!'
             })
         }
+    });
         /*}).done((result) => {
             alert('berhasil'),
                 window.location = "https://localhost:44320/eksternal/dashboard"
         }).fail((error) => {
             alert('gagal')
         });*/
-    });
+   
 };
 //tambah projek baru
 function AddProjectJS() {
@@ -177,8 +178,9 @@ function PostChangePassword(item) {
         contentType: "application/json",
         data: JSON.stringify(item)
     }).done((result) => {
-        alert('berhasil');
-        window.location = "https://localhost:44320/Internal/Trainer";
+        swal("Nice!", "Password Changed!", "success");
+        /*alert('berhasil');
+        window.location = "https://localhost:44320/Client";*/
     }).fail((error) => {
         alert('gagal');
     });
