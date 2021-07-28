@@ -116,7 +116,6 @@ $.ajax({
             val.birthDate,
             val.grade,
             val.status,//#exampleModal
-            val.participantId,//#exampleModal
             `<button class="btn btn-primary modalClass"  data-id="${val.participantId}" data-toggle="modal" data-target="#exampleModal">
                 Detail
             </button>`
