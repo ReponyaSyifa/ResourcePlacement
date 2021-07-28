@@ -20,6 +20,26 @@ $.ajax({
     console.log(err);
 });
 
+let tables = $('#tablezB').DataTable();
+$.ajax({
+    url: "https://localhost:44338/api/project/GetListUserProject"
+}).done((result) => {
+    console.log(result);
+    text = "";
+    no = 1;
+    $.each(result, function (key, value) {
+        tables.row.add([
+            no,
+            value.projectName,
+            value.companyName,
+            value.skillName
+        ])
+        no++;
+    })
+}).fail((err) => {
+    console.log(err);
+});
+
 function Test() {
     var obj = new Object(); //sesuaikan sendiri nama objectnya dan beserta isinya
     //ini ngambil value dari tiap inputan di form nya

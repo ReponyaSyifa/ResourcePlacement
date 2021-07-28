@@ -13,14 +13,14 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\_ViewImports.cshtml"
+#line 1 "D:\DATA\MCC\ResourcePlacement\Client\Views\_ViewImports.cshtml"
 using Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\_ViewImports.cshtml"
+#line 2 "D:\DATA\MCC\ResourcePlacement\Client\Views\_ViewImports.cshtml"
 using Client.Models;
 
 #line default
@@ -33,18 +33,15 @@ using Client.Models;
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/rpms/images/logo/logo1.png"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("alt", new global::Microsoft.AspNetCore.Html.HtmlString("Logo"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_2 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("srcset", new global::Microsoft.AspNetCore.Html.HtmlString(""), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_3 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "romboid", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_4 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "trapeze", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_5 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "triangle", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_6 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "polygon", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_7 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "red", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_8 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "green", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_9 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "blue", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_10 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "purple", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_11 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("form"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_12 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("form form-horizontal"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_13 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", new global::Microsoft.AspNetCore.Html.HtmlString("text/javascript"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_14 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/js/add2.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_3 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "1", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_4 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "2", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_5 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "3", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_6 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "4", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_7 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "5", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_8 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("form"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_9 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("form form-horizontal"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_10 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", new global::Microsoft.AspNetCore.Html.HtmlString("text/javascript"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_11 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/js/add2.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         #line hidden
         #pragma warning disable 0649
         private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext __tagHelperExecutionContext;
@@ -73,8 +70,8 @@ using Client.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
 #nullable restore
-#line 1 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\Add2\Index.cshtml"
-  
+#line 1 "D:\DATA\MCC\ResourcePlacement\Client\Views\Add2\Index.cshtml"
+
     ViewData["Title"] = "RPMS - ADD 2";
     Layout = "_ADD2Layout";
 
@@ -116,10 +113,10 @@ using Client.Models;
                 <ul class=""menu"">
                     <li class=""sidebar-item "">
                         <a");
-            BeginWriteAttribute("href", " href=\"", 858, "\"", 887, 1);
+            BeginWriteAttribute("href", " href=\"", 857, "\"", 886, 1);
 #nullable restore
-#line 24 "C:\Users\papahjahat\Documents\Project C#\ResourcePlacement\Client\Views\Add2\Index.cshtml"
-WriteAttributeValue("", 865, Url.Content("~/add2"), 865, 22, false);
+#line 24 "D:\DATA\MCC\ResourcePlacement\Client\Views\Add2\Index.cshtml"
+WriteAttributeValue("", 864, Url.Content("~/add2"), 864, 22, false);
 
 #line default
 #line hidden
@@ -150,6 +147,13 @@ WriteAttributeValue("", 1157, Url.Content("~/add2/ProjectPlotting"), 1157, 38, f
                         <a class='sidebar-link'>
                             <i class=""bi bi-gear""></i>
                             <span>Change Password</span>
+                        </a>
+                    </li>
+                    <li class=""sidebar-item "" type=""button"">
+                        <a class='sidebar-link' href=""/login/Logout"" met");
+            WriteLiteral(@"hod=""get"">
+                            <i class=""bi bi-door-open-fill""></i>
+                            <span>Logout</span>
                         </a>
                     </li>
                 </ul>
@@ -249,11 +253,11 @@ WriteAttributeValue("", 1157, Url.Content("~/add2/ProjectPlotting"), 1157, 38, f
                                                     </div>
                                                 </div>
                                                 <div class=""col-md-6 col-12"">
-                                                    <div class=""form-group"">
+                                                    <div class=""form-group"" id=""blabla"">
                                                         <label for=""skills"">Skills</label>
-                                                        <select class=""choices form-select multiple-remove""
-                                                                multiple=""multiple"">
-                                                            <optgroup label=""Figures"">
+                                                        <select class=""choices form-select multiple-remove"" name=""skills[]"" onchange=""update_div(this)""
+                                                                multiple=""multiple"" id=""skills"">
+                                                            <optgroup label=""Skills"">
                                                                 ");
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d715e70f85f03393d4cbfb4eeccdc7ead860163f19919", async() => {
                     WriteLiteral("Romboid");
@@ -279,9 +283,6 @@ WriteAttributeValue("", 1157, Url.Content("~/add2/ProjectPlotting"), 1157, 38, f
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_4.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_4);
-                BeginWriteTagHelperAttribute();
-                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
-                __tagHelperExecutionContext.AddHtmlAttribute("selected", Html.Raw(__tagHelperStringValueBuffer), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.Minimized);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
                 {
@@ -401,7 +402,7 @@ WriteAttributeValue("", 1157, Url.Content("~/add2/ProjectPlotting"), 1157, 38, f
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper);
             __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
-            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
             {
@@ -486,7 +487,7 @@ WriteAttributeValue("", 1157, Url.Content("~/add2/ProjectPlotting"), 1157, 38, f
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper);
             __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
-            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_12);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_9);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
             {
@@ -576,7 +577,7 @@ WriteAttributeValue("", 1157, Url.Content("~/add2/ProjectPlotting"), 1157, 38, f
                                 <tr>
                                     <th>Project Name</th>
                                     <th>Place</th>
-                                    <th>Pic</th>
+                                    <th>PIC</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -586,33 +587,45 @@ WriteAttributeValue("", 1157, Url.Content("~/add2/ProjectPlotting"), 1157, 38, f
                 </div>
             </section>
 
-            <section class=""section"">
-                <div class=""card"">
-                    <div class=""card-header"">
-                        <h4>Employee Placement</h4>
-                    </div>
-                    <di");
-            WriteLiteral(@"v class=""card-body"">
-                        <div id=""placement""></div>
-                    </div>
-                </div>
-                <div class=""card"">
-                    <div class=""card-header"">
-                        <h4>Participant Grade</h4>
-                    </div>
-                    <div class=""card-body"">
-                        <div id=""grading""></div>
+            <section>
+                <div");
+            BeginWriteAttribute("class", " class=\"", 17659, "\"", 17667, 0);
+            EndWriteAttribute();
+            WriteLiteral(@">
+                    <div class=""row"">
+                        <div class="" col-md-6"">
+                            <div class=""card col-md-12"">
+                                <div class=""card-header"">
+                                    <h4 class=""card-title"">Employee Placement</h4>
+                                </div>
+                                <div class=""card-body"">
+");
+            WriteLiteral(@"                                    <div id=""placement""></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=""col-md-6"">
+                            <div class=""card col-md-12"">
+                                <div");
+            BeginWriteAttribute("class", " class=\"", 18420, "\"", 18428, 0);
+            EndWriteAttribute();
+            WriteLiteral(@">
+                                    <div class=""card-header"">
+                                        <h4 class=""card-title"">Participant Grade</h4>
+                                    </div>
+                                    <div class=""card-body"">
+");
+            WriteLiteral(@"                                        <div id=""grading""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-        </div>
-    </div>
-
- </div>
-
-
 
 ");
+            WriteLiteral("        </div>\r\n    </div>\r\n\r\n </div>\r\n\r\n\r\n\r\n");
             DefineSection("Scripts", async() => {
                 WriteLiteral("\r\n        ");
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d715e70f85f03393d4cbfb4eeccdc7ead860163f42293", async() => {
@@ -620,8 +633,8 @@ WriteAttributeValue("", 1157, Url.Content("~/add2/ProjectPlotting"), 1157, 38, f
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper);
-                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
-                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_14);
+                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_10);
+                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
                 {

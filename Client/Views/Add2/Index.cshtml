@@ -3,7 +3,7 @@
     Layout = "_ADD2Layout";
 }
 
-@*INI DASHBOARD PUNYA CLIENT*@
+@*INI DASHBOARD PUNYA STAFF*@
 
 <div id="app">
     <div id="sidebar" class="active">
@@ -36,6 +36,12 @@
                         <a class='sidebar-link'>
                             <i class="bi bi-gear"></i>
                             <span>Change Password</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item " type="button">
+                        <a class='sidebar-link' href="/login/Logout" method="get">
+                            <i class="bi bi-door-open-fill"></i>
+                            <span>Logout</span>
                         </a>
                     </li>
                 </ul>
@@ -128,21 +134,16 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-12">
-                                                    <div class="form-group">
+                                                    <div class="form-group" id="blabla">
                                                         <label for="skills">Skills</label>
-                                                        <select class="choices form-select multiple-remove"
-                                                                multiple="multiple">
-                                                            <optgroup label="Figures">
-                                                                <option value="romboid">Romboid</option>
-                                                                <option value="trapeze" selected>Trapeze</option>
-                                                                <option value="triangle">Triangle</option>
-                                                                <option value="polygon">Polygon</option>
-                                                            </optgroup>
-                                                            <optgroup label="Colors">
-                                                                <option value="red">Red</option>
-                                                                <option value="green">Green</option>
-                                                                <option value="blue" selected>Blue</option>
-                                                                <option value="purple">Purple</option>
+                                                        <select class="choices form-select multiple-remove" name="skills[]" onchange="update_div(this)"
+                                                                multiple="multiple" id="skills">
+                                                            <optgroup label="Skills">
+                                                                <option value="1">PHP</option>
+                                                                <option value="2">ASP.NET Core</option>
+                                                                <option value="3">MySql</option>
+                                                                <option value="4">Java</option>
+                                                                <option value="5">JavaScript</option>
                                                             </optgroup>
                                                         </select>
                                                     </div>
@@ -296,7 +297,7 @@
                                 <tr>
                                     <th>Project Name</th>
                                     <th>Place</th>
-                                    <th>Pic</th>
+                                    <th>PIC</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -306,7 +307,38 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section>
+                <div class="">
+                    <div class="row">
+                        <div class=" col-md-6">
+                            <div class="card col-md-12">
+                                <div class="card-header">
+                                    <h4 class="card-title">Employee Placement</h4>
+                                </div>
+                                <div class="card-body">
+                                    @*Chart 1*@
+                                    <div id="placement"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card col-md-12">
+                                <div class="">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Participant Grade</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        @*Chart 2*@
+                                        <div id="grading"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            @*<section class="section">
                 <div class="card">
                     <div class="card-header">
                         <h4>Employee Placement</h4>
@@ -323,7 +355,7 @@
                         <div id="grading"></div>
                     </div>
                 </div>
-            </section>
+            </section>*@
         </div>
     </div>
 

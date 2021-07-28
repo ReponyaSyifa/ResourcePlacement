@@ -14,6 +14,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using static Client.Enums.Enums;
 
 namespace Client.Controllers
 {
@@ -27,7 +28,7 @@ namespace Client.Controllers
         }
         public IActionResult Index()
         {
-            var message = HttpContext.Session.GetString("message");
+            /*var message = HttpContext.Session.GetString("message");
             if (message == "Berhasil")
             {
                 ViewBag.Message = string.Format("Berhasil");
@@ -41,7 +42,8 @@ namespace Client.Controllers
             else
             {
                 return View();
-            }
+            }*/
+            return View();
         }
 
         public IActionResult Privacy()
@@ -56,13 +58,15 @@ namespace Client.Controllers
             var result = repository.AddProject(entity, gg);
             if (result == System.Net.HttpStatusCode.OK)
             {
-                HttpContext.Session.SetString("message", "Berhasil");
-                return RedirectToAction("index", "client");
+                Alert("Add New Project Succeed!", NotificationType.success, 1500);
+                var reload = RedirectToAction("index", "client");
+                return reload;
             }
             else
             {
-                HttpContext.Session.SetString("message", "Gagal");
-                return RedirectToAction("index", "client");
+                Alert("Add New Project Failed!", NotificationType.error, 1500);
+                var reload = RedirectToAction("index", "client");
+                return reload;
             }
         }
 
@@ -72,13 +76,15 @@ namespace Client.Controllers
             var result = repository.ChooseParticipant(chooseParticipant, participantId);
             if (result == System.Net.HttpStatusCode.OK)
             {
-                HttpContext.Session.SetString("message", "Berhasil");
-                return RedirectToAction("index", "client");
+                Alert("Participant Choosed!", NotificationType.success, 1500);
+                var reload = RedirectToAction("index", "client");
+                return reload;
             }
             else
             {
-                HttpContext.Session.SetString("message", "Gagal");
-                return RedirectToAction("index", "client");
+                Alert("Choose Participant Failed!", NotificationType.error, 1500);
+                var reload = RedirectToAction("index", "client");
+                return reload;
             }
         }
 
