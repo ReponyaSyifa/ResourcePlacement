@@ -27,7 +27,7 @@ namespace Client.Controllers
 
         public IActionResult Index()
         {
-            Alert("Welcome!", "On ADD 2 Page", NotificationType.success);
+            //Alert("Welcome!", "On ADD 2 Page", NotificationType.success);
             return View();
         }
 
