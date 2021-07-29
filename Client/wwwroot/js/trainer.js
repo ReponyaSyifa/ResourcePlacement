@@ -230,7 +230,7 @@ function PostParticipant(item) {
         success: function () {
             Swal.fire({
                 icon: 'success',
-                title: 'New Project Added!',
+                title: 'New Participant Added!',
                 showConfirmButton: false,
                 timer: 1500
             })
@@ -239,7 +239,7 @@ function PostParticipant(item) {
             Swal.fire({
                 icon: 'error',
                 title: 'Oh Snap!',
-                text: 'Add New Project Failed!'
+                text: 'Add New Participant Failed!'
             })
         }
     });
@@ -308,6 +308,11 @@ function AddParticipant() {
         && obj.ListSkill != '') {
         PostParticipant(obj);
     } else {
-        alert("Semua Harus Di Isi!!");
+        Swal.fire({
+            icon: 'warning',
+            title: 'Hmm!?',
+            text: 'Every Column Need To Be Fill!',
+            showConfirmButton: true
+        });
     }
 };

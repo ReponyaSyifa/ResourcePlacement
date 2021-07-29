@@ -1,31 +1,34 @@
-﻿function Insert(item) {
+﻿/// <reference path="trainer.js" />
+function Insert(item) {
     //isi dari object kalian buat sesuai dengan bentuk object yang akan di post
     $.ajax({
         url: "https://localhost:44338/api/employee/RegisterRepoWithAdmin",
         type: "POST",
         contentType: "application/json",
-        data: JSON.stringify(item)
-    }).done((result) => {
-        Swal.fire({
-            icon: 'success',
-            title: 'New Registration Succeed!',
-            showConfirmButton: true
-            //,timer: 1500
-        }),
-        $('#largeModal').modal('hide');
-        //alert('berhasil'),
-        //window.location = "https://localhost:44320/" //https://localhost:44320/Login/Index
-    }).fail((error) => {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Registrasi Failed, Something Went Wrong!',
-            showConfirmButton: true
-            //,timer: 1800
-        }),
-        $('#largeModal').modal('hide');
-        /*alert('gagal'),*/
-        //window.location = "https://localhost:44320/" /*https://localhost:44320/Login/Index*/
+        data: JSON.stringify(item),
+        success: function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'New Registration Succeed!',
+                text: 'Now, Go To Login Page!'
+            }).then(function (result) {
+                if (true) {
+                    window.location = "https://localhost:44320/Login/Index";
+                }
+            })
+        },
+        error: function (err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oh Snap!',
+                text: 'Registrasi Failed, Something Went Wrong!',
+                showConfirmButton: true
+            }).then(function (result) {
+                if (true) {
+                    window.location = "https://localhost:44320/";
+                }
+            })
+        }
     });
 };
 
@@ -58,11 +61,10 @@ function ValidationEmployee() {
         Swal.fire({
             icon: 'warning',
             title: 'Oops...',
-            text: 'Semua Harus Di Isi!!',
+            text: 'Every Column Need To Be Fill!',
             showConfirmButton: false,
-            timer: 1800
-        })
-        //alert("Semua Harus Di Isi!!");
+            timer: 1700
+        })        
     }
 };
 
@@ -87,10 +89,9 @@ function ValidationClient() {
         Swal.fire({
             icon: 'warning',
             title: 'Oops...',
-            text: 'Semua Harus Di Isi!!',
+            text: 'Every Column Need To Be Fill!',
             showConfirmButton: false,
-            timer: 1800
+            timer: 1700
         })
-        //alert("Semua Harus Di Isi!!");
     }
 }

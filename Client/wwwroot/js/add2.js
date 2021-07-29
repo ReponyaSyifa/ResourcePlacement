@@ -19,10 +19,10 @@
                     "data": "email"
                 },
                 {
-                    "data": "status"
+                    "data": "grade"
                 },
                 {
-                    "data": "grade"
+                    "data": "status"
                 }
             ]
         }
@@ -56,103 +56,107 @@
     //}, 30000)
 });
 
-function LabelsPlacement() {
-    let labels = [];
-    $.ajax({
-        async: true,
-        type: "GET",
-        url: "https://localhost:44338/api/participant/GetListParticipant/",
-        contentType: "application/json",
-        success: "gg",
-            /*function (result) {*/
-        //    //for (var i = 0; i < result.length; i++) {
-        //    //    if (labels == null) {
-        //    //        labels[i] = result.companyName;
-        //    //        var j = 1;
-        //    //    }
-        //    //    else {
-        //    //        for (var y = 0; y < labels.length; y++) {
-        //    //            if (labels[y] != result.companyName) {
-        //    //                labels[j] = result.companyName;
-        //    //                j++;
-        //    //            }
-        //    //        }
-        //    //    };
-                
-        //    //}
-
-        //    $.each(result, function (key, val) {
-        //        if (labels == null) {
-        //            labels[0] = val.companyName;
-        //            var j = 1;
-        //        }
-        //        else {
-        //            for (var y = 0; y < labels.length; y++) {
-        //                if (labels[y] != val.companyName) {
-        //                    labels[j] = val.companyName;
-        //                    j++;
-        //                }
-        //            }
-        //        };
-        //        //if (val.name == name) {
-        //        //    ++count;
-        //        //}
-        //    });
-        //},
-        async: false
-    });
-    return labels;
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
 
-var labes = LabelsPlacement();
-console.log(LabelsPlacement());
-//labes[0] = "Male";
-//labes[1] = "Female";
 
-let optionsVisitorsProfile = {
-    series: [70, 30],
-    labels: ['Grade A', 'Grade B'],
-    colors: ['#435ebe', '#55c6e8'],
-    chart: {
-        type: 'donut',
-        width: '100%',
-        height: '350px'
-    },
-    legend: {
-        position: 'bottom'
-    },
-    plotOptions: {
-        pie: {
-            donut: {
-                size: '30%'
+LabelsGrade();
+function LabelsGrade() {
+    var gradeA = 0;
+    var gradeB = 0;
+
+    $.ajax({
+        url: "/participant/getall/",
+        contentType: "application/json"
+    }).done((result) => {
+        var gradeA = 0;
+        var gradeB = 0;
+        $.each(result, function (key, val) {
+            if (val.grade == "A") {
+                gradeA++;
+                
+            } else {
+                gradeB++;
+                
             }
-        }
-    }
-};
-
-var chartGrading = new ApexCharts(document.getElementById('grading'), optionsVisitorsProfile);
-chartGrading.render();
-
-let optionsVisitorsProfileB = {
-    series: [60, 25, 15],
-    labels: ['PT. ABC', 'PT. DEF', 'PT. GHI'],
-    colors: ['#435ebe', '#55c6e8', '#9ae6fc'],
-    chart: {
-        type: 'donut',
-        width: '100%',
-        height: '350px'
-    },
-    legend: {
-        position: 'bottom'
-    },
-    plotOptions: {
-        pie: {
-            donut: {
-                size: '30%'
+        })
+        /*console.log(gradeA);
+       console.log(gradeB);*/
+        var optionsGrading = {
+            series: [gradeA, gradeB],
+            labels: ['Grade A', 'Grade B'],
+            chart: {
+                type: 'donut',
+                 width: '100%',
+                height: '350px'
+            },
+            colors: ['#2b4070', '#a1d9f5'],
+            legend: {
+                position: 'left'
+            },
+            plotOptions: {
+                pie: {
+                    donut: {
+                        size: '30%'
+                    }
+                }
             }
-        }
-    }
-};
+        };
+        var chartGrading = new ApexCharts(document.getElementById('grading'), optionsGrading);
+        chartGrading.render();
+    })    
+}
 
-var chartPlacement = new ApexCharts(document.getElementById('placement'), optionsVisitorsProfileB);
-chartPlacement.render();
+
+LabelsStatus();
+function LabelsStatus() {
+    var Idle = 0;
+    var Project = 0;
+
+    $.ajax({
+        url: "/participant/getall/",
+        contentType: "application/json"
+    }).done((result) => {
+        var Idle = 0;
+        var Project = 0;
+        $.each(result, function (key, val) {
+            if (val.status == "Idle") {
+                Idle++;
+
+            } else {
+                Project++;
+
+            }
+        })
+        /*console.log(gradeA);
+       console.log(gradeB);*/
+        var optionsStatus = {
+            series: [Idle, Project],
+            labels: ['Idle', 'On Project'],
+            chart: {
+                type: 'pie',
+                width: '100%',
+                height: '350px'
+            },
+            colors: ['#2b4070', '#a1d9f5'],
+            legend: {
+                position: 'left'
+            },
+            plotOptions: {
+                pie: {
+                    donut: {
+                        size: '30%'
+                    }
+                }
+            }
+        };
+        var chartGrading = new ApexCharts(document.getElementById('placement'), optionsStatus);
+        chartGrading.render();
+    })
+}
