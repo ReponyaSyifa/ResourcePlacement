@@ -32,7 +32,7 @@ namespace ResourcePlacementAPI.Controllers
             var login = repository.Login(loginVM);
             if (login == "1")
             {
-                return Ok(new JWTokenVM { Status = HttpStatusCode.BadRequest, Token = login, Message = "email tidak sesuai dengan data didatabase" });
+                return Ok(new JWTokenVM { Status = HttpStatusCode.BadRequest, Token = login, Message = "Email tidak Terdaftar" });
             }
             else if (login == "0")
             {

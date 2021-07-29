@@ -36,7 +36,7 @@ namespace ResourcePlacementAPI.Controllers
             }
             else
             {
-                return Ok(choose);
+                return BadRequest(choose);
             }
         }
 

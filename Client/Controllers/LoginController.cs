@@ -1,23 +1,26 @@
-﻿using Client.Models;
+﻿using Client.Base;
+using Client.Models;
 using Client.Repository.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ResourcePlacementAPI.Models;
 using ResourcePlacementAPI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using static Client.Enums.Enums;
 
 namespace Client.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : BaseController<Accounts, LoginRepository, int>
     {
         private readonly LoginRepository repository;
 
-        public LoginController(LoginRepository repository)
+        public LoginController(LoginRepository repository) : base(repository)
         {
             this.repository = repository;
         }
@@ -32,6 +35,12 @@ namespace Client.Controllers
             var jwToken = await repository.Auth(login);
             if (jwToken == null)
             {
+                Alert("Warning!!", "Email tidak Terdaftar", NotificationType.warning);
+                return RedirectToAction("index");
+            }
+            else if (jwToken.Message == "Password Salah")
+            {
+                Alert("Oh Snap!!", jwToken.Message, NotificationType.error);
                 return RedirectToAction("index");
             }
 

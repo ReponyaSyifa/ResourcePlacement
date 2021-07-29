@@ -28,7 +28,7 @@ namespace Client.Controllers
         }
         public IActionResult Index()
         {
-            Alert("Welcome!", "On Clinet Page", NotificationType.success);
+            //Alert("Welcome!", "On Clinet Page", NotificationType.success);
             return View();
         }
 
@@ -63,6 +63,12 @@ namespace Client.Controllers
             if (result == System.Net.HttpStatusCode.OK)
             {
                 Alert("Nice!", "Participant Choosed!", NotificationType.success);
+                var reload = RedirectToAction("index", "client");
+                return reload;
+            }
+            else if (result == System.Net.HttpStatusCode.BadRequest)
+            {
+                Alert("Nice!", "Participant Rejected!", NotificationType.warning);
                 var reload = RedirectToAction("index", "client");
                 return reload;
             }

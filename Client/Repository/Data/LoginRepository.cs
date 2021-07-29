@@ -14,13 +14,13 @@ using System.Threading.Tasks;
 
 namespace Client.Repository.Data
 {
-    public class LoginRepository
+    public class LoginRepository : GeneralRepository<Accounts, int>
     {
         private readonly Address address;
         private readonly string request;
         private readonly IHttpContextAccessor _contextAccessor;
         private readonly HttpClient httpClient;
-        public LoginRepository(Address address, string request = "Account/") 
+        public LoginRepository(Address address, string request = "Account/")  : base(address, request)
         {
             this.address = address;
             this.request = request;
