@@ -8,7 +8,7 @@
 <nav class="navbar navbar-light">
     <div class="container d-block">
         <a href="@Url.Content("~/Home/Index")"><i class="bi bi-chevron-left"></i></a>
-        <a class="navbar-brand ms-4" href="index.html">
+        <a class="navbar-brand ms-4" href="@Url.Content("~/Home/Index")">
             <img src="~/rpms/images/logo/logo1.png">
         </a>
     </div>
@@ -40,11 +40,6 @@
                         </div>
                     </div>
                     <div class="modal-footer mb-24">
-                        <button type="button" class="btn btn-light-secondary"
-                                data-bs-dismiss="modal">
-                            <i class="bx bx-x d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Close</span>
-                        </button>
                         <button type="submit" class="btn btn-primary ml-1">
                             <span>login</span>
                         </button>

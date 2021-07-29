@@ -58,7 +58,7 @@ namespace Client.Controllers
 
         public IActionResult ProjectPlotting()
         {
-            Alert("Welcome!", "On Placement Page", NotificationType.success);
+            //Alert("Welcome!", "On Placement Page", NotificationType.success);
             return View();
         }
 
