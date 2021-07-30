@@ -160,3 +160,49 @@ function LabelsStatus() {
         chartGrading.render();
     })
 }
+
+// change password
+function PostChangePassword(item) {
+    //isi dari object kalian buat sesuai dengan bentuk object yang akan di post
+    $.ajax({
+        url: "https://localhost:44338/api/account/changepassword",
+        type: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(item),
+        success: function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Change Password Succeed!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        },
+        error: function (err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oh Snap!',
+                text: 'Change Password Failed!'
+            })
+        }
+    });
+};
+//change password
+function ChangePassword() {
+    var obj = new Object(); //sesuaikan sendiri nama objectnya dan beserta isinya
+    //ini ngambil value dari tiap inputan di form nya
+    obj.Email = $("#email-id").val();
+    obj.OldPassword = $("#oldPassword").val();
+    obj.NewPassword = $("#newPassword").val();
+
+    console.log(obj.Email);
+
+    // Regular Expression For Email
+    emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    passReg = /^[0-9a-zA-Z]{8,}$/;
+
+    if (obj.Email != '' && obj.OldPassword != '' && obj.NewPassword != '') {
+        PostChangePassword(obj);
+    } else {
+        alert("Semua Harus Di Isi!!");
+    }
+};
