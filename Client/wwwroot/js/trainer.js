@@ -115,10 +115,10 @@ $.ajax({
             val.phoneNumber,
             val.birthDate,
             val.grade,
-            val.status,//#exampleModal
-            `<button class="btn btn-primary modalClass"  data-id="${val.participantId}" data-toggle="modal" data-target="#exampleModal">
-                Detail
-            </button>`
+            val.status//#exampleModal
+            //,`<button class="btn btn-primary modalClass"  data-id="${val.participantId}" data-toggle="modal" data-target="#exampleModal">
+            //    Detail
+            //</button>`
         ]).draw(false)
         no++;
     })
