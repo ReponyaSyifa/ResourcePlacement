@@ -230,7 +230,7 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Phone Number</th>
+                                    <th>Grade</th>
                                     <th>Birth Date</th>
                                     <th>Status</th>
                                     <th>Gender</th>
@@ -271,10 +271,10 @@
     @*modal choose participant*@
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Participant Skills</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -291,7 +291,7 @@
                         </button>
                     </form>
                     <form action="/client/ChooseParticipant/" method="post">
-                        <button type="submit" class="btn btn-danger ml-1" value="Rejected" name="Status">
+                        <button type="submit" class="btn btn-warning ml-1" value="Rejected" name="Status">
                             <span>Reject</span>
                         </button>
                     </form>

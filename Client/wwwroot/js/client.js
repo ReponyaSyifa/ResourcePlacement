@@ -16,9 +16,7 @@
                 }
             },
             {
-                "data": "email",
-                searchable: false,
-                orderable: false
+                "data": "email"
             },
             {
                 "data": null,
@@ -30,9 +28,7 @@
                         return indo + namber2;
                     }
                     return row["phoneNumber"];
-                },
-                searchable: false,
-                orderable: false
+                }
             },
             {
                 "data": "birthDate",
