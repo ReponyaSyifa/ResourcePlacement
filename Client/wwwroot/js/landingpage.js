@@ -2,7 +2,8 @@
 function Insert(item) {
     //isi dari object kalian buat sesuai dengan bentuk object yang akan di post
     $.ajax({
-        url: "https://localhost:44338/api/employee/RegisterRepoWithAdmin",
+        //url: "https://localhost:44338/api/employee/RegisterRepoWithAdmin",
+        url: "https://localhost:44338/api/employee/Register",
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify(item),
@@ -45,6 +46,7 @@ function ValidationEmployee() {
     obj.NIK = $("#nik").val();
     obj.FirstName = $("#firstName").val();
     obj.LastName = $("#lastName").val();
+    obj.RoleId = parseInt($("#role").val());
     obj.Email = $("#emailem").val();
     obj.Password = $("#password").val();
 
