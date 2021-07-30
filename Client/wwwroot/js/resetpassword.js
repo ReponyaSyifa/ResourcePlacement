@@ -19,9 +19,12 @@ $(document).ready(function () {
             success: function () {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Email Sent!',
-                    showConfirmButton: false,
-                    timer: 1500
+                    title: 'Great!',
+                    text: 'Email Sent'
+                }).then(function (result) {
+                    if (true) {
+                        window.location = "https://localhost:44320/Login/Index";
+                    }
                 })
             },
             error: function (err) {

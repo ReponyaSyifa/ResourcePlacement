@@ -35,12 +35,12 @@ namespace Client.Controllers
             var jwToken = await repository.Auth(login);
             if (jwToken == null)
             {
-                Alert("Warning!!", "Email tidak Terdaftar", NotificationType.warning);
+                Alert("Warning!!", "This Email Is Unregistered", NotificationType.warning);
                 return RedirectToAction("index");
             }
             else if (jwToken.Message == "Password Salah")
             {
-                Alert("Oh Snap!!", jwToken.Message, NotificationType.error);
+                Alert("Oh Snap!!", "Wrong Password!", NotificationType.error);
                 return RedirectToAction("index");
             }
 
@@ -70,8 +70,7 @@ namespace Client.Controllers
         [HttpGet]
         public async Task<IActionResult> Logout()
         {
-            HttpContext.Session.Clear();
-           // await HttpContext.SignOutAsync();
+           HttpContext.Session.Clear();
             return RedirectToAction("index", "home");
         }
 

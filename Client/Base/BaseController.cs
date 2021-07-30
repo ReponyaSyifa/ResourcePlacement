@@ -18,7 +18,7 @@ namespace Client.Base
         {
             //Swal.fire({icon: 'error', title: 'Oops...', text: 'Something went wrong!'})
             //Swal.fire('The Internet?','That thing is still around?','question')
-            var msg = "<script language='javascript'>Swal.fire('" + title.ToUpper() + "', '" + message + "','" + notificationType + "')" + "</script>";
+            var msg = "<script language='javascript'>Swal.fire('" + title + "', '" + message + "','" + notificationType + "')" + "</script>";
             TempData["notification"] = msg;
         }
         public void Message(string message, NotificationType notifyType)

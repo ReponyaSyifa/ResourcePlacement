@@ -2,6 +2,7 @@
 using ResourcePlacementAPI.Models;
 using ResourcePlacementAPI.ViewModel;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -89,5 +90,6 @@ namespace ResourcePlacementAPI.Repositories.Data
             showDetailProject.ListSKillProject = ShowSkillProjects(project.ProjectId);
             return showDetailProject;
         }
+        
     }
 }

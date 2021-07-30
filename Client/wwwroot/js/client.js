@@ -178,11 +178,22 @@ function PostChangePassword(item) {
         contentType: "application/json",
         data: JSON.stringify(item)
     }).done((result) => {
-        swal("Nice!", "Password Changed!", "success");
-        /*alert('berhasil');
-        window.location = "https://localhost:44320/Client";*/
+        Swal.fire({
+            icon: 'success',
+            title: 'Nice!',
+            text: 'Change Password Succeed',
+            showConfirmButton: true
+        }).then(function (result) {
+            if (true) {
+                window.location = "https://localhost:44320/Client/";
+            }
+        });
     }).fail((error) => {
-        swal("Nice!", "Cahnge Password Failed!", "error");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oh Snap!',
+            text: 'Change Password Failed!'
+        })
     });
 };
 //change password

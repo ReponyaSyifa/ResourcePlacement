@@ -28,7 +28,6 @@ namespace Client.Controllers
         }
         public IActionResult Index()
         {
-            //Alert("Welcome!", "On Clinet Page", NotificationType.success);
             return View();
         }
 
