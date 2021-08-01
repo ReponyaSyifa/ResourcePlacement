@@ -76,10 +76,21 @@ namespace ResourcePlacementAPI.Repositories.Data
             {  
                 if (item.ProjectId != null)
                 {
-                    var customer = myContext.CustomerUsers.FirstOrDefault(e => e.CustomerUserId == customerUserId);
-                    if (true)
+                    var projects = myContext.Projects.Where(e => e.CustomerUserId == customerUserId).ToList();
+                    if (projects == null)
                     {
-                        participants.Add(item);
+                        
+                    }
+                    else
+                    {
+                        //var customer = myContext.CustomerUsers.FirstOrDefault(e => e.CustomerUserId == customerUserId);
+                        foreach (var item2 in projects)
+                        {
+                            if (item.ProjectId == item2.ProjectId)
+                            {
+                                participants.Add(item);
+                            }
+                        }
                     }
                 }                
             }
