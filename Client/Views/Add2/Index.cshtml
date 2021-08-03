@@ -64,8 +64,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-    @*disini form add partisipation*@
-    <div class="row match-height">
+                    @*disini form add partisipation*@
+                    <div class="row match-height">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-content">
@@ -173,9 +173,9 @@
     </div>
     @*modal change password*@
     <div class="modal fade text-left modalChangePassword" id="modalChangePassword" tabindex="-1"
-             role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
+         role="dialog" aria-labelledby="myModalLabel18" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-                role="document">
+             role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="myModalLabel18">
@@ -198,21 +198,21 @@
                                             </div>
                                             <div class="col-md-8 form-group">
                                                 <input type="email" id="email-id" class="form-control"
-                                                        name="email-id" placeholder="Email">
+                                                       name="email-id" placeholder="Email">
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Old Password</label>
                                             </div>
                                             <div class="col-md-8 form-group">
                                                 <input type="password" id="oldPassword" class="form-control"
-                                                        name="oldPassword" placeholder="Old Password">
+                                                       name="oldPassword" placeholder="Old Password">
                                             </div>
                                             <div class="col-md-4">
                                                 <label>New Password</label>
                                             </div>
                                             <div class="col-md-8 form-group">
                                                 <input type="password" id="newPassword" class="form-control"
-                                                        name="newPassword" placeholder="New Password">
+                                                       name="newPassword" placeholder="New Password">
                                             </div>
                                         </div>
                                     </div>
@@ -272,10 +272,12 @@
                         <table class="table table-striped text-center" id="table1">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Grade</th>
                                     <th>Status</th>
+                                    @*<th>Skill Detail</th>*@
                                 </tr>
                             </thead>
                             <tbody>
@@ -295,9 +297,11 @@
                         <table class="table table-striped" id="table2">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Project Name</th>
                                     <th>Place</th>
                                     <th>PIC</th>
+                                    <th>Detail Skill</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -340,9 +344,33 @@
         </div>
     </div>
 
- </div>
+    @*modal skill set*@
+    <!-- Modal -->
+    <div class="modal fade" id="cobaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Participant Skill Set</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">Skills</div>
+                        <div class="col-1">:</div>
+                        <div class="col font-weight-bold skill" id="skill"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-danger"
+                            data-bs-dismiss="modal">
+                        <i class="bx bx-x d-block d-sm-none"></i>
+                        <span class="d-none d-sm-block">Close</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
+</div>
 
     @section Scripts {
         <script type="text/javascript" src="~/js/add2.js"></script>

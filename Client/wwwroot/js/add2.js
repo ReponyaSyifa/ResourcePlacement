@@ -10,6 +10,12 @@
             "columns": [
                 {
                     "data": null,
+                    "searchable": false,
+                    "orderable": false,
+                    "targets": 0
+                },
+                {
+                    "data": null,
                     "render": function (data, type, row) {
                         let name = row["firstName"] + " " + row["lastName"]
                         return name;
@@ -24,10 +30,19 @@
                 {
                     "data": "status"
                 }
-            ]
+            ],
+            "order": [[1, 'asc']]
         }
     );
 
+    table.on('order.dt search.dt', function () {
+        table.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
+            cell.innerHTML = i + 1;
+        });
+    }).draw();
+});
+
+$(document).ready(function () {
     var table2 = $("#table2").DataTable(
         {
             'ajax': {
@@ -35,8 +50,13 @@
                 dataType: "json",
                 dataSrc: ""
             },
-
             "columns": [
+                {
+                    "data": null,
+                    "searchable": false,
+                    "orderable": false,
+                    "targets": 0
+                },
                 {
                     "data": "projectName"
                 },
@@ -45,15 +65,53 @@
                 },
                 {
                     "data": "projectClient"
+                },
+                {
+                    "data": null,
+                    "render": function (data, type, row) { // wajib pakai bootstrap 5 untuk ini template
+                        return `<button type="button" class="btn btn-primary modalClass" data-id="${row["projectId"]}" data-bs-toggle="modal" data-bs-target="#cobaModal">Detail
+                            </button>`;
+                    },
+                    searchable: false,
+                    orderable: false
                 }
-            ]
+            ],
+            "order": [[1, 'asc']]
         }
     );
+
+    table2.on('order.dt search.dt', function () {
+        table2.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
+            cell.innerHTML = i + 1;
+        });
+    }).draw();
 
     //setInterval(function () {
     //    table.ajax.reload();
     //    table2.ajax.reload();
     //}, 30000)
+});
+
+$(document).on("click", ".modalClass", function () { // untuk ambil data-id wajib menggunakan class yang ada di button
+    
+    var nik = $(this).data('id');
+    console.log(nik);
+    $.ajax({
+        url: "/add2/AllSkillProject/" + nik
+    }).done((result) => {
+        //=====================================================================================
+        skillPokemon = "";
+        $.each(result, function (key, val) {
+            console.log(val.sKillName);
+            skillPokemon += `<span class="badge bg-info">${val.sKillName}</span> `;
+        })
+        $(".skill").html(skillPokemon);
+        //=====================================================================================
+
+
+    }).fail((error) => {
+        console.log(error);
+    });
 });
 
 function getRandomColor() {

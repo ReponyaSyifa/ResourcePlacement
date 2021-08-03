@@ -84,5 +84,14 @@ namespace Client.Controllers
                 return RedirectToAction("projectplotting", "add2");
             }
         }
+
+        [HttpGet("Add2/AllSkillProject/{nik}")]
+        public async Task<JsonResult> AllSkillProject(int nik)
+        {
+            var nikString = nik.ToString();
+            HttpContext.Session.SetString("projectId", nikString);
+            var result = await repository.AllSkillProject(nik);
+            return Json(result);
+        }
     }
 }

@@ -56,6 +56,18 @@ namespace Client.Repository.Data
             return entities;
         }
 
+        public async Task<List<ShowSkillVM>> AllSkillProject(int projectId)
+        {
+            List<ShowSkillVM> entities = new List<ShowSkillVM>();
+
+            using (var response = await httpClient.GetAsync("project/showskillprojects/" + projectId))
+            {
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                entities = JsonConvert.DeserializeObject<List<ShowSkillVM>>(apiResponse);
+            }
+            return entities;
+        }
+
         public HttpStatusCode Ploting(ProjectPlottingVM projectPlotting, int participantId)
         {
             StringContent content = new StringContent(JsonConvert.SerializeObject(projectPlotting), Encoding.UTF8, "application/json");
