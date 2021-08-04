@@ -94,10 +94,10 @@ $(document).ready(function () {
 
 $(document).on("click", ".modalClass", function () { // untuk ambil data-id wajib menggunakan class yang ada di button
     
-    var nik = $(this).data('id');
-    console.log(nik);
+    var id = $(this).data('id');
+    console.log(id);
     $.ajax({
-        url: "/add2/AllSkillProject/" + nik
+        url: "/add2/AllSkillProject/" + id
     }).done((result) => {
         //=====================================================================================
         skillPokemon = "";

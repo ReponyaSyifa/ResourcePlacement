@@ -68,6 +68,7 @@ namespace ResourcePlacementAPI.Repositories.Data
             {
                 ShowDetailProjectVM showDetailProject = new ShowDetailProjectVM();
                 var client = myContext.CustomerUsers.FirstOrDefault(e => e.CustomerUserId == item.CustomerUserId);
+                showDetailProject.ProjectId = item.ProjectId;
                 showDetailProject.ProjectName = item.ProjectName;
                 showDetailProject.ProjectDesc = item.ProjectDesc;
                 showDetailProject.ProjectPlace = client.CompanyName;

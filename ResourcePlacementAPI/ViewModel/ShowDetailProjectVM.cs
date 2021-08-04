@@ -7,6 +7,7 @@ namespace ResourcePlacementAPI.ViewModel
 {
     public class ShowDetailProjectVM
     {
+        public int ProjectId { get; set; }
         public string ProjectName { get; set; }
         public string ProjectDesc { get; set; }
         public string ProjectPlace { get; set; }
