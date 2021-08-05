@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/rpms/css/bootstrap.css">
 
+    <!-- Multiple Select CSS -->
+    <link rel="stylesheet" href="~/rpms/vendors/choices.js/choices.min.css" />
+
     <!-- Title -->
     <title>@ViewData["Title"]</title>
 
@@ -21,8 +24,7 @@
     <link rel="stylesheet" href="~/rpms/css/app.css">
     <link rel="shortcut icon" href="~/rpms/images/favicon.svg" type="image/x-icon">
 
-    <!-- Multiple Select CSS -->
-    <link rel="stylesheet" href="~/rpms/vendors/choices.js/choices.min.css" />
+
 
     @*<link href="~/sweetAlert/sweetalert.css" rel="stylesheet" />
         <script src="~/sweetAlert/sweetalert.min.js"></script>*@
@@ -57,6 +59,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/rpms/js/bootstrap.bundle.min.js"></script>
     <script src="~/rpms/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="~/js/skills.js"></script>
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
 
@@ -71,7 +74,7 @@
     <script src="~/rpms/vendors/choices.js/choices.min.js"></script>
 
     <script type="text/javascript" src="~/rpms/js/main.js"></script>
-    
+
     <!-- Sweet Alert JS -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Toastr JS -->
@@ -80,6 +83,8 @@
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>-->
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     @RenderSection("Scripts", required: false)
+
+
 </body>
 </html>
 

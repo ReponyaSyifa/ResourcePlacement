@@ -28,9 +28,9 @@ window.addEventListener('resize', (event) => {
     }
 });
 
-document.querySelector('.burger-btn').addEventListener('click', () => {
-    document.getElementById('sidebar').classList.toggle('active');
-})
+//document.querySelector('.burger-btn').addEventListener('click', () => {
+//    document.getElementById('sidebar').classList.toggle('active');
+//})
 document.querySelector('.sidebar-hide').addEventListener('click', () => {
     document.getElementById('sidebar').classList.toggle('active');
 
@@ -46,4 +46,4 @@ if(typeof PerfectScrollbar == 'function') {
 }
 
 // Scroll into active sidebar
-document.querySelector('.sidebar-item.active').scrollIntoView(false)
+//document.querySelector('.sidebar-item.active').scrollIntoView(false)
