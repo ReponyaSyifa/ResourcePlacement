@@ -69,8 +69,11 @@ $(document).ready(function () {
                 {
                     "data": null,
                     "render": function (data, type, row) { // wajib pakai bootstrap 5 untuk ini template
-                        return `<button type="button" class="btn btn-primary modalClass" data-id="${row["projectId"]}" data-bs-toggle="modal" data-bs-target="#cobaModal">Detail
-                            </button>`;
+                        return `<button type="button" class="btn btn-primary modalClass" data-id="${row["projectId"]}" data-bs-toggle="modal" data-bs-target="#cobaModal" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                    </svg>
+                                </button>`;
                     },
                     searchable: false,
                     orderable: false
@@ -152,7 +155,40 @@ function LabelsGrade() {
             chart: {
                 type: 'donut',
                  width: '100%',
-                height: '350px'
+                height: '350px',
+                toolbar: {
+                    show: true,
+                    offsetX: 0,
+                    offsetY: 0,
+                    tools: {
+                        download: true,
+                        selection: true,
+                        zoom: true,
+                        zoomin: true,
+                        zoomout: true,
+                        pan: true,
+                        reset: true | '<img src="/static/icons/reset.png" width="20">',
+                        customIcons: []
+                    },
+                    export: {
+                        csv: {
+                            filename: 'Participant Grade Chart',
+                            columnDelimiter: ',',
+                            headerCategory: 'category',
+                            headerValue: 'value',
+                            dateFormatter(timestamp) {
+                                return new Date(timestamp).toDateString()
+                            }
+                        },
+                        svg: {
+                            filename: 'Participant Grade Chart',
+                        },
+                        png: {
+                            filename: 'Participant Grade Chart',
+                        }
+                    },
+                    autoSelected: 'zoom'
+                }
             },
             colors: ['#2b4070', '#a1d9f5'],
             legend: {
@@ -200,7 +236,40 @@ function LabelsStatus() {
             chart: {
                 type: 'pie',
                 width: '100%',
-                height: '350px'
+                height: '350px',
+                toolbar: {
+                    show: true,
+                    offsetX: 0,
+                    offsetY: 0,
+                    tools: {
+                        download: true,
+                        selection: true,
+                        zoom: true,
+                        zoomin: true,
+                        zoomout: true,
+                        pan: true,
+                        reset: true | '<img src="/static/icons/reset.png" width="20">',
+                        customIcons: []
+                    },
+                    export: {
+                        csv: {
+                            filename: 'Pariticant Status Chart',
+                            columnDelimiter: ',',
+                            headerCategory: 'category',
+                            headerValue: 'value',
+                            dateFormatter(timestamp) {
+                                return new Date(timestamp).toDateString()
+                            }
+                        },
+                        svg: {
+                            filename: 'Pariticant Status Chart',
+                        },
+                        png: {
+                            filename: 'Pariticant Status Chart',
+                        }
+                    },
+                    autoSelected: 'zoom'
+                }
             },
             colors: ['#2b4070', '#a1d9f5'],
             legend: {
