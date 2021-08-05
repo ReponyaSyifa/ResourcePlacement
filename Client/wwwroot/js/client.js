@@ -10,6 +10,12 @@
         "columns": [
             {
                 "data": null,
+                "searchable": false,
+                "orderable": false,
+                "targets": 0
+            },
+            {
+                "data": null,
                 "render": function (data, type, row) {
                     let name = row["firstName"] + " " + row["lastName"]
                     return name;
@@ -58,16 +64,26 @@
             {
                 "data": null,
                 "render": function (data, type, row) { // wajib pakai bootstrap 5 untuk ini template
-                    return `<button type="button" class="btn btn-primary modalClass" data-id="${row["participantId"]}" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                  Detail
+                    return `<button type="button" class="btn btn-success modalClass" data-id="${row["participantId"]}" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-zoom-in" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                                    <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
+                                    <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z"/>
+                                </svg>
                             </button>`;
                 },
                 searchable: false,
                 orderable: false
             }
-        ]
+            ],
+            "order": [[1, 'asc']]
         }
     );
+    table.on('order.dt search.dt', function () {
+        table.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
+            cell.innerHTML = i + 1;
+        });
+    }).draw();
 
     var table2 = $("#table2").DataTable(
         {
@@ -79,26 +95,38 @@
 
             "columns": [
                 {
+                    "data": null,
+                    "searchable": false,
+                    "orderable": false,
+                    "targets": 0
+                },
+                {
                     "data": "projectName"
                 },
                 {
                     "data": "projectDesc"
+                },
+                {
+                    "data": null,
+                    "render": function (data, type, row) { // wajib pakai bootstrap 5 untuk ini template
+                        return `<button type="button" class="btn btn-primary modalClassProject" data-id="${row["projectId"]}" data-bs-toggle="modal" data-bs-target="#cobaModal" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                    </svg>
+                                </button>`;
+                    },
+                    searchable: false,
+                    orderable: false
                 }
-                //,{
-                //    "data": null,
-                //    "render": function (data, type, row) {
-                //        return `<button type="button" class="btn btn-primary" data-toggle="modal" data-target="">
-                //                  Edit
-                //            </button>
-                //            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="">
-                //                  Delete
-                //            </button>
-                //            `;
-                //    }
-                //}
-            ]
+            ],
+            "order": [[1, 'asc']]
         }
     );
+    table2.on('order.dt search.dt', function () {
+        table2.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
+            cell.innerHTML = i + 1;
+        });
+    }).draw();
 
     //setInterval(function () {
     //    table.ajax.reload();
@@ -277,3 +305,41 @@ function RejectParticipant() {
         //    alert('gagal')
     });
 };
+
+$.ajax({
+    url: "https://localhost:44338/API/skill"
+}).done((result) => {
+    text = `<optgroup label="Skills">`;
+    $.each(result, function (key, value) {
+        text += `<option value="${value.skillId}">${value.skillName}</option>`;
+        //text += `<option>${value.customerUserId}`+ `</option>`;
+        console.log(value.skillName);
+    });
+    text += `</optgroup>`;
+    console.log(text);
+    $("#skills").html(text);
+}).fail((err) => {
+    console.log(err);
+});
+
+$(document).on("click", ".modalClassProject", function () { // untuk ambil data-id wajib menggunakan class yang ada di button
+
+    var id = $(this).data('id');
+    console.log(id);
+    $.ajax({
+        url: "/add2/AllSkillProject/" + id
+    }).done((result) => {
+        //=====================================================================================
+        skillPokemon = "";
+        $.each(result, function (key, val) {
+            console.log(val.sKillName);
+            skillPokemon += `<span class="badge bg-info">${val.sKillName}</span> `;
+        })
+        $(".skill").html(skillPokemon);
+        //=====================================================================================
+
+
+    }).fail((error) => {
+        console.log(error);
+    });
+});

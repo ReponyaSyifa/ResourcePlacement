@@ -7584,19 +7584,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USER\\.nuget\\packages\\": {}
+    "C:\\Users\\papahjahat\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DATA\\MCC\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
+      "projectUniqueName": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
       "projectName": "ResourcePlacementAPI",
-      "projectPath": "D:\\DATA\\MCC\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
-      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "D:\\DATA\\MCC\\ResourcePlacement\\ResourcePlacementAPI\\obj\\",
+      "projectPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\ResourcePlacementAPI.csproj",
+      "packagesPath": "C:\\Users\\papahjahat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\papahjahat\\Documents\\Project C#\\ResourcePlacement\\ResourcePlacementAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\papahjahat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7671,7 +7671,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
